@@ -1,10 +1,10 @@
 import './App.scss';
-import { Button } from 'reactstrap';
+import PackagesList from './components/PackagesList/PackagesList';
 
 function App() {
     return (
         <div>
-            <Button>hello world</Button>
+            <PackagesList/>
         </div>
     );
 }
