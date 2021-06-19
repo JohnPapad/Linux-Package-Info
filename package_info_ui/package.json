@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
     "immer": "^9.0.2",
+    "lodash": "^4.17.21",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
     "react-data-table-component": "^6.11.7",
