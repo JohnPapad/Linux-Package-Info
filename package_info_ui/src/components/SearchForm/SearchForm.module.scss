@@ -1,0 +1,11 @@
+
+
+.dropdown-item {
+    background-color: white !important;
+    &:focus {
+        background-color: lightgrey !important ;
+    };
+    &:hover {
+        background-color: lightgrey !important ;
+    };
+}
