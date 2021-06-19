@@ -4,6 +4,7 @@ import PackagesList from './components/PackagesList/PackagesList';
 import SearchForm from './components/SearchForm/SearchForm';
 import dpkgSampleData from './assets/packageData/dpkg-sample-data.json';
 import produce from 'immer';
+import { Container, Row, Col } from 'reactstrap';
 
 
 class App extends Component {
@@ -28,14 +29,18 @@ class App extends Component {
     render() {
         // console.log("data", this.state)
         return (
-            <div>
-                <SearchForm
-                    searchQueryHandler={this.searchQueryHandler}
-                />
+            <Container fluid className="mt-5">
+                <Row>
+                    <Col md="3">
+                        <SearchForm
+                            searchQueryHandler={this.searchQueryHandler}
+                        />
+                    </Col>
+                </Row>
                 <PackagesList
                     data={this.state.data}
                 />
-            </div>
+            </Container>
         );
     }
 
