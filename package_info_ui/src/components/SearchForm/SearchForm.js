@@ -79,7 +79,7 @@ class SearchForm extends Component {
         return (
             <form onSubmit={e=>this.submitFormHandler(e)}>
                 <InputGroup>
-                    <input
+                    <Input
                         placeholder="Example: grep"
                         value={this.state.searchText}
                         onChange={e => this.inputChangedHandler(e.target.value)}
