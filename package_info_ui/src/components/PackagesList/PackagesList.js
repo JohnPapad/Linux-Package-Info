@@ -2,7 +2,7 @@ import { Component } from "react"
 import DataTable from 'react-data-table-component';
 import { orderBy } from 'lodash';
 
-
+const baseSWHul = "https://archive.softwareheritage.org/browse/";
 const columns = [
     {
         name: 'Distribution',
@@ -24,7 +24,8 @@ const columns = [
 
     {
         name: "SoftWare Heritage ID",
-        selector: "swhid"
+        selector: "swhid",
+        cell: row => <a href={baseSWHul + row.swhid}>{row.swhid}</a>
     }
 
 ];
