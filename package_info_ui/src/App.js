@@ -5,6 +5,7 @@ import SearchForm from './components/SearchForm/SearchForm';
 import dpkgSampleData from './assets/packageData/dpkg-sample-data.json';
 import produce from 'immer';
 import { Container, Row, Col } from 'reactstrap';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 
 class App extends Component {
@@ -29,18 +30,25 @@ class App extends Component {
     render() {
         // console.log("data", this.state)
         return (
-            <Container fluid className="mt-5">
-                <Row>
-                    <Col md="3">
-                        <SearchForm
-                            searchQueryHandler={this.searchQueryHandler}
+
+            <Switch>
+                <Route path="/" exact>
+                    <Container fluid className="mt-5">
+                        <Row>
+                            <Col md="3">
+                                <SearchForm
+                                    searchQueryHandler={this.searchQueryHandler}
+                                />
+                            </Col>
+                        </Row>
+                        <PackagesList
+                            data={this.state.data}
                         />
-                    </Col>
-                </Row>
-                <PackagesList
-                    data={this.state.data}
-                />
-            </Container>
+                    </Container>
+                </Route>
+
+                <Redirect to="/" />
+            </Switch>
         );
     }
 
