@@ -11,6 +11,8 @@ import { Form,
     DropdownItem } from 'reactstrap';
 import produce from 'immer';
 import styles from './SearchForm.module.scss';
+import { createQueryParams } from '../../utilities/URIutil';
+import { withRouter } from 'react-router';
 
 
 const dropdownOptions = [
@@ -55,12 +57,14 @@ class SearchForm extends Component {
     submitFormHandler = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        this.props.searchQueryHandler(this.state.searchText, this.state.selectedDropdownItem);
+        const queryParams = {
+            package: this.state.searchText,
+            distro: this.state.selectedDropdownItem
+        };
+        this.props.history.push("/?" + createQueryParams(queryParams));
     }
 
     render () {
-
-        console.log(this.state);
 
         const dropdownItems = dropdownOptions.map((item, i) =>(
             <div key={item}>
@@ -104,4 +108,4 @@ class SearchForm extends Component {
 
 }
 
-export default SearchForm;
+export default withRouter(SearchForm);
