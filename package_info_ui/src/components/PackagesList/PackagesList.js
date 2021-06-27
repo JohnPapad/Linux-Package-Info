@@ -3,6 +3,7 @@ import DataTable from 'react-data-table-component';
 import { withRouter } from 'react-router-dom';
 import { orderBy } from 'lodash';
 import produce from 'immer';
+import { isEqual } from 'lodash';
 import { getQueryParams } from '../../utilities/URIutil';
 import dpkgSampleData from '../../assets/packageData/dpkg-sample-data.json';
 
@@ -118,6 +119,23 @@ class PackagesList extends Component {
         );
     }
 
+    componentDidMount () {
+        console.log("Package list did mount");
+        this.filterPackages();
+    }
+
+    componentDidUpdate () {
+        console.log("Package list did update");
+        this.filterPackages();
+    }
+
+    shouldComponentUpdate (nextProps, nextState) {
+        console.log("Package list should update");
+        if (nextProps.location.search !== this.props.location.search){
+            return true;
+        }
+
+        return !isEqual(this.state.data, nextState.data);
     }
 
 }
