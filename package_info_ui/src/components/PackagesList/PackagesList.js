@@ -1,6 +1,11 @@
 import { Component } from "react"
 import DataTable from 'react-data-table-component';
+import { withRouter } from 'react-router-dom';
 import { orderBy } from 'lodash';
+import produce from 'immer';
+import { getQueryParams } from '../../utilities/URIutil';
+import dpkgSampleData from '../../assets/packageData/dpkg-sample-data.json';
+
 
 const baseSWHul = "https://archive.softwareheritage.org/browse/";
 const columns = [
@@ -32,8 +37,27 @@ const columns = [
 
 class PackagesList extends Component {
 
-    distroSortingOrder = "asc";
-    packageSortingOrder = "asc";
+    state = {
+        data: dpkgSampleData
+    };
+
+    filterPackages = () => {
+        const URLparams = getQueryParams(this.props.location.search);
+        if ((!URLparams.distro) || (!URLparams.package)) {
+            return;
+        }
+
+        this.setState(
+            produce(draft=>{
+                if (URLparams.distro === "all") {
+                    draft.data = dpkgSampleData.filter(item=>item["package"].includes(URLparams.package));
+                }
+                else {
+                    draft.data = dpkgSampleData.filter(item=>item["distro"] === URLparams.distro && item["package"].includes(URLparams.package));
+                }
+            })
+        );
+    }
 
     handleSort = (rows, selector, sortDirection) => {
         // console.log("rows", rows)
@@ -80,9 +104,11 @@ class PackagesList extends Component {
 
     render() {
 
+        console.log("packages rendered")
+
         return (
             <DataTable
-                data={[...this.props.data]}
+                data={[...this.state.data]}
                 columns={columns}
                 defaultSortField="distro"
                 highlightOnHover
@@ -92,6 +118,8 @@ class PackagesList extends Component {
         );
     }
 
+    }
+
 }
 
-export default PackagesList;
+export default withRouter(PackagesList);
