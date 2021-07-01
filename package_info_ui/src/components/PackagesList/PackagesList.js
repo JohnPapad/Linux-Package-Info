@@ -8,6 +8,9 @@ import { getQueryParams } from '../../utilities/URIutil';
 import dpkgSampleData from '../../assets/packageData/dpkg-sample-data.json';
 import SearchForm from '../SearchForm/SearchForm';
 import { Row, Col } from 'reactstrap';
+import ExportOptions from '../ExportOptions/ExportOptions';
+import { downloadCSV } from '../../utilities/CSVutil';
+import { downloadJSON } from '../../utilities/JSONutil';
 
 
 const baseSWHul = "https://archive.softwareheritage.org/browse/";
@@ -43,6 +46,15 @@ class PackagesList extends Component {
     state = {
         data: dpkgSampleData
     };
+
+    exportHandler = (type) => {
+        if (type === "CSV") {
+            downloadCSV(this.state.data);
+        }
+        else if (type === "JSON") {
+            downloadJSON(this.state.data);
+        }
+    }
 
     filterPackages = () => {
         const URLparams = getQueryParams(this.props.location.search);
@@ -114,6 +126,9 @@ class PackagesList extends Component {
             <Row className="justify-content-between">
                 <Col md="3">
                     <SearchForm/>
+                </Col>
+                <Col xs="auto">
+                    <ExportOptions exportHandler={this.exportHandler}/>
                 </Col>
             </Row>
             <DataTable
