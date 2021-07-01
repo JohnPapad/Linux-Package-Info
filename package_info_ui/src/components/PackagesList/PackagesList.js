@@ -6,6 +6,8 @@ import produce from 'immer';
 import { isEqual } from 'lodash';
 import { getQueryParams } from '../../utilities/URIutil';
 import dpkgSampleData from '../../assets/packageData/dpkg-sample-data.json';
+import SearchForm from '../SearchForm/SearchForm';
+import { Row, Col } from 'reactstrap';
 
 
 const baseSWHul = "https://archive.softwareheritage.org/browse/";
@@ -108,6 +110,12 @@ class PackagesList extends Component {
         console.log("packages rendered")
 
         return (
+            <>
+            <Row className="justify-content-between">
+                <Col md="3">
+                    <SearchForm/>
+                </Col>
+            </Row>
             <DataTable
                 data={[...this.state.data]}
                 columns={columns}
@@ -116,6 +124,7 @@ class PackagesList extends Component {
                 pagination
                 sortFunction={this.handleSort}
             />
+            </>
         );
     }
 
