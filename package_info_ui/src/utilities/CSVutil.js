@@ -32,7 +32,7 @@ export const downloadCSV = (array) => {
     let csv = convertArrayOfObjectsToCSV(array);
     if (csv == null) return;
 
-    const filename = 'export.csv';
+    const filename = 'packages.csv';
 
     if (!csv.match(/^data:text\/csv/i)) {
         csv = `data:text/csv;charset=utf-8,${csv}`;
