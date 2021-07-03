@@ -117,6 +117,10 @@ class PackagesList extends Component {
 
     }
 
+    selectedRowsChangedHandler = state => {
+        console.log(state)
+    }
+
     render() {
 
         console.log("packages rendered")
@@ -137,7 +141,9 @@ class PackagesList extends Component {
                 defaultSortField="distro"
                 highlightOnHover
                 pagination
+                selectableRows
                 sortFunction={this.handleSort}
+                onSelectedRowsChange={this.selectedRowsChangedHandler}
             />
             </>
         );
