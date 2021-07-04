@@ -47,12 +47,14 @@ class PackagesList extends Component {
         data: dpkgSampleData
     };
 
+    selectedPackages = [];
+
     exportHandler = (type) => {
         if (type === "CSV") {
-            downloadCSV(this.state.data);
+            downloadCSV(this.selectedPackages);
         }
         else if (type === "JSON") {
-            downloadJSON(this.state.data);
+            downloadJSON(this.selectedPackages);
         }
     }
 
@@ -118,7 +120,7 @@ class PackagesList extends Component {
     }
 
     selectedRowsChangedHandler = state => {
-        console.log(state)
+        this.selectedPackages = state.selectedRows;
     }
 
     render() {
