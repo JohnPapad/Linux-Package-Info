@@ -1,22 +1,17 @@
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 const ExportOptions = (props) => {
 
     return (
-        <UncontrolledDropdown>
-            <DropdownToggle caret color="primary">
-                Export
-            </DropdownToggle>
-            <DropdownMenu right>
-                <DropdownItem className="text-center" onClick={()=>props.exportHandler("CSV")}>
-                    CSV
-                </DropdownItem>
-                <DropdownItem divider/>
-                <DropdownItem className="text-center" onClick={()=>props.exportHandler("JSON")}>
-                    JSON
-                </DropdownItem>
-            </DropdownMenu>
-        </UncontrolledDropdown>
+        <span>
+            <Button onClick={()=>props.exportHandler("CSV")} color="primary">
+                Export to CSV
+            </Button>
+            <Button className="mx-4" onClick={()=>props.exportHandler("JSON")} color="primary">
+                Export to JSON
+            </Button>
+        </span>
+       
     );
 }
 
