@@ -127,12 +127,9 @@ class PackagesList extends Component {
 
         return (
             <>
-            <Row className="justify-content-between">
+            <Row className="mb-3">
                 <Col md="3">
                     <SearchForm/>
-                </Col>
-                <Col xs="auto">
-                    <ExportOptions exportHandler={this.exportHandler}/>
                 </Col>
             </Row>
             <DataTable
@@ -144,6 +141,7 @@ class PackagesList extends Component {
                 selectableRows
                 sortFunction={this.handleSort}
                 onSelectedRowsChange={this.selectedRowsChangedHandler}
+                contextActions={<ExportOptions exportHandler={this.exportHandler}/>}
             />
             </>
         );
