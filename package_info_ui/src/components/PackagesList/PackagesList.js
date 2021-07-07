@@ -7,44 +7,20 @@ import { isEqual } from 'lodash';
 import { getQueryParams } from '../../utilities/URIutil';
 import dpkgSampleData from '../../assets/packageData/dpkg-sample-data.json';
 import SearchForm from '../SearchForm/SearchForm';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import ExportOptions from '../ExportOptions/ExportOptions';
 import { downloadCSV } from '../../utilities/CSVutil';
 import { downloadJSON } from '../../utilities/JSONutil';
 
 
 const baseSWHul = "https://archive.softwareheritage.org/browse/";
-const columns = [
-    {
-        name: 'Distribution',
-        selector: 'distro',
-        sortable: true,
-    },
 
-    {
-        name: "Package",
-        selector: "package",
-        sortable: true,
-    },
-
-    {
-        name: "Version",
-        selector: "version",
-        sortable: true,
-    },
-
-    {
-        name: "SoftWare Heritage ID",
-        selector: "swhid",
-        cell: row => <a href={baseSWHul + row.swhid}>{row.swhid}</a>
-    }
-
-];
 
 class PackagesList extends Component {
 
     state = {
-        data: dpkgSampleData
+        data: dpkgSampleData,
+        visibleColumns: ['distro', 'version', 'swhid']
     };
 
     selectedPackages = [];
@@ -123,15 +99,67 @@ class PackagesList extends Component {
         this.selectedPackages = state.selectedRows;
     }
 
+    omitColumn = (colName) => {
+        console.log("col name: ", colName)
+        this.setState(
+            produce(draft=>{
+                draft.visibleColumns = draft.visibleColumns.filter(val=> val !== colName);
+            })
+        );
+    }
+
     render() {
 
         console.log("packages rendered")
 
+        const visibleColumns = new Set(this.state.visibleColumns);
+        const columns = [
+            {
+                name: 'Distribution',
+                selector: 'distro',
+                sortable: true,
+                omit: !visibleColumns.has('distro')
+            },
+        
+            {
+                name: "Package",
+                selector: "package",
+                sortable: true,
+            },
+        
+            {
+                name: "Version",
+                selector: "version",
+                sortable: true,
+                omit: !visibleColumns.has('version')
+            },
+        
+            {
+                name: "SoftWare Heritage ID",
+                selector: "swhid",
+                omit: !visibleColumns.has('swhid'),
+                cell: row => <a href={baseSWHul + row.swhid}>{row.swhid}</a>
+            }
+        
+        ];
+
         return (
             <>
-            <Row className="mb-3">
+            <Row className="mb-3 justify-content-between">
                 <Col md="3">
                     <SearchForm/>
+                </Col>
+                <Col xs="auto">
+                    <span className="fw-bold me-4">
+                        Show: 
+                    </span>
+                    {
+                        this.state.visibleColumns.map(col=>(
+                            <Button key={col} onClick={()=>this.omitColumn(col)} className="mx-2">
+                                {col}
+                            </Button>
+                        ))
+                    }
                 </Col>
             </Row>
             <DataTable
