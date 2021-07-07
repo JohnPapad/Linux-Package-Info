@@ -188,6 +188,9 @@ class PackagesList extends Component {
     }
 
     shouldComponentUpdate (nextProps, nextState) {
+        if (!isEqual(nextState.visibleColumns, this.state.visibleColumns)) {
+            return true;
+        }
         console.log("Package list should update");
         if (nextProps.location.search !== this.props.location.search){
             return true;
