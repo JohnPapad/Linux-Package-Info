@@ -168,7 +168,9 @@ class PackagesList extends Component {
                 defaultSortField="distro"
                 highlightOnHover
                 pagination
+                responsive
                 selectableRows
+                selectableRowsHighlight
                 sortFunction={this.handleSort}
                 onSelectedRowsChange={this.selectedRowsChangedHandler}
                 contextActions={<ExportOptions exportHandler={this.exportHandler}/>}
