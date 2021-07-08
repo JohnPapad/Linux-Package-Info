@@ -110,6 +110,14 @@ class PackagesList extends Component {
         );
     }
 
+    showAllColumnsHandler = () => {
+        this.setState(
+            produce(draft=>{
+                draft.visibleColumns = ['distro', 'version', 'swhid'];
+            })
+        );
+    }
+
     render() {
 
         console.log("packages rendered")
@@ -167,6 +175,11 @@ class PackagesList extends Component {
                             </span>
                         ))
                     }
+                    <Button color="secondary" className="ms-4" onClick={this.showAllColumnsHandler}>
+                        <span className="fw-bold">
+                            All
+                        </span>
+                    </Button>
                 </Col>
             </Row>
             <DataTable
