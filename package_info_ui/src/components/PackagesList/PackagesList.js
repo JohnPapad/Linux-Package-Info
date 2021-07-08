@@ -11,6 +11,8 @@ import { Row, Col, Button } from 'reactstrap';
 import ExportOptions from '../ExportOptions/ExportOptions';
 import { downloadCSV } from '../../utilities/CSVutil';
 import { downloadJSON } from '../../utilities/JSONutil';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
 
 const baseSWHul = "https://archive.softwareheritage.org/browse/";
@@ -99,7 +101,7 @@ class PackagesList extends Component {
         this.selectedPackages = state.selectedRows;
     }
 
-    omitColumn = (colName) => {
+    omitColumnHandler = (colName) => {
         console.log("col name: ", colName)
         this.setState(
             produce(draft=>{
@@ -146,18 +148,23 @@ class PackagesList extends Component {
         return (
             <>
             <Row className="mb-3 justify-content-between">
-                <Col md="3">
+                <Col md="3" className="py-2">
                     <SearchForm/>
                 </Col>
-                <Col xs="auto">
+                <Col xs="auto" className="py-2">
                     <span className="fw-bold me-4">
                         Show: 
                     </span>
                     {
                         this.state.visibleColumns.map(col=>(
-                            <Button key={col} onClick={()=>this.omitColumn(col)} className="mx-2">
-                                {col}
-                            </Button>
+                            <span key={col} className="mx-2">
+                                <Button color="dark" outline disabled>
+                                    <span className="fw-bold">
+                                        {col}
+                                    </span>
+                                </Button>
+                                <FontAwesomeIcon role="button" onClick={()=>this.omitColumnHandler(col)} icon={faTimesCircle} className="ms-1 text-secondary small"/>
+                            </span>
                         ))
                     }
                 </Col>
