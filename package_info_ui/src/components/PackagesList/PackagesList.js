@@ -160,7 +160,7 @@ class PackagesList extends Component {
                     <SearchForm/>
                 </Col>
                 <Col xs="auto" className="py-2">
-                    <span className="fw-bold me-4">
+                    <span className="fw-bold me-2">
                         Show: 
                     </span>
                     {
@@ -171,11 +171,13 @@ class PackagesList extends Component {
                                         {col}
                                     </span>
                                 </Button>
-                                <FontAwesomeIcon role="button" onClick={()=>this.omitColumnHandler(col)} icon={faTimesCircle} className="ms-1 text-secondary small"/>
+                                <FontAwesomeIcon role="button" onClick={()=>this.omitColumnHandler(col)} icon={faTimesCircle} className="mx-2 text-secondary small"/>
+                                <span className="py-2" style={{borderLeft: "1px solid grey"}}/>
                             </span>
+
                         ))
                     }
-                    <Button color="secondary" className="ms-4" onClick={this.showAllColumnsHandler}>
+                    <Button color="secondary" className="ms-2" onClick={this.showAllColumnsHandler}>
                         <span className="fw-bold">
                             All
                         </span>
