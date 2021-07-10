@@ -1,37 +1,62 @@
 import os
+import ray
 import sys
 
+info_to_parse = set(["Version", "Section", "Installed-Size", "Homepage", "Description", "Bugs"])
 
-def collect_package_names():
-    stream = os.popen('apt-cache search .')
-    output = stream.readlines()
-    print("Number of packages found: ", len(output))
-    return output
+def parse_packages_info():
+    packages_output = (os.popen('apt-cache search .')).readlines()
+    print("Number of packages found: ", len(packages_output))
 
-def parse_packages_info(cmd_output):
     packages = {}
-    counter = 0
-    for i, line in enumerate(cmd_output):
-        package_name = line.rstrip('\n').split(" - ")[0]
-        print(f"package: '{package_name}'")
+    ids = []
+    ray.init()
+    for line in packages_output:
+        id = parallel_processing.remote(packages, line)
+        ids.append(id)
 
-        versions = {}
-        versions_output = (os.popen(f'apt-cache madison {package_name}')).readlines()
-        for version_line in versions_output:
-            _, version, arch = version_line.rstrip('\n').split(" | ")
-            version = version.lstrip(" ")
-            arch = arch.split(" ")[-2]
-            assert arch == "amd64" or arch == "i386", "parsing error in package version's architecture"
-            # print(f"version: '{version}' - '{arch}'")
-            if version not in versions:
-                versions[version] = set()
+    ray.get(ids)
+ 
 
-            versions[version].add(arch)
+@ray.remote
+def parallel_processing(packages, line):
+    package_name = line.rstrip('\n').split(" - ")[0]
+    print(f"package: '{package_name}'")
 
-        packages[package_name] = {}
-        packages[package_name]["versions"] = versions
-           
+    versions = {}
+    versions_output = (os.popen(f'apt-cache madison {package_name}')).readlines()
+    for version_line in versions_output:
+        _, version, arch = version_line.rstrip('\n').split(" | ")
+        version = version.lstrip(" ")
+        arch = arch.split(" ")[-2]
+        assert arch == "amd64" or arch == "i386", "parsing error in package version's architecture"
+        # print(f"version: '{version}' - '{arch}'")
+        if version not in versions:
+            versions[version] = set()
+
+        versions[version].add(arch)
+
+    packages[package_name] = {}
+    packages[package_name]["versions"] = versions
+
+    info = {}
+    info_output = (os.popen(f'apt show {package_name}')).readlines()
+    for info_line in info_output:
+        # print(info_line)
+        splitted_info = info_line.rstrip('\n').split(": ")
+        if len(splitted_info) == 1 and splitted_info != '':
+            # description = splitted_info[0].lstrip(" ").rstrip("\n")
+            # info["Description"] += description
+            pass
+        elif len(splitted_info) > 1:
+            info_key = splitted_info[0]
+            if info_key not in info_to_parse:
+                continue
+            info_value = splitted_info[1]
+            info[info_key] = info_value
+
+    packages[package_name]["info"] = info
+
 
 if __name__ == "__main__":
-    cmd_output = collect_package_names()
-    parse_packages_info(cmd_output)
+    parse_packages_info()
