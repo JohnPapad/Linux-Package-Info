@@ -1,8 +1,7 @@
 import os
 import ray
-import sys
 import json
-import subprocess
+import requests
 
 
 info_to_parse = set(["Version", "Section", "Installed-Size", "Homepage", "Description", "Bugs"])
@@ -36,7 +35,8 @@ class Packages:
         else:
             self._packages[name]["Versions"][version] = {
                 "arch": [],
-                "SWHID": None
+                "SWHID": None,
+                "exists": None
             }
             if arch == "all":
                 self._packages[name]["Versions"][version]["arch"] = ["amd64", "i386"]
@@ -47,8 +47,12 @@ class Packages:
     def set_version_SWHID(self, name, version, SWHID):
         self._packages[name]["Versions"][version]["SWHID"] = SWHID
 
+    def set_version_SWHID_exists(self, name, version, exists):
+        self._packages[name]["Versions"][version]["exists"] = exists
+
     def get(self):
         return self._packages
+
 
 
 def parse_packages_info():
@@ -99,6 +103,23 @@ def parse_package_info(package_name, packages):
     packages.set_info.remote(package_name, info)
 
 
+def SWHID_resolve(SWHID, package_name, package_version, packages):
+    if SWHID is None:
+        return
+        
+    response = requests.get('https://archive.softwareheritage.org/api/1/resolve/' + SWHID)
+    exists = None
+    if response.status_code == 200:
+        exists = True
+    elif response.status_code == 404:
+        exists = False
+    
+    if exists is None:
+        return
+
+    packages.set_version_SWHID_exists.remote(package_name, package_version, exists)
+    
+
 def calc_SWHID(package_name, package_version, packages):
     dir_name = package_name + '-' + package_version
     cmd = f'''
@@ -111,8 +132,14 @@ def calc_SWHID(package_name, package_version, packages):
         rm -rf output/{dir_name}
     '''
     output = (os.popen(cmd)).readlines()
+
     SWHID = output[-1].rstrip("\n")
+    if not SWHID.startswith("swh"):
+        SWHID = None
+
+    # print("SWHID", SWHID, " package", package_name, " version", package_version)
     packages.set_version_SWHID.remote(package_name, package_version, SWHID)
+    return SWHID
 
 
 @ray.remote
@@ -125,7 +152,9 @@ def parallel_processing(line, packages):
 
     calc_SWHID_flag, package_version = parse_package_version(package_name, splitted_line, packages)
     if calc_SWHID_flag:
-        calc_SWHID(package_name, package_version, packages)
+        SWHID = calc_SWHID(package_name, package_version, packages)
+        SWHID_resolve(SWHID, package_name, package_version, packages)
+ 
 
 
 if __name__ == "__main__":
