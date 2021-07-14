@@ -12,11 +12,12 @@ class Packages:
     def __init__(self):
         self._packages = {}
 
-    def add(self, name):
+    def add(self, name, i):
         if name in self._packages:
             return False
         else:
             self._packages[name] = {
+                "id": i,
                 "Info": {},
                 "Versions": {}
             }
@@ -53,34 +54,38 @@ class Packages:
     def get(self):
         return self._packages
 
+    def dump(self):
+        self._logs = open("packages.json", "w")
+        json.dump(self._packages, self._logs, sort_keys=True, ensure_ascii=False, indent=4)
+        self._logs.close()
 
 
 def parse_packages_info():
     packages_output = (os.popen('apt list --all-versions')).readlines()
-    print("Number of packages found:", len(packages_output))
+    print("Number of packages found:", (len(packages_output) // 2)-1)
     ids = []
     ray.init()
-    packages = Packages.remote()
-    for line in packages_output:
+    packages_obj = Packages.remote()
+    for i, line in enumerate(packages_output):
         line = line.rstrip("\n")
         if line == '' or line == "Listing...":
             continue
-        id = parallel_processing.remote(line, packages)
+        id = parallel_processing.remote(line, packages_obj, i)
         ids.append(id)
 
     ray.get(ids)
-    packages = ray.get(packages.get.remote())
+    packages = ray.get(packages_obj.get.remote())
     print("Number of packages parsed: ", len(packages))
-    # print(packages)
-    with open('data_docker.json', 'w') as f:
-        json.dump(packages, f)
+    with open('packages_all.json', 'w') as f:
+        json.dump(packages, f, sort_keys=True, ensure_ascii=False, indent=4)
 
 
 def parse_package_version(package_name, string, packages):
     splitted_package_version = string.split(" ")
     package_version = splitted_package_version[1]
     package_arch = splitted_package_version[2]
-    return packages.set_version.remote(package_name, package_version, package_arch), package_version
+    calc_SWHID_flag = ray.get([packages.set_version.remote(package_name, package_version, package_arch)])[0]
+    return calc_SWHID_flag, package_version
     
 
 def parse_package_info(package_name, packages):
@@ -143,10 +148,10 @@ def calc_SWHID(package_name, package_version, packages):
 
 
 @ray.remote
-def parallel_processing(line, packages):
+def parallel_processing(line, packages, i):
     package_name, splitted_line = line.split("/")
     print(f"package: '{package_name}'")
-    parse_info_flag = packages.add.remote(package_name)
+    parse_info_flag = ray.get([packages.add.remote(package_name, i)])[0]
     if parse_info_flag:
         parse_package_info(package_name, packages)
 
@@ -155,6 +160,7 @@ def parallel_processing(line, packages):
         SWHID = calc_SWHID(package_name, package_version, packages)
         SWHID_resolve(SWHID, package_name, package_version, packages)
  
+    packages.dump.remote()
 
 
 if __name__ == "__main__":
