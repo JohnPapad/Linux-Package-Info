@@ -4,7 +4,7 @@ import json
 import requests
 
 
-info_to_parse = set(["Version", "Section", "Installed-Size", "Homepage", "Description", "Bugs"])
+info_to_parse = set(["Version", "Section", "Installed-Size", "Homepage", "Description", "Original-Maintainer"])
 
 
 @ray.remote
@@ -45,10 +45,8 @@ class Packages:
                 self._packages[name]["Versions"][version]["arch"] = [arch]
             return True # new version was added thus its corresponding SWHID needs to be calculated
 
-    def set_version_SWHID(self, name, version, SWHID):
+    def set_version_SWHID(self, name, version, SWHID, exists):
         self._packages[name]["Versions"][version]["SWHID"] = SWHID
-
-    def set_version_SWHID_exists(self, name, version, exists):
         self._packages[name]["Versions"][version]["exists"] = exists
 
     def get(self):
@@ -109,7 +107,7 @@ def parse_package_info(package_name, packages):
 
 
 def SWHID_resolve(SWHID, package_name, package_version, packages):
-    if SWHID is None:
+    if SWHID == None:
         return
         
     response = requests.get('https://archive.softwareheritage.org/api/1/resolve/' + SWHID)
@@ -119,13 +117,10 @@ def SWHID_resolve(SWHID, package_name, package_version, packages):
     elif response.status_code == 404:
         exists = False
     
-    if exists is None:
-        return
-
-    packages.set_version_SWHID_exists.remote(package_name, package_version, exists)
+    packages.set_version_SWHID.remote(package_name, package_version, SWHID, exists)
     
 
-def calc_SWHID(package_name, package_version, packages):
+def calc_SWHID(package_name, package_version):
     dir_name = package_name + '-' + package_version
     cmd = f'''
         mkdir output/{dir_name} && 
@@ -143,7 +138,6 @@ def calc_SWHID(package_name, package_version, packages):
         SWHID = None
 
     # print("SWHID", SWHID, " package", package_name, " version", package_version)
-    packages.set_version_SWHID.remote(package_name, package_version, SWHID)
     return SWHID
 
 
@@ -157,7 +151,7 @@ def parallel_processing(line, packages, i):
 
     calc_SWHID_flag, package_version = parse_package_version(package_name, splitted_line, packages)
     if calc_SWHID_flag:
-        SWHID = calc_SWHID(package_name, package_version, packages)
+        SWHID = calc_SWHID(package_name, package_version)
         SWHID_resolve(SWHID, package_name, package_version, packages)
  
     packages.dump.remote()
