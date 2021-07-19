@@ -2,6 +2,7 @@ import os
 import ray
 import json
 import requests
+import random
 
 
 info_to_parse = set(["Version", "Section", "Installed-Size", "Homepage", "Description", "Original-Maintainer"])
@@ -11,6 +12,7 @@ info_to_parse = set(["Version", "Section", "Installed-Size", "Homepage", "Descri
 class Packages:
     def __init__(self):
         self._packages = {}
+        self._versions_SWHID_cache = {}
 
     def add(self, name, i):
         if name in self._packages:
@@ -25,6 +27,12 @@ class Packages:
 
     def exists(self, name):
         return name in self._packages
+
+    def _get_hash_version_id(self, name, version):
+        pkg_homepage = self._packages[name]["Info"].get("Homepage", version)
+        pkg_section = self._packages[name]["Info"].get("Section", "")
+        pkg_maintainer = self._packages[name]["Info"].get("Original-Maintainer", "")
+        return version + pkg_homepage + pkg_maintainer + pkg_section
 
     def set_info(self, name, info):
         self._packages[name]["Info"] = info
@@ -43,11 +51,28 @@ class Packages:
                 self._packages[name]["Versions"][version]["arch"] = ["amd64", "i386"]
             else:
                 self._packages[name]["Versions"][version]["arch"] = [arch]
-            return True # new version was added thus its corresponding SWHID needs to be calculated
 
-    def set_version_SWHID(self, name, version, SWHID, exists):
+            hash_version_id = self._get_hash_version_id(name, version)
+            if hash_version_id not in self._versions_SWHID_cache:
+                return True 
+
+            SWHID = self._versions_SWHID_cache[hash_version_id]["SWHID"]
+            SWHID_exists = self._versions_SWHID_cache[hash_version_id]["exists"]
+            self.set_version_SWHID(name, version, SWHID, SWHID_exists, False)
+            return False
+
+    def set_version_SWHID(self, name, version, SWHID, exists, set_cache_flag = True):
         self._packages[name]["Versions"][version]["SWHID"] = SWHID
         self._packages[name]["Versions"][version]["exists"] = exists
+
+        if not set_cache_flag:
+            return
+
+        hash_version_id = self._get_hash_version_id(name, version)
+        self._versions_SWHID_cache[hash_version_id] = {
+            "SWHID": SWHID,
+            "exists": exists
+        }
 
     def get(self):
         return self._packages
@@ -60,6 +85,7 @@ class Packages:
 
 def parse_packages_info():
     packages_output = (os.popen('apt list --all-versions')).readlines()
+    random.shuffle(packages_output)
     print("Number of packages found:", (len(packages_output) // 2)-1)
     ids = []
     ray.init()
