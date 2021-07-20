@@ -84,25 +84,41 @@ class Packages:
 
 
 def parse_packages_info():
+    start_time = time.time()
     packages_output = (os.popen('apt list --all-versions')).readlines()
     random.shuffle(packages_output)
     print("Number of packages found:", (len(packages_output) // 2)-1)
-    ids = []
+    ray_ids = []
     ray.init()
     packages_obj = Packages.remote()
-    for i, line in enumerate(packages_output):
+    pkg_counter = 0
+    for line in packages_output:
         line = line.rstrip("\n")
         if line == '' or line == "Listing...":
             continue
-        id = parallel_processing.remote(line, packages_obj, i)
-        ids.append(id)
+        
+        if len(ray_ids) > 50:
+            num_ready = pkg_counter-50
+            ray.wait(ray_ids, num_returns=num_ready)
 
-    ray.get(ids)
+        ray_id = parallel_processing.remote(line, packages_obj, pkg_counter)
+        ray_ids.append(ray_id)
+        pkg_counter += 1
+
+    unfinished = ray_ids
+    while unfinished:
+        # Returns the first ObjectRef that is ready.
+        finished, unfinished = ray.wait(unfinished, num_returns=1)
+        pkg_name, pkg_i = ray.get(finished)
+        print(f"-> Package #{pkg_i} - {pkg_name} collected")
+
     packages = ray.get(packages_obj.get.remote())
     print("Number of packages parsed: ", len(packages))
     with open('packages_all.json', 'w') as f:
         json.dump(packages, f, sort_keys=True, ensure_ascii=False, indent=4)
 
+    end_time = time.time() 
+    print('-> Elapsed time: ', end_time - start_time)
 
 def parse_package_version(package_name, string, packages):
     splitted_package_version = string.split(" ")
