@@ -136,13 +136,16 @@ def SWHID_resolve(SWHID, package_name, package_version, packages):
     if SWHID == None:
         return
         
-    response = requests.get('https://archive.softwareheritage.org/api/1/resolve/' + SWHID)
     exists = None
-    if response.status_code == 200:
-        exists = True
-    elif response.status_code == 404:
-        exists = False
-    
+    try:
+        response = requests.get('https://archive.softwareheritage.org/api/1/resolve/' + SWHID)
+        if response.status_code == 200:
+            exists = True
+        elif response.status_code == 404:
+            exists = False
+    except:
+        pass
+        
     packages.set_version_SWHID.remote(package_name, package_version, SWHID, exists)
     
 
