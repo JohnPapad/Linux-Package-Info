@@ -84,7 +84,7 @@ class Packages:
 
 
 def parse_packages_info():
-    start_time = time.time()
+    
     packages_output = (os.popen('apt list --all-versions')).readlines()
     random.shuffle(packages_output)
     print("Number of packages found:", (len(packages_output) // 2)-1)
@@ -92,6 +92,7 @@ def parse_packages_info():
     ray.init()
     packages_obj = Packages.remote()
     pkg_counter = 0
+    start_time = time.time()
     for line in packages_output:
         line = line.rstrip("\n")
         if line == '' or line == "Listing...":
@@ -109,8 +110,8 @@ def parse_packages_info():
     while unfinished:
         # Returns the first ObjectRef that is ready.
         finished, unfinished = ray.wait(unfinished, num_returns=1)
-        pkg_name, pkg_i = ray.get(finished)
-        print(f"-> Package #{pkg_i} - {pkg_name} collected")
+        msg = ray.get(finished)
+        print(msg)
 
     packages = ray.get(packages_obj.get.remote())
     print("Number of packages parsed: ", len(packages))
@@ -189,7 +190,7 @@ def calc_SWHID(package_name, package_version):
 @ray.remote
 def parallel_processing(line, packages, i):
     package_name, splitted_line = line.split("/")
-    print(f"package: '{package_name}'")
+    print(f"package: '{package_name}' - #{i}")
     parse_info_flag = ray.get([packages.add.remote(package_name, i)])[0]
     if parse_info_flag:
         parse_package_info(package_name, packages)
@@ -200,6 +201,7 @@ def parallel_processing(line, packages, i):
         SWHID_resolve(SWHID, package_name, package_version, packages)
  
     packages.dump.remote()
+    return f"-> Package #{i} - {package_name} collected"
 
 
 if __name__ == "__main__":
