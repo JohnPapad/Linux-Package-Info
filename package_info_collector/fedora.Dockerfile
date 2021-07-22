@@ -1,6 +1,7 @@
 FROM fedora:34
 
 RUN yum install -y yum-utils 
+RUN yum install -y cpio
 RUN yum install -y python3-pip
 
 WORKDIR /collector
