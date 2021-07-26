@@ -26,10 +26,10 @@ class Package(models.Model):
 class PackageVersion(models.Model):
     VERSION_ARCHs = Choices("amd64", "i386", "amd64 i386")
 
-    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+    package = models.ForeignKey(Package, related_name="versions", on_delete=models.CASCADE)
     version = models.CharField(max_length=50)
     architecture = models.CharField(max_length=20, choices=VERSION_ARCHs)
-    swhid = models.CharField(max_length=100)
+    swhid = models.CharField(max_length=100, blank=True, default='')
     swhid_exists = models.BooleanField(blank=True, null=True)
 
     def __str__(self):
