@@ -23,7 +23,7 @@ class Package(models.Model):
         unique_together = [['name', 'distro']]
 
 
-class Package_Version(models.Model):
+class PackageVersion(models.Model):
     VERSION_ARCHs = Choices("amd64", "i386", "amd64 i386")
 
     package = models.ForeignKey(Package, on_delete=models.CASCADE)

@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Package, Package_Version
+from .models import Package, PackageVersion
 
 # Register your models here.
 admin.site.register(Package)
-admin.site.register(Package_Version)
+admin.site.register(PackageVersion)
