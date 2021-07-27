@@ -1,14 +1,12 @@
 from django.db import models
 from model_utils import Choices
 
-# t(["Version", "Section", "Installed-Size", "Homepage", "Description", "Original-Maintainer"])
-
 
 class Package(models.Model):
-    DISTROS = Choices('Ubuntu', 'Debian', 'Fedora')
+    # DISTROS = Choices('Ubuntu', 'Debian', 'Fedora')
     
     name = models.CharField(max_length=50)
-    distro = models.CharField(max_length=50, choices=DISTROS)
+    distro = models.CharField(max_length=50)
     section = models.CharField(max_length=50, blank=True, default='')
     license = models.CharField(max_length=50, blank=True, default='')
     maintainer = models.CharField(max_length=100, blank=True, default='')
@@ -34,3 +32,6 @@ class PackageVersion(models.Model):
 
     def __str__(self):
         return f"{self.version}-{self.architecture}"
+
+    class Meta:
+        unique_together = [['package', 'version']]

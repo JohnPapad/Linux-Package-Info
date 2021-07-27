@@ -5,7 +5,7 @@ from .models import Package, PackageVersion
 class PackageVersionSerializer(serializers.ModelSerializer):
     class Meta:
         model = PackageVersion
-        fields= "__all__"
+        fields = "__all__"
         # exclude = ["package"]
         extra_kwargs = {
             'package': { 'read_only': True }
@@ -23,7 +23,7 @@ class PackageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Package
-        fields= "__all__"
+        fields = "__all__"
 
     def create(self, validated_data):
         versions = validated_data.pop('versions')
