@@ -11,9 +11,9 @@ COPY requirements.txt /collector
 RUN pip3 install --no-cache-dir --upgrade pip && \
     pip3 install --no-cache-dir -r requirements.txt
 
-COPY collector.py /collector
+COPY apt_collector.py /collector
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-CMD ["python3", "-u", "collector.py"]
+CMD ["python3", "-u", "apt_collector.py"]
