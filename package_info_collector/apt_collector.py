@@ -3,9 +3,17 @@ import ray
 import json
 import requests
 import random
+import time
 
 
-info_to_parse = set(["Version", "Section", "Installed-Size", "Homepage", "Description", "Original-Maintainer"])
+# info_to_parse = set(["Section", "Installed-Size", "Homepage", "Description", "Original-Maintainer"])
+info_to_parse = {
+    "Section": "section", 
+    "Installed-Size": "size", 
+    "Homepage": "homepage", 
+    "Description": "description", 
+    "Original-Maintainer": "maintainer"
+}
 
 
 @ray.remote
@@ -14,73 +22,47 @@ class Packages:
         self._packages = {}
         self._versions_SWHID_cache = {}
 
-    def add(self, name, i):
-        if name in self._packages:
-            return False
-        else:
-            self._packages[name] = {
-                "id": i,
-                "Info": {},
-                "Versions": {}
-            }
-            return True
-
     def exists(self, name):
         return name in self._packages
 
-    def _get_hash_version_id(self, name, version):
-        pkg_homepage = self._packages[name]["Info"].get("Homepage", version)
-        pkg_section = self._packages[name]["Info"].get("Section", "")
-        pkg_maintainer = self._packages[name]["Info"].get("Original-Maintainer", "")
-        return version + pkg_homepage + pkg_maintainer + pkg_section
+    def get_info(self, name):
+        return self._packages.get(name, None)
 
-    def set_info(self, name, info):
-        self._packages[name]["Info"] = info
+    def add(self, name, info):
+        self._packages[name] = info
 
-    def set_version(self, name, version, arch):
-        if version in self._packages[name]["Versions"]:
-            self._packages[name]["Versions"][version]["arch"] = ["amd64", "i386"]
-            return False # no need to re-calculate version's SWHID
-        else:
-            self._packages[name]["Versions"][version] = {
-                "arch": [],
-                "SWHID": None,
-                "exists": None
-            }
-            if arch == "all":
-                self._packages[name]["Versions"][version]["arch"] = ["amd64", "i386"]
-            else:
-                self._packages[name]["Versions"][version]["arch"] = [arch]
+    def add_versions(self, name, versions_to_add):
+        self._packages[name]["versions"].extend(versions_to_add)
 
-            hash_version_id = self._get_hash_version_id(name, version)
-            if hash_version_id not in self._versions_SWHID_cache:
-                return True 
+    def update_versions(self, name, versions_to_update):
+        pass
 
-            SWHID = self._versions_SWHID_cache[hash_version_id]["SWHID"]
-            SWHID_exists = self._versions_SWHID_cache[hash_version_id]["exists"]
-            self.set_version_SWHID(name, version, SWHID, SWHID_exists, False)
-            return False
-
-    def set_version_SWHID(self, name, version, SWHID, exists, set_cache_flag = True):
-        self._packages[name]["Versions"][version]["SWHID"] = SWHID
-        self._packages[name]["Versions"][version]["exists"] = exists
-
-        if not set_cache_flag:
+    def set_version_SWHID_cache(self, version_hash_id, SWHID, SWHID_exists):
+        if SWHID == None:
             return
 
-        hash_version_id = self._get_hash_version_id(name, version)
-        self._versions_SWHID_cache[hash_version_id] = {
-            "SWHID": SWHID,
-            "exists": exists
+        self._versions_SWHID_cache[version_hash_id] = {
+            "swhid": SWHID,
+            "swhid_exists": SWHID_exists
         }
+
+    def check_version_SWHID_cache(self, version_hash_id):
+        if version_hash_id not in self._versions_SWHID_cache:
+            return None, None
+
+        SWHID = self._versions_SWHID_cache[version_hash_id]["swhid"]
+        SWHID_exists = self._versions_SWHID_cache[version_hash_id]["swhid_exists"]
+        return SWHID, SWHID_exists
 
     def get(self):
         return self._packages
 
-    def dump(self):
-        self._logs = open("packages.json", "w")
-        json.dump(self._packages, self._logs, sort_keys=True, ensure_ascii=False, indent=4)
-        self._logs.close()
+
+def get_pkg_version_hash_id(package_info, version):
+    pkg_homepage = package_info.get("homepage", version)
+    pkg_section = package_info.get("section", "")
+    pkg_maintainer = package_info.get("maintainer", "")
+    return version + pkg_homepage + pkg_maintainer + pkg_section
 
 
 def parse_packages_info():
@@ -113,23 +95,23 @@ def parse_packages_info():
         msg = ray.get(finished)
         print(msg)
 
-    packages = ray.get(packages_obj.get.remote())
-    print("Number of packages parsed: ", len(packages))
-    with open('packages_all.json', 'w') as f:
-        json.dump(packages, f, sort_keys=True, ensure_ascii=False, indent=4)
-
     end_time = time.time() 
     print('-> Elapsed time: ', end_time - start_time)
 
-def parse_package_version(package_name, string, packages):
+    packages = ray.get(packages_obj.get.remote())
+    print("Number of packages parsed: ", len(packages))
+    
+
+def get_package_versions(string):
     splitted_package_version = string.split(" ")
     package_version = splitted_package_version[1]
     package_arch = splitted_package_version[2]
-    calc_SWHID_flag = ray.get([packages.set_version.remote(package_name, package_version, package_arch)])[0]
-    return calc_SWHID_flag, package_version
-    
+    return {
+        package_version: package_arch
+    }
 
-def parse_package_info(package_name, packages):
+
+def get_package_info(package_name):
     info = {}
     info_output = (os.popen(f'apt show {package_name}')).readlines()
     for info_line in info_output:
@@ -143,15 +125,16 @@ def parse_package_info(package_name, packages):
             info_key = splitted_info[0]
             if info_key not in info_to_parse:
                 continue
-            info_value = splitted_info[1]
-            info[info_key] = info_value
+            
+            info_key = info_to_parse[info_key]
+            info[info_key] = splitted_info[1] # info value
 
-    packages.set_info.remote(package_name, info)
+    return info  
 
 
-def SWHID_resolve(SWHID, package_name, package_version, packages):
+def SWHID_resolve(SWHID):
     if SWHID == None:
-        return
+        return None
         
     exists = None
     try:
@@ -163,7 +146,7 @@ def SWHID_resolve(SWHID, package_name, package_version, packages):
     except:
         pass
         
-    packages.set_version_SWHID.remote(package_name, package_version, SWHID, exists)
+    return exists
     
 
 def calc_SWHID(package_name, package_version):
@@ -187,23 +170,83 @@ def calc_SWHID(package_name, package_version):
     return SWHID
 
 
+def save_package(packages, package_name, pkg_existing_info, package_info, pkg_versions_to_add, pkg_versions_to_update):
+    if package_info == None: # package is already included no need to re-entry its info to the db
+        # add only the possible new versions
+        if len(pkg_versions_to_add) != 0:
+            package_id = pkg_existing_info["id"]
+            try:
+                response = requests.post(f'http://localhost:8000/api/v1/packages/{package_id}/versions', data=pkg_versions_to_add)
+                if response.status_code == 201: # created
+                    ray.get([packages.add_versions.remote(package_name, pkg_versions_to_add)])[0]
+            except:
+                pass
+    else: # package not included
+        package_info["versions"] = pkg_versions_to_add
+        package_info["distro"] = "Ubuntu"
+        try:
+            response = requests.post('http://localhost:8000/api/v1/packages/', data=package_info)
+            if response.status_code == 201: # created
+                data = response.json()
+                print("response data: ", data)
+                ray.get([packages.add.remote(package_name)])[0]
+        except:
+            pass
+
+
+def get_package_existing_versions(package_versions):
+    versions = {}
+    for version_info in package_versions:
+        versions[version_info["version"]] = version_info
+
+    return versions
+
+
 @ray.remote
 def parallel_processing(line, packages, i):
     package_name, splitted_line = line.split("/")
     print(f"package: '{package_name}' - #{i}")
-    parse_info_flag = ray.get([packages.add.remote(package_name, i)])[0]
-    if parse_info_flag:
-        parse_package_info(package_name, packages)
+    package_versions = get_package_versions(splitted_line)
 
-    calc_SWHID_flag, package_version = parse_package_version(package_name, splitted_line, packages)
-    if calc_SWHID_flag:
-        SWHID = calc_SWHID(package_name, package_version)
-        SWHID_resolve(SWHID, package_name, package_version, packages)
+    pkg_existing_info = ray.get([packages.get_info.remote(package_name)])[0]
+    if pkg_existing_info == None: # package not included
+        package_info = get_package_info(package_name)
+        pkg_existing_versions = None
+    else: # package is included not need to re-parse its info
+        package_info = None
+        pkg_existing_versions = get_package_existing_versions(pkg_existing_info['versions'])
+
+    pkg_versions_to_add = []
+    pkg_versions_to_update = {}
+    for package_version, package_arch in package_versions.items():
+        if pkg_existing_versions and package_version in pkg_existing_versions: # version exists
+            existing_version_arch = pkg_existing_versions[package_version]["architecture"]
+            if package_arch != existing_version_arch and existing_version_arch != "amd64 i386":
+            # if the particular version supports both architectures no need to update
+                pkg_versions_to_update[package_version] = "amd64 i386" 
+        else: # new version
+            if pkg_existing_info:
+                pkg_version_hash_id = get_pkg_version_hash_id(pkg_existing_info, package_version)
+            else:
+                pkg_version_hash_id = get_pkg_version_hash_id(package_info, package_version)
+
+            SWHID, SWHID_exists = ray.get([packages.check_version_SWHID_cache.remote(pkg_version_hash_id)])[0]
+            if SWHID == None:
+                SWHID = calc_SWHID(package_name, package_version)
+                SWHID_exists = SWHID_resolve(SWHID) 
+                packages.set_version_SWHID_cache.remote(pkg_version_hash_id, SWHID, SWHID_exists)
+    
+            pkg_versions_to_add.append({
+                "version": package_version,
+                "swhid": SWHID,
+                "swhid_exists": SWHID_exists,
+                "architecture": package_arch
+            })
  
-    packages.dump.remote()
+    save_package(packages, package_name, pkg_existing_info, package_info, pkg_versions_to_add, pkg_versions_to_update)
     return f"-> Package #{i} - {package_name} collected"
 
 
 if __name__ == "__main__":
-    print("started")
+    print("-> Package collector started..")
     parse_packages_info()
