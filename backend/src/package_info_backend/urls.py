@@ -1,3 +1,6 @@
+# Copyright 2021 Ioannis Papadopoulos
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """package_info_backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:

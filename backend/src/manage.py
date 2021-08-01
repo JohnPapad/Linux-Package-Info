@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+# Copyright 2021 Ioannis Papadopoulos
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 import os
 import sys
 

@@ -1,3 +1,6 @@
+# Copyright 2021 Ioannis Papadopoulos
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 FROM fedora:34
 
 RUN yum install -y yum-utils 

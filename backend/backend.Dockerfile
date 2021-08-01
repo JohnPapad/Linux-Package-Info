@@ -1,3 +1,6 @@
+# Copyright 2021 Ioannis Papadopoulos
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Use an official Python runtime as a parent image
 FROM python:3.9
 

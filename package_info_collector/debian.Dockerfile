@@ -1,3 +1,6 @@
+# Copyright 2021 Ioannis Papadopoulos
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 FROM debian:10
 
 RUN sed -i 's/^deb.*/&\n@&/' /etc/apt/sources.list

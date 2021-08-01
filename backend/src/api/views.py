@@ -1,3 +1,6 @@
+# Copyright 2021 Ioannis Papadopoulos
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 from .serializers import PackageVersionSerializer, PackageSerializer
 from rest_framework import viewsets, mixins, filters, status
 from rest_framework.response import Response
