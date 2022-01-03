@@ -1,0 +1,5996 @@
+[
+  {
+    "distro": "ubuntu",
+    "package": "libp11-kit0",
+    "version": "0.23.9-2",
+    "swhid": "swh:1:dir:d4a3e57aeb9576131cbfe38bf669fc9ce0033cfa"
+  },
+  {
+    "distro": "debian",
+    "package": "libiec61883-0",
+    "version": "1.2.0-2",
+    "swhid": "swh:1:dir:fe24491c66810cdea201a1e943218e32833e19d6"
+  },
+  {
+    "distro": "debian",
+    "package": "telnet",
+    "version": "0.17-41",
+    "swhid": "swh:1:dir:ba5f5f4723cd735f17213a71cfc3702bc79bf643"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-electrum",
+    "version": "3.1.3-1~bpo9+1",
+    "swhid": "swh:1:dir:7883384d97a64e09c1497ea1e3ee639fd1342495"
+  },
+  {
+    "distro": "debian",
+    "package": "libsecret-common",
+    "version": "0.18.5-3.1",
+    "swhid": "swh:1:dir:cb0ce4b2b92fc00033dea75f2ed83a895f80b2c8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-extra-5.3.0-61-generic",
+    "version": "5.3.0-61.55~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "debian",
+    "package": "libfile-listing-perl",
+    "version": "6.04-1",
+    "swhid": "swh:1:dir:07c9875eb2c2970ecdfcec9e82c32dd3cfb91a72"
+  },
+  {
+    "distro": "debian",
+    "package": "gcj-6-jre-lib",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-debconf",
+    "version": "1.5.66ubuntu1",
+    "swhid": "swh:1:dir:29ffa898dcf4201e1b7e70fbaff77e0adb3bdc5c"
+  },
+  {
+    "distro": "debian",
+    "package": "rtmpdump",
+    "version": "2.4+20151223.gitfa8646d.1-1+b1",
+    "swhid": "swh:1:dir:dffbc4e23d0bbc3049b212a207e40c0805b53f1b"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libcdt5",
+    "version": "2.40.1-2",
+    "swhid": "swh:1:dir:59e89b224e3ff3ac93dcd77cbd3828ae7f87ae2d"
+  },
+  {
+    "distro": "debian",
+    "package": "libavahi-glib1",
+    "version": "0.6.32-2",
+    "swhid": "swh:1:dir:0670284751c68987708f9a9b4525c7be1ece81e7"
+  },
+  {
+    "distro": "debian",
+    "package": "libisc160",
+    "version": "1:9.10.3.dfsg.P4-12.3+deb9u6",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "debian",
+    "package": "less",
+    "version": "481-2.1",
+    "swhid": "swh:1:dir:94ec69f83bcffaa1e54fed4499e9a2af13d3d44e"
+  },
+  {
+    "distro": "debian",
+    "package": "libsndio6.1",
+    "version": "1.1.0-3",
+    "swhid": "swh:1:dir:4af4892673a08f523c210ed17c13849847f24c35"
+  },
+  {
+    "distro": "debian",
+    "package": "qt-at-spi",
+    "version": "0.4.0-5",
+    "swhid": "swh:1:dir:c13cf7bd67ba034220c65254209d8edf3a093193"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libalgorithm-diff-perl",
+    "version": "1.19.03-1",
+    "swhid": "swh:1:dir:e97f2e0cd17fe8dd3b0bcadaefa856a2d8ae2cee"
+  },
+  {
+    "distro": "debian",
+    "package": "libmotif-dev",
+    "version": "2.3.4-13",
+    "swhid": "swh:1:dir:47b2e381df21282f3305b65e8d3c95b8ccd46248"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "command-not-found",
+    "version": "18.04.5",
+    "swhid": "swh:1:dir:66bfd58892e059d1f4626d368adb41eff1c2c409"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpcsclite1",
+    "version": "1.8.23-1",
+    "swhid": "swh:1:dir:c528d9910df73a3f0108d37a419bb81b51daa6df"
+  },
+  {
+    "distro": "debian",
+    "package": "x11-session-utils",
+    "version": "7.7+2+b1",
+    "swhid": "swh:1:dir:4ed756abd4863838deeac541cdc88889240e82e8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "liblcms2-2",
+    "version": "2.9-1ubuntu0.1",
+    "swhid": "swh:1:dir:735127823e8fdb3e9b4d2154f4c1ebfa5ded079a"
+  },
+  {
+    "distro": "debian",
+    "package": "install-info",
+    "version": "6.3.0.dfsg.1-1+b2",
+    "swhid": "swh:1:dir:e8fcc5effc66bd484832f489be3522967e5b896e"
+  },
+  {
+    "distro": "debian",
+    "package": "libopenal-data",
+    "version": "1:1.17.2-4",
+    "swhid": "swh:1:dir:6f99d83796163a6504ab2120d9370e14591eb0f6"
+  },
+  {
+    "distro": "debian",
+    "package": "liblzma-dev",
+    "version": "5.2.2-1.2+b1",
+    "swhid": "swh:1:dir:0befcbec644a3b3e73d6f983885f093281e9942d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "systemd-sysv",
+    "version": "237-3ubuntu10.41",
+    "swhid": "swh:1:dir:6197fd2ec4707e28669f803f492a781785f9d34d"
+  },
+  {
+    "distro": "debian",
+    "package": "libjline-java",
+    "version": "1.0-2",
+    "swhid": "swh:1:dir:56d2919a9ecdff0b920e372c4dcb0e6eb570ec9e"
+  },
+  {
+    "distro": "debian",
+    "package": "init",
+    "version": "1.48",
+    "swhid": "swh:1:dir:0dced046670849041b96c1ee307beba55d8ed346"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "liblwp-mediatypes-perl",
+    "version": "6.02-1",
+    "swhid": "swh:1:dir:0c7b00bd0f8c4dc98d2492fa1c8928f08884d10c"
+  },
+  {
+    "distro": "debian",
+    "package": "libgfortran-6-dev",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "liblua5.2-0",
+    "version": "5.2.4-1.1+b2",
+    "swhid": "swh:1:dir:0e7849a7de141cf8255881423d9827382f05fb5b"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libcryptsetup12",
+    "version": "2:2.0.2-1ubuntu1.1",
+    "swhid": "swh:1:dir:d7ce65a330490b5f14269a70a04cbeb8f77db3bf"
+  },
+  {
+    "distro": "debian",
+    "package": "sgml-base",
+    "version": "1.29",
+    "swhid": "swh:1:dir:095d2c7f0c9ccb270ccd69f887740da6bc888ce9"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-icccm4-dev",
+    "version": "0.4.1-1",
+    "swhid": "swh:1:dir:e3f6e50a4c9c401c70204bdfbc93384196d7b7f5"
+  },
+  {
+    "distro": "debian",
+    "package": "libcairo2-dev",
+    "version": "1.14.8-1",
+    "swhid": "swh:1:dir:2710df1e5a22f4411ffdd356d7f67656d35715d5"
+  },
+  {
+    "distro": "debian",
+    "package": "libgsm1",
+    "version": "1.0.13-4+b2",
+    "swhid": "swh:1:dir:bf1ec25853f2c0ac7853757348f59cb27d093b05"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-image-5.3.0-53-generic",
+    "version": "5.3.0-53.47~18.04.1",
+    "swhid": "swh:1:dir:52a377f1738da74986c39f67c3d7a305c80cafbe"
+  },
+  {
+    "distro": "debian",
+    "package": "libibus-1.0-dev",
+    "version": "1.5.14-3+deb9u2",
+    "swhid": "swh:1:dir:7eb63f19b75149c7bac0d395f8e13a093b263b71"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpng16-16",
+    "version": "1.6.34-1ubuntu0.18.04.2",
+    "swhid": "swh:1:dir:50e16418c3dcc9bf748bd45897fe4c179002a29a"
+  },
+  {
+    "distro": "debian",
+    "package": "libmono-system-security4.0-cil",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-core",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libxmuu1",
+    "version": "2:1.1.2-2",
+    "swhid": "swh:1:dir:309bb0263973086d3c0dcbcc783a9f4f460287bd"
+  },
+  {
+    "distro": "debian",
+    "package": "libxml-sax-perl",
+    "version": "0.99+dfsg-2",
+    "swhid": "swh:1:dir:4e87a702ea5f7bcb8019c132b277ecc2427e1e2f"
+  },
+  {
+    "distro": "debian",
+    "package": "logrotate",
+    "version": "3.11.0-0.1",
+    "swhid": "swh:1:dir:f8194716814e3f829ecba4d9561d4c8bf94113fa"
+  },
+  {
+    "distro": "debian",
+    "package": "libnspr4",
+    "version": "2:4.12-6",
+    "swhid": "swh:1:dir:6c147f5bbb2371beeaa494407fe551027ee416ad"
+  },
+  {
+    "distro": "debian",
+    "package": "libdb5.3",
+    "version": "5.3.28-12+deb9u1",
+    "swhid": "swh:1:dir:3f481d0b99341d57086851388387ce06b89602aa"
+  },
+  {
+    "distro": "debian",
+    "package": "libxalan2-java",
+    "version": "2.7.1-9",
+    "swhid": "swh:1:dir:2a05d467e76e3ea8c0ebc5882f5e49f01c06ea93"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-extension-pdf-import",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libgupnp-igd-1.0-4",
+    "version": "0.2.4-1+b2",
+    "swhid": "swh:1:dir:73d91fce16ee4459807e0fd9cf55a55dfae8ff2e"
+  },
+  {
+    "distro": "debian",
+    "package": "libjson-c3",
+    "version": "0.12.1-1.1",
+    "swhid": "swh:1:dir:23cc2e77222c8c5f69e36fed33f25fc00ac73c85"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgcc1",
+    "version": "1:8.4.0-1ubuntu1~18.04",
+    "swhid": "swh:1:dir:d49af0c20553df7786c37c2c2f91ac5808a9d6ec"
+  },
+  {
+    "distro": "debian",
+    "package": "libswresample2",
+    "version": "7:3.2.14-1~deb9u1",
+    "swhid": "swh:1:dir:085de4bd8865a7e8540c32a9243afcc364d1c5aa"
+  },
+  {
+    "distro": "debian",
+    "package": "libgpgme11",
+    "version": "1.8.0-3+b2",
+    "swhid": "swh:1:dir:f62cf02e1196f88e2ae33dec2f67540b5c0a5922"
+  },
+  {
+    "distro": "debian",
+    "package": "gir1.2-atspi-2.0",
+    "version": "2.22.0-6+deb9u1",
+    "swhid": "swh:1:dir:c516116bcbd2898ba1e7b71602f992281489f4e4"
+  },
+  {
+    "distro": "debian",
+    "package": "libswitch-perl",
+    "version": "2.17-2",
+    "swhid": "swh:1:dir:0b24871a1b0926fa237587c6902b34872f6e44fe"
+  },
+  {
+    "distro": "debian",
+    "package": "libpython2.7",
+    "version": "2.7.13-2+deb9u3",
+    "swhid": "swh:1:dir:5d0dde871ed19d3a96a4137bede70a1aee6d4bd7"
+  },
+  {
+    "distro": "debian",
+    "package": "libchm1",
+    "version": "2:0.40a-3+b2",
+    "swhid": "swh:1:dir:ae4e919e53b5921427be811ea9e409905891367e"
+  },
+  {
+    "distro": "debian",
+    "package": "firmware-linux-nonfree",
+    "version": "20161130-5",
+    "swhid": "swh:1:dir:afbf56a5e4161611792c6c808daa7ffc488e88e9"
+  },
+  {
+    "distro": "debian",
+    "package": "libpangomm-1.4-1",
+    "version": "2.34.0-1.1",
+    "swhid": "swh:1:dir:87253d0e321530cf323bc7a252ef799a5bbbc26b"
+  },
+  {
+    "distro": "debian",
+    "package": "libscalar-list-utils-perl",
+    "version": "1:1.47-1",
+    "swhid": "swh:1:dir:3f6218c9e4c3e708f324dd8560fb9a0feafb1c59"
+  },
+  {
+    "distro": "debian",
+    "package": "libminizip1",
+    "version": "1.1-8+b1",
+    "swhid": "swh:1:dir:80b2f84e6fd65b7cb3efbe22bc50512b8bdefe4d"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt4-sql",
+    "version": "4:4.8.7+dfsg-11",
+    "swhid": "swh:1:dir:96697ee08e13d2823db56f2404f25d5c31d4e2a0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "grub-pc-bin",
+    "version": "2.02-2ubuntu8.15",
+    "swhid": "swh:1:dir:d16fad91d791e11a6e41eea6376dfce091051bdf"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-shm0",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgvpr2",
+    "version": "2.40.1-2",
+    "swhid": "swh:1:dir:59e89b224e3ff3ac93dcd77cbd3828ae7f87ae2d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "uidmap",
+    "version": "1:4.5-1ubuntu2",
+    "swhid": "swh:1:dir:13b22c6670e3b7808730941bec7de6595b75a4c4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-twisted",
+    "version": "17.9.0-2ubuntu0.1",
+    "swhid": "swh:1:dir:01f70be8052ec09df302650356927849e36d6df9"
+  },
+  {
+    "distro": "debian",
+    "package": "libnfnetlink0",
+    "version": "1.0.1-3",
+    "swhid": "swh:1:dir:c6ed0e7cfcf22db8f04684e32e7927258ed0d269"
+  },
+  {
+    "distro": "debian",
+    "package": "libiw30",
+    "version": "30~pre9-12+b1",
+    "swhid": "swh:1:dir:b85f0f778f696a06dc74138b23f05e09ae29a92d"
+  },
+  {
+    "distro": "debian",
+    "package": "intel-gpu-tools",
+    "version": "1.17-1",
+    "swhid": "swh:1:dir:c0a7229da7531b92e073c2d781289683c308463c"
+  },
+  {
+    "distro": "debian",
+    "package": "libpango-1.0-0",
+    "version": "1.40.5-1",
+    "swhid": "swh:1:dir:87253d0e321530cf323bc7a252ef799a5bbbc26b"
+  },
+  {
+    "distro": "debian",
+    "package": "libdatrie1",
+    "version": "0.2.10-4+b1",
+    "swhid": "swh:1:dir:54d89da178dfe4b13b0fdc4853e9acea668ce7b7"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-damage0",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "libapt-inst2.0",
+    "version": "1.4.10",
+    "swhid": "swh:1:dir:e511fec46be8b258dff3596887adc9f6f459299c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gcc-7",
+    "version": "7.5.0-3ubuntu1~18.04",
+    "swhid": "swh:1:dir:1c05dc7c4afc412096a0cf418dfc5acd9e415b57"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-pyqt5",
+    "version": "5.7+dfsg-5",
+    "swhid": "swh:1:dir:2f00cc54c37b70173e611b1febfb951c5ee337ba"
+  },
+  {
+    "distro": "debian",
+    "package": "sensible-utils",
+    "version": "0.0.9+deb9u1",
+    "swhid": "swh:1:dir:18f3e0fc94428221223eca3b1d204e2716a88b01"
+  },
+  {
+    "distro": "debian",
+    "package": "libopts25",
+    "version": "1:5.18.12-3",
+    "swhid": "swh:1:dir:76d14df4e7426364e419a4d999f2698f9f3dcd51"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "ufw",
+    "version": "0.36-0ubuntu0.18.04.1",
+    "swhid": "swh:1:dir:8ebb3bfc5ff9f75bfd2e1b7b4e207161b43a1f14"
+  },
+  {
+    "distro": "debian",
+    "package": "fontforge-extras",
+    "version": "0.3-4",
+    "swhid": "swh:1:dir:926390b14593a51bc26002761259416c93b9f715"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-shape0",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "ftp",
+    "version": "0.17-34",
+    "swhid": "swh:1:dir:caaaca620114219b73971a87d57a0ffa62427a38"
+  },
+  {
+    "distro": "debian",
+    "package": "libmjpegutils-2.1-0",
+    "version": "1:2.1.0+debian-5",
+    "swhid": "swh:1:dir:b507fc49a3d8b2bf576f42f903d27e9cee477c3e"
+  },
+  {
+    "distro": "debian",
+    "package": "libgeoip1",
+    "version": "1.6.9-4",
+    "swhid": "swh:1:dir:c69bdd845bb285b0dba239674f2be0277826c658"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "binutils-common",
+    "version": "2.30-21ubuntu1~18.04.3",
+    "swhid": "swh:1:dir:a3434e1a99f25516ab50a70a08c1d6e36ca1851d"
+  },
+  {
+    "distro": "debian",
+    "package": "libtwolame0",
+    "version": "0.3.13-2",
+    "swhid": "swh:1:dir:36bb4e456db6b3046548870731a7049453681c84"
+  },
+  {
+    "distro": "debian",
+    "package": "automake",
+    "version": "1:1.15-6",
+    "swhid": "swh:1:dir:80b4c298a28eec82e22030fbe7ddbb2b20339ce2"
+  },
+  {
+    "distro": "debian",
+    "package": "vim-common",
+    "version": "2:8.0.0197-4+deb9u3",
+    "swhid": "swh:1:dir:d4b3ad519adf45ef1caf7c32356be2257c15a748"
+  },
+  {
+    "distro": "debian",
+    "package": "libwebkit2gtk-4.0-dev",
+    "version": "2.18.6-1~deb9u1",
+    "swhid": "swh:1:dir:d3ee61862f54b35a4aed909a4ca8b2f9e238edb9"
+  },
+  {
+    "distro": "debian",
+    "package": "libharfbuzz-dev",
+    "version": "1.4.2-1",
+    "swhid": "swh:1:dir:0cd71a8d46386d404225e160d8fd2705eb094a9f"
+  },
+  {
+    "distro": "debian",
+    "package": "libauthen-sasl-perl",
+    "version": "2.1600-1",
+    "swhid": "swh:1:dir:cbbf36f3719fd6072017651443e27c60d1368089"
+  },
+  {
+    "distro": "debian",
+    "package": "libreoffice6.1",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "tcpdump",
+    "version": "4.9.3-0ubuntu0.18.04.1",
+    "swhid": "swh:1:dir:4c6d320b7fc09169e1ef3139b526ae7362a7ce97"
+  },
+  {
+    "distro": "debian",
+    "package": "rsyslog",
+    "version": "8.4.2-1+deb8u2",
+    "swhid": "swh:1:dir:229f2cfbe60a070aa61289378dde874447065fc0"
+  },
+  {
+    "distro": "debian",
+    "package": "libopencv-features2d2.4v5",
+    "version": "2.4.9.1+dfsg1-2",
+    "swhid": "swh:1:dir:8c48d5da54dd6f953aefb1fffc6a27439fd296e3"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "netplan.io",
+    "version": "0.99-0ubuntu3~18.04.3",
+    "swhid": "swh:1:dir:cc67d4008958e6ab8146391b8cc4815b81462fae"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-5.3.0-46-generic",
+    "version": "5.3.0-46.38~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "debian",
+    "package": "libwebpdemux1",
+    "version": "0.4.1-1.2+b2",
+    "swhid": "swh:1:dir:cfd00e010ee97a366c2a01a6ae03bc35b3a511a2"
+  },
+  {
+    "distro": "debian",
+    "package": "libxml-namespacesupport-perl",
+    "version": "1.11-1",
+    "swhid": "swh:1:dir:5309d136d24fef9f138a187c52fd81553bf72903"
+  },
+  {
+    "distro": "debian",
+    "package": "libvulkan1",
+    "version": "1.0.39.0+dfsg1-1",
+    "swhid": "swh:1:dir:0f1d37079bec296ce6ef3b9c433a08e259ed05ea"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "mtr-tiny",
+    "version": "0.92-1",
+    "swhid": "swh:1:dir:b657f2abf573c18d83d21daac66b8aa91e6f40b5"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-kb-dev",
+    "version": "1.0.7-1",
+    "swhid": "swh:1:dir:a328ddb3d4d382c43c5508848181448625259a84"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcursor-dev",
+    "version": "1:1.1.14-1+deb9u2",
+    "swhid": "swh:1:dir:a3b4cf740a1f2eb18bfa295d5ebc4586fdaa50ce"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "curl",
+    "version": "7.58.0-2ubuntu3.9",
+    "swhid": "swh:1:dir:55ad8111024cfa98c877dbe3635d4e54b8007566"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpam-systemd",
+    "version": "237-3ubuntu10.41",
+    "swhid": "swh:1:dir:6197fd2ec4707e28669f803f492a781785f9d34d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libfcgi-perl",
+    "version": "0.78-2build1",
+    "swhid": "swh:1:dir:9ca98b03b3a5be3bb57e0b9d4987604e832ff17c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libdbus-1-3",
+    "version": "1.12.2-1ubuntu1.2",
+    "swhid": "swh:1:dir:fc5f4c61ecb8d21af3141b832e776e4e36f51470"
+  },
+  {
+    "distro": "debian",
+    "package": "libsmartcols1",
+    "version": "2.29.2-1+deb9u1",
+    "swhid": "swh:1:dir:726b78b92e3809d74cd1437dd51e373607bdd8ad"
+  },
+  {
+    "distro": "debian",
+    "package": "libdrm-dev",
+    "version": "2.4.74-1",
+    "swhid": "swh:1:dir:9f4ec9c3246435e566a6cc24a9038de5a579beda"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-images",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libpopt0",
+    "version": "1.16-10+b2",
+    "swhid": "swh:1:dir:71145c52a0558c5d0325ee708bae5d9a3b8e4e28"
+  },
+  {
+    "distro": "debian",
+    "package": "nano",
+    "version": "2.7.4-1",
+    "swhid": "swh:1:dir:c7a01e9dd160dfcb8cbd46f62294f7313c378e12"
+  },
+  {
+    "distro": "debian",
+    "package": "libfontforge2",
+    "version": "1:20161005~dfsg-4+deb9u1",
+    "swhid": "swh:1:dir:13ed4b595bf2d54d6fbcf5195778e489cbfa1da1"
+  },
+  {
+    "distro": "debian",
+    "package": "dblatex-doc",
+    "version": "0.3.9-3",
+    "swhid": "swh:1:dir:ada3e7a9cdd1661d9befe815c7bc63697e07d814"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-urllib3",
+    "version": "1.19.1-1",
+    "swhid": "swh:1:dir:55b2fbdb3b8fd5c7829c1dd31421dc36adb2bf89"
+  },
+  {
+    "distro": "debian",
+    "package": "libdevmapper-dev",
+    "version": "2:1.02.137-2",
+    "swhid": "swh:1:dir:7bf7e0b70ecd341d21a9e88053a11b0e8e4a09db"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcomposite-dev",
+    "version": "1:0.4.4-2",
+    "swhid": "swh:1:dir:f56d004ff1ba76d8204d1b1c33eadad8c3731fb1"
+  },
+  {
+    "distro": "debian",
+    "package": "libc-l10n",
+    "version": "2.24-11+deb9u4",
+    "swhid": "swh:1:dir:f04db534a4b40783360cc4bd42f37e15dad37bfd"
+  },
+  {
+    "distro": "debian",
+    "package": "readline-common",
+    "version": "7.0-3",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt5clucene5",
+    "version": "5.7.1-1",
+    "swhid": "swh:1:dir:87968b084fbb193b29b13b35e6f0a906b3042d6d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-zope.interface",
+    "version": "4.3.2-1build2",
+    "swhid": "swh:1:dir:633d00d30c9db424f6a45eb5ecb9cb82f38f7529"
+  },
+  {
+    "distro": "debian",
+    "package": "gcc-4.8-base",
+    "version": "4.8.4-1",
+    "swhid": "swh:1:dir:092486dd2ad6dc75d28590f63357eb64790eafb5"
+  },
+  {
+    "distro": "debian",
+    "package": "libhunspell-1.4-0",
+    "version": "1.4.1-2+b2",
+    "swhid": "swh:1:dir:bbdb24cdac1551d7d993be29066f9f2cf7d5a7dc"
+  },
+  {
+    "distro": "debian",
+    "package": "libjbig0",
+    "version": "2.1-3.1+b2",
+    "swhid": "swh:1:dir:a793aed92544bf10d4b165c23a4bb578eb9ee134"
+  },
+  {
+    "distro": "debian",
+    "package": "libgles1-mesa-dev",
+    "version": "13.0.6-1+b2",
+    "swhid": "swh:1:dir:18fb39f3821d80388eb01f24efcde508a5a22a74"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "dns-root-data",
+    "version": "2018013001",
+    "swhid": "swh:1:dir:d8c8f15589b473cedc78cffbddb818b5533b1c10"
+  },
+  {
+    "distro": "debian",
+    "package": "libavresample3",
+    "version": "7:3.2.14-1~deb9u1",
+    "swhid": "swh:1:dir:085de4bd8865a7e8540c32a9243afcc364d1c5aa"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-5.3.0-26-generic",
+    "version": "5.3.0-26.28~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "debian",
+    "package": "libavfilter6",
+    "version": "7:3.2.14-1~deb9u1",
+    "swhid": "swh:1:dir:085de4bd8865a7e8540c32a9243afcc364d1c5aa"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "sudo",
+    "version": "1.8.21p2-3ubuntu1.2",
+    "swhid": "swh:1:dir:84b2ab2a3c344f384267def18c4b80e9ac5082ac"
+  },
+  {
+    "distro": "debian",
+    "package": "libzltext0.12",
+    "version": "0.12.10dfsg-9.1+b1",
+    "swhid": "swh:1:dir:6925d9bbc60370f4c466169c96491b0e08ff88b9"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libc6-dev",
+    "version": "2.27-3ubuntu1",
+    "swhid": "swh:1:dir:22cb79e66f368b54b876d305c576f6b7af4b37bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libgupnp-1.0-4",
+    "version": "1.0.1-1",
+    "swhid": "swh:1:dir:267f2168cb8e328f0c453770aaba61a416f2cc66"
+  },
+  {
+    "distro": "debian",
+    "package": "libllvm3.5",
+    "version": "1:3.5-10",
+    "swhid": "swh:1:dir:99a33a86e5dc0d2569f87774a5f0eb63d46de4e9"
+  },
+  {
+    "distro": "debian",
+    "package": "i3lock",
+    "version": "2.8-1",
+    "swhid": "swh:1:dir:3c32d94005d6768da82844ace5b37d69152783de"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgeoip1",
+    "version": "1.6.12-1",
+    "swhid": "swh:1:dir:a1e0b7d6652f664b44981eb8827cd0a54f5ad785"
+  },
+  {
+    "distro": "debian",
+    "package": "mosh",
+    "version": "1.2.6-1+b2",
+    "swhid": "swh:1:dir:2ce3cd603399f70981d58988f5ac6ef103975356"
+  },
+  {
+    "distro": "debian",
+    "package": "equivs",
+    "version": "2.0.9+nmu1",
+    "swhid": "swh:1:dir:e0a5241b61b79ea800a17ba05704f17baed13567"
+  },
+  {
+    "distro": "debian",
+    "package": "libselinux1-dev",
+    "version": "2.6-3+b3",
+    "swhid": "swh:1:dir:82e9ae450b493c1fadac53bd6cbfe0657b71f722"
+  },
+  {
+    "distro": "debian",
+    "package": "libx11-dev",
+    "version": "2:1.6.4-3+deb9u1",
+    "swhid": "swh:1:dir:56f66cce36d99cd6a52ff9ff3eae47f8b1865b74"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "zlib1g",
+    "version": "1:1.2.11.dfsg-0ubuntu2",
+    "swhid": "swh:1:dir:ae17db15bf5816cd92eb77611c0d4a7bafb1b8de"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt4-designer",
+    "version": "4:4.8.7+dfsg-11",
+    "swhid": "swh:1:dir:96697ee08e13d2823db56f2404f25d5c31d4e2a0"
+  },
+  {
+    "distro": "debian",
+    "package": "libgraphviz-dev",
+    "version": "2.38.0-17",
+    "swhid": "swh:1:dir:a1316aee79b47201079d36f6240c368a98afa19e"
+  },
+  {
+    "distro": "debian",
+    "package": "libgd3",
+    "version": "2.2.4-2+deb9u5",
+    "swhid": "swh:1:dir:0c377301f32033085915ccc1701b3c0e7f97a0b7"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-gl-dev",
+    "version": "1.4.17-1",
+    "swhid": "swh:1:dir:1ce10a5ab6ae02a90048c8998214ee14be281ab3"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-scrnsaver-dev",
+    "version": "1.2.2-1",
+    "swhid": "swh:1:dir:0a1c3c11c9432b118b609796d4b4c261894142f4"
+  },
+  {
+    "distro": "debian",
+    "package": "gstreamer1.0-x",
+    "version": "1.10.4-1+deb9u1",
+    "swhid": "swh:1:dir:a64ae2db408f11b82f339bd91ba7becdc78bb98a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "openjdk-11-jre-headless",
+    "version": "11.0.7+10-2ubuntu2~18.04",
+    "swhid": "swh:1:dir:6b8c17f706b25356be117ab64d28137328fd9644"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libavahi-common-data",
+    "version": "0.7-3.1ubuntu1.2",
+    "swhid": "swh:1:dir:c65af1251b862117281b43de11c75c928ca0acdf"
+  },
+  {
+    "distro": "debian",
+    "package": "libxaw7",
+    "version": "2:1.0.13-1+b2",
+    "swhid": "swh:1:dir:5768247d53ee868fb3dc60d48e7897fa9ce0201b"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "hostname",
+    "version": "3.20",
+    "swhid": "swh:1:dir:c5b4e36f3c4b3d61f6e8084bcf362200f53f8021"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-icccm4",
+    "version": "0.4.1-1",
+    "swhid": "swh:1:dir:e3f6e50a4c9c401c70204bdfbc93384196d7b7f5"
+  },
+  {
+    "distro": "debian",
+    "package": "xfstt",
+    "version": "1.9.3-1",
+    "swhid": "swh:1:dir:ecaa9cf643428d7621dc6a88cc931d91bfcb224b"
+  },
+  {
+    "distro": "debian",
+    "package": "libgc-dev",
+    "version": "1:7.4.2-8",
+    "swhid": "swh:1:dir:094455ccc1962ca706502412b77d4e1d49545bba"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-image-5.3.0-61-generic",
+    "version": "5.3.0-61.55~18.04.1",
+    "swhid": "swh:1:dir:52a377f1738da74986c39f67c3d7a305c80cafbe"
+  },
+  {
+    "distro": "debian",
+    "package": "libgnutls30",
+    "version": "3.5.8-5+deb9u4",
+    "swhid": "swh:1:dir:b7ac6ca60cb5eb66219e69a6dc72b0cbaed0e43c"
+  },
+  {
+    "distro": "debian",
+    "package": "libapt-inst1.5",
+    "version": "1.0.9.8.4",
+    "swhid": "swh:1:dir:e511fec46be8b258dff3596887adc9f6f459299c"
+  },
+  {
+    "distro": "debian",
+    "package": "unar",
+    "version": "1.10.1-1+b1",
+    "swhid": "swh:1:dir:f5a5e8cdb4f3e2c1a9d8c240b518b39d83e1c8e9"
+  },
+  {
+    "distro": "debian",
+    "package": "libfs-dev",
+    "version": "2:1.0.7-1+b2",
+    "swhid": "swh:1:dir:9bfaac03aaa3f41bfb7f88255376fb0cd65e1af0"
+  },
+  {
+    "distro": "debian",
+    "package": "librsvg2-common",
+    "version": "2.40.16-1+b1",
+    "swhid": "swh:1:dir:8c5ddc6f7c5c87d5f66efcf09265a89494868458"
+  },
+  {
+    "distro": "debian",
+    "package": "libmpcdec6",
+    "version": "2:0.1~r495-1+b1",
+    "swhid": "swh:1:dir:9ffd84c03c16b4016a40d558d3525000daba0299"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-5.0.0-31-generic",
+    "version": "5.0.0-31.33~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libxslt1.1",
+    "version": "1.1.29-5ubuntu0.2",
+    "swhid": "swh:1:dir:4cf278170682f558697b05a1129bad3dd6b4c582"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libxi6",
+    "version": "2:1.7.9-1",
+    "swhid": "swh:1:dir:3be8667ca048799b3fd20de339584809089cafb7"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-httplib2",
+    "version": "0.9.2+dfsg-1ubuntu0.1",
+    "swhid": "swh:1:dir:92754a887e867948254fe127ce3c75359c3014b8"
+  },
+  {
+    "distro": "debian",
+    "package": "libatomic1",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "libwebp5",
+    "version": "0.4.1-1.2+b2",
+    "swhid": "swh:1:dir:90b7527fb880e8688ee4a9d27b7fb024918ae4bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libestr0",
+    "version": "0.1.10-2",
+    "swhid": "swh:1:dir:cf66129021c35421d25fba47df50301f6335b6a6"
+  },
+  {
+    "distro": "debian",
+    "package": "libxft2",
+    "version": "2.3.2-1+b2",
+    "swhid": "swh:1:dir:c4646dab2dbfbd7e68f8e534c1478469b04d9686"
+  },
+  {
+    "distro": "debian",
+    "package": "libssl1.0.0",
+    "version": "1.0.1t-1+deb8u6",
+    "swhid": "swh:1:dir:df3732ca53d63d4a476c738b4d4c6b3ca599a9c1"
+  },
+  {
+    "distro": "debian",
+    "package": "libio-socket-ssl-perl",
+    "version": "2.044-1",
+    "swhid": "swh:1:dir:aae91111110dba9654bd53314963f1e7a18fee9f"
+  },
+  {
+    "distro": "debian",
+    "package": "libfdisk1",
+    "version": "2.29.2-1+deb9u1",
+    "swhid": "swh:1:dir:726b78b92e3809d74cd1437dd51e373607bdd8ad"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libntfs-3g88",
+    "version": "1:2017.3.23-2ubuntu0.18.04.2",
+    "swhid": "swh:1:dir:6f61020bbd66f9ace25b6132ca63c16675271a22"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3",
+    "version": "3.6.7-1~18.04",
+    "swhid": "swh:1:dir:7cae6c5e77b7425d10484312f89f6e095d93ff80"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libhtml-parser-perl",
+    "version": "3.72-3build1",
+    "swhid": "swh:1:dir:b6e803189472c6624cf19b8db44c6271fa1cba14"
+  },
+  {
+    "distro": "debian",
+    "package": "libxinerama1",
+    "version": "2:1.1.3-1+b3",
+    "swhid": "swh:1:dir:8d0622ff7e222c932866e154c9868f6c312190bf"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libjsoncpp1",
+    "version": "1.7.4-3",
+    "swhid": "swh:1:dir:c3cdf0c548f652193a0c3a774d2cff5e45e40088"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgnutls30",
+    "version": "3.5.18-1ubuntu1.3",
+    "swhid": "swh:1:dir:0c6462a66103ac5e6e96af0c1a1986b8c1ec576e"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtk-3-common",
+    "version": "3.22.11-1",
+    "swhid": "swh:1:dir:da4b173bc1e67d38acbdc97b98c4ba5d1c907db3"
+  },
+  {
+    "distro": "debian",
+    "package": "libgdbm3",
+    "version": "1.8.3-14",
+    "swhid": "swh:1:dir:112c5d4b43f178cd7d76d7f88ec82d3665c5b23b"
+  },
+  {
+    "distro": "debian",
+    "package": "ledger",
+    "version": "3.1.2~pre1+g3a00e1c+dfsg1-2+b1",
+    "swhid": "swh:1:dir:a4a9a0baed1215d69cb041679b61d9b36263c2b2"
+  },
+  {
+    "distro": "debian",
+    "package": "libxkbfile1",
+    "version": "1:1.0.9-2",
+    "swhid": "swh:1:dir:480b0728aba3f15ee8ad07ae9024bff9fd4c71aa"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "mawk",
+    "version": "1.3.3-17ubuntu3",
+    "swhid": "swh:1:dir:9cd11fd90c9b3adee3411c24db4f57b23c65d42b"
+  },
+  {
+    "distro": "debian",
+    "package": "mesa-utils",
+    "version": "8.3.0-3",
+    "swhid": "swh:1:dir:16f7aa7a8fba0bca5f8d8cbb90f49ffd8701a7b2"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "systemd",
+    "version": "237-3ubuntu10.41",
+    "swhid": "swh:1:dir:6197fd2ec4707e28669f803f492a781785f9d34d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libudev1",
+    "version": "237-3ubuntu10.41",
+    "swhid": "swh:1:dir:6197fd2ec4707e28669f803f492a781785f9d34d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libsasl2-modules-db",
+    "version": "2.1.27~101-g0780600+dfsg-3ubuntu2.1",
+    "swhid": "swh:1:dir:0889d30dd9ea5a5c69ead28e58dd04cedd87f442"
+  },
+  {
+    "distro": "debian",
+    "package": "fontforge-common",
+    "version": "1:20161005~dfsg-4+deb9u1",
+    "swhid": "swh:1:dir:13ed4b595bf2d54d6fbcf5195778e489cbfa1da1"
+  },
+  {
+    "distro": "debian",
+    "package": "gfortran-6",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gcc",
+    "version": "4:7.4.0-1ubuntu2.3",
+    "swhid": "swh:1:dir:478d5ce963dc6eb2fbc61072f31c320e2741957a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "run-one",
+    "version": "1.17-0ubuntu1",
+    "swhid": "swh:1:dir:f408ba697266c9b7f8455d42e30ca1044857477d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libclass-accessor-perl",
+    "version": "0.51-1",
+    "swhid": "swh:1:dir:6c6058bef02f6ff1e8b6485975d35f0e56fa1ea0"
+  },
+  {
+    "distro": "debian",
+    "package": "util-linux-locales",
+    "version": "2.29.2-1+deb9u1",
+    "swhid": "swh:1:dir:726b78b92e3809d74cd1437dd51e373607bdd8ad"
+  },
+  {
+    "distro": "debian",
+    "package": "libdbusmenu-gtk3-4",
+    "version": "12.10.2-2",
+    "swhid": "swh:1:dir:8f28e748491014e1bfd762693e58f40d9f4e20a0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libapt-inst2.0",
+    "version": "1.6.12ubuntu0.1",
+    "swhid": "swh:1:dir:87427f14ed2a85fbbc52ed06d2d388bca88ea55b"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-dmx-dev",
+    "version": "1:2.3.1-2",
+    "swhid": "swh:1:dir:43493376940c69cda60c8a5f5ae60b30616be733"
+  },
+  {
+    "distro": "debian",
+    "package": "libubsan0",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "diffutils",
+    "version": "1:3.6-1",
+    "swhid": "swh:1:dir:fb2a37641056ef1ac2e31e4ffd85404857c6e213"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-render-dev",
+    "version": "2:0.11.1-2",
+    "swhid": "swh:1:dir:8a9d816eef2f10265975c3b2cb9777dbe3945c7b"
+  },
+  {
+    "distro": "debian",
+    "package": "libiptc0",
+    "version": "1.6.0+snapshot20161117-6",
+    "swhid": "swh:1:dir:f99a366f5c19a4a7cdc6d55c9c3fc44577ba3fe9"
+  },
+  {
+    "distro": "debian",
+    "package": "python-html5lib",
+    "version": "0.999999999-1",
+    "swhid": "swh:1:dir:9652e8ad4ddfe52f519ef7b44bc4cec927c62d84"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "networkd-dispatcher",
+    "version": "1.7-0ubuntu3.3",
+    "swhid": "swh:1:dir:2d4bd95a15e7d92b0c2804eeb55a38ddb7a1847f"
+  },
+  {
+    "distro": "debian",
+    "package": "ssl-cert",
+    "version": "1.0.39",
+    "swhid": "swh:1:dir:097bba82345acd03f803e31273b11da969bfdc0a"
+  },
+  {
+    "distro": "debian",
+    "package": "python-dbus",
+    "version": "1.2.4-1+b1",
+    "swhid": "swh:1:dir:9cd0660755353de051d3b7330ab38850d0b84ba5"
+  },
+  {
+    "distro": "debian",
+    "package": "libmount1",
+    "version": "2.29.2-1+deb9u1",
+    "swhid": "swh:1:dir:726b78b92e3809d74cd1437dd51e373607bdd8ad"
+  },
+  {
+    "distro": "debian",
+    "package": "libmono-corlib4.5-cil",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "debian",
+    "package": "libdebconfclient0",
+    "version": "0.227",
+    "swhid": "swh:1:dir:96d40d884fcc7f40358f473fb36bedf8ab5336fa"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-dri3-dev",
+    "version": "1.0-1",
+    "swhid": "swh:1:dir:ef7ee7ae00283838266cc3319aeeebba1abb010e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libubsan0",
+    "version": "7.5.0-3ubuntu1~18.04",
+    "swhid": "swh:1:dir:1c05dc7c4afc412096a0cf418dfc5acd9e415b57"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-image-5.3.0-46-generic",
+    "version": "5.3.0-46.38~18.04.1",
+    "swhid": "swh:1:dir:52a377f1738da74986c39f67c3d7a305c80cafbe"
+  },
+  {
+    "distro": "debian",
+    "package": "libjbig2dec0",
+    "version": "0.13-4.1",
+    "swhid": "swh:1:dir:861ba274e24c548983a9cb5f35587bd0d7175d0e"
+  },
+  {
+    "distro": "debian",
+    "package": "mono-runtime-common",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-core",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libselinux1",
+    "version": "2.6-3+b3",
+    "swhid": "swh:1:dir:82e9ae450b493c1fadac53bd6cbfe0657b71f722"
+  },
+  {
+    "distro": "debian",
+    "package": "dbus-x11",
+    "version": "1.10.28-0+deb9u1",
+    "swhid": "swh:1:dir:6ed4c174f092af7c84da0ba52f119f836d301119"
+  },
+  {
+    "distro": "debian",
+    "package": "libtsan0",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-randr0-dev",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libarchive13",
+    "version": "3.2.2-3.1ubuntu0.6",
+    "swhid": "swh:1:dir:b730cd212f6a25f3d6579937dc9d18d649fa5129"
+  },
+  {
+    "distro": "debian",
+    "package": "libvo-aacenc0",
+    "version": "0.1.3-1",
+    "swhid": "swh:1:dir:b2a628e878dbc8f38814e894d3810e525290cf9b"
+  },
+  {
+    "distro": "debian",
+    "package": "linux-image-3.16.0-4-amd64",
+    "version": "3.16.39-1+deb8u2",
+    "swhid": "swh:1:dir:42741ff8e3ac14a6df2f21aae1f995d395044b05"
+  },
+  {
+    "distro": "debian",
+    "package": "man-db",
+    "version": "2.7.6.1-2",
+    "swhid": "swh:1:dir:57e48a45ab03c2ef6ac03e33b33d479742c5992a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "squashfs-tools",
+    "version": "1:4.3-6ubuntu0.18.04.1",
+    "swhid": "swh:1:dir:e5ba4fb6c8b480edab42f32ee72ceab3cc7582b8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libstdc++-7-dev",
+    "version": "7.5.0-3ubuntu1~18.04",
+    "swhid": "swh:1:dir:1c05dc7c4afc412096a0cf418dfc5acd9e415b57"
+  },
+  {
+    "distro": "debian",
+    "package": "libdbusmenu-gtk4",
+    "version": "12.10.2-2",
+    "swhid": "swh:1:dir:8f28e748491014e1bfd762693e58f40d9f4e20a0"
+  },
+  {
+    "distro": "debian",
+    "package": "libxres-dev",
+    "version": "2:1.0.7-1+b3",
+    "swhid": "swh:1:dir:c7aa62485e91134790d9b7d5e7778c8e2aef28c3"
+  },
+  {
+    "distro": "debian",
+    "package": "po-debconf",
+    "version": "1.0.20",
+    "swhid": "swh:1:dir:75bb906e06af4e95165db5b161d7e46669c42722"
+  },
+  {
+    "distro": "debian",
+    "package": "libunwind8",
+    "version": "1.1-4.1",
+    "swhid": "swh:1:dir:0e2fcd593ee42cbde2c8a97af262e9219104bb26"
+  },
+  {
+    "distro": "debian",
+    "package": "ruby2.3",
+    "version": "2.3.3-1+deb9u7",
+    "swhid": "swh:1:dir:4ecb6be0624e86cea027735c05dbb4965203d1ce"
+  },
+  {
+    "distro": "debian",
+    "package": "libtokyocabinet9",
+    "version": "1.4.48-11+b1",
+    "swhid": "swh:1:dir:f333fe01fbcad25cfd193510f67b578b6de92105"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-extra-5.3.0-45-generic",
+    "version": "5.3.0-45.37~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "telnet",
+    "version": "0.17-41",
+    "swhid": "swh:1:dir:ba5f5f4723cd735f17213a71cfc3702bc79bf643"
+  },
+  {
+    "distro": "debian",
+    "package": "libcc1-0",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "python-ipaddress",
+    "version": "1.0.17-1",
+    "swhid": "swh:1:dir:ac6f26dbec6d455a86f79e42a5e96d9b998d3673"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "liblwres160",
+    "version": "1:9.11.3+dfsg-1ubuntu1.12",
+    "swhid": "swh:1:dir:882614b2f02ab5f03af61ec07bf12068ebc5e66a"
+  },
+  {
+    "distro": "debian",
+    "package": "libimage-magick-q16-perl",
+    "version": "8:6.9.7.4+dfsg-11+deb9u8",
+    "swhid": "swh:1:dir:6bbc153bc8bf9caed2cc1af0df6628529fd5e388"
+  },
+  {
+    "distro": "debian",
+    "package": "librtmp1",
+    "version": "2.4+20151223.gitfa8646d.1-1+b1",
+    "swhid": "swh:1:dir:dffbc4e23d0bbc3049b212a207e40c0805b53f1b"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "distro-info-data",
+    "version": "0.37ubuntu0.7",
+    "swhid": "swh:1:dir:39d91647a608fd2437fe909b5c0e11a7aa3692b3"
+  },
+  {
+    "distro": "debian",
+    "package": "libcap2",
+    "version": "1:2.25-1",
+    "swhid": "swh:1:dir:1a014dd9fd22d72b10a2899ccab967cf8f8f7620"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-input-dev",
+    "version": "2.3.2-1",
+    "swhid": "swh:1:dir:d8b840bda63792de0cbf84f791146589488d849a"
+  },
+  {
+    "distro": "debian",
+    "package": "xfonts-75dpi",
+    "version": "1:1.0.4+nmu1",
+    "swhid": "swh:1:dir:718b447db3e8ba76bd637a96c2444d905f059933"
+  },
+  {
+    "distro": "debian",
+    "package": "libxml-twig-perl",
+    "version": "1:3.50-1",
+    "swhid": "swh:1:dir:1826c49d74a6999d01817c282e7be250e39f779e"
+  },
+  {
+    "distro": "debian",
+    "package": "libmagickwand-6.q16-3",
+    "version": "8:6.9.7.4+dfsg-11+deb9u8",
+    "swhid": "swh:1:dir:6bbc153bc8bf9caed2cc1af0df6628529fd5e388"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-fonts-dev",
+    "version": "2.1.3-1",
+    "swhid": "swh:1:dir:18a6145d7e1483c8bb22abc621209cbfa577a65c"
+  },
+  {
+    "distro": "debian",
+    "package": "python-gtk2",
+    "version": "2.24.0-5.1",
+    "swhid": "swh:1:dir:e6e845ea520b52da21c8d71071bcc13a1f2b4a8e"
+  },
+  {
+    "distro": "debian",
+    "package": "libfile-fcntllock-perl",
+    "version": "0.22-3+b2",
+    "swhid": "swh:1:dir:1215866a367b3d077c94d83abf0f9ff8c23fd7f3"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "openssh-client",
+    "version": "1:7.6p1-4ubuntu0.3",
+    "swhid": "swh:1:dir:434311c0200ce908bdaf84eee0f0d29cc9361dcf"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpcre3",
+    "version": "2:8.39-9",
+    "swhid": "swh:1:dir:2ec208c9c78b6841fb9fc6bf5c89939c37cbd765"
+  },
+  {
+    "distro": "debian",
+    "package": "libfontbox-java",
+    "version": "1:1.8.12-1",
+    "swhid": "swh:1:dir:371ce6165cde6223eaf32c74e273570bad0ec628"
+  },
+  {
+    "distro": "debian",
+    "package": "xz-utils",
+    "version": "5.2.2-1.2+b1",
+    "swhid": "swh:1:dir:0befcbec644a3b3e73d6f983885f093281e9942d"
+  },
+  {
+    "distro": "debian",
+    "package": "libavalon-framework-java",
+    "version": "4.2.0-9",
+    "swhid": "swh:1:dir:a23ef7051e45aa948f75d11dba0e9f2053d828d4"
+  },
+  {
+    "distro": "debian",
+    "package": "autotools-dev",
+    "version": "20161112.1",
+    "swhid": "swh:1:dir:54116d9453a7dc70949a26374c6d13c9eea3318d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "groff-base",
+    "version": "1.22.3-10",
+    "swhid": "swh:1:dir:7e58944b8aa8113f77a62a9ca57ec91fc8c1e8f1"
+  },
+  {
+    "distro": "debian",
+    "package": "xserver-xorg-legacy",
+    "version": "2:1.19.2-1+deb9u5",
+    "swhid": "swh:1:dir:83dfa18af6ccc916cbd120a564319db259c4bfa2"
+  },
+  {
+    "distro": "debian",
+    "package": "libxxf86dga1",
+    "version": "2:1.1.4-1+b3",
+    "swhid": "swh:1:dir:f9e706a931c517f342d7cf40f1b36d5686c7cd20"
+  },
+  {
+    "distro": "debian",
+    "package": "libisccfg-export90",
+    "version": "1:9.9.5.dfsg-9+deb8u10",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-pyuno",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "dnsutils",
+    "version": "1:9.10.3.dfsg.P4-12.3+deb9u6",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "debian",
+    "package": "libpam-modules-bin",
+    "version": "1.1.8-3.6",
+    "swhid": "swh:1:dir:f0fb8fdccffbb827b5b3d2efd86169463605cb89"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libxcb1",
+    "version": "1.13-2~ubuntu18.04",
+    "swhid": "swh:1:dir:798807c80fbaf1c0e7bed7cf47717faa51de2947"
+  },
+  {
+    "distro": "debian",
+    "package": "g++",
+    "version": "4:6.3.0-4",
+    "swhid": "swh:1:dir:092486dd2ad6dc75d28590f63357eb64790eafb5"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libio-html-perl",
+    "version": "1.001-1",
+    "swhid": "swh:1:dir:e9d71339995ee88334392fbabe1b56d37ee1d1ed"
+  },
+  {
+    "distro": "debian",
+    "package": "libatspi2.0-0",
+    "version": "2.22.0-6+deb9u1",
+    "swhid": "swh:1:dir:c516116bcbd2898ba1e7b71602f992281489f4e4"
+  },
+  {
+    "distro": "debian",
+    "package": "libxxf86dga-dev",
+    "version": "2:1.1.4-1+b3",
+    "swhid": "swh:1:dir:f9e706a931c517f342d7cf40f1b36d5686c7cd20"
+  },
+  {
+    "distro": "debian",
+    "package": "libncurses5",
+    "version": "6.0+20161126-1+deb9u2",
+    "swhid": "swh:1:dir:144b0df8a64d3677989d30a7a5003c7e32703b64"
+  },
+  {
+    "distro": "debian",
+    "package": "libcairo-script-interpreter2",
+    "version": "1.14.8-1",
+    "swhid": "swh:1:dir:2710df1e5a22f4411ffdd356d7f67656d35715d5"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "amd64-microcode",
+    "version": "3.20191021.1+really3.20181128.1~ubuntu0.18.04.1",
+    "swhid": "swh:1:dir:9fc34291b790c15133ce388b25a18348c864e1ab"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgts-bin",
+    "version": "0.7.6+darcs121130-4",
+    "swhid": "swh:1:dir:822a99dbf57a109ce62236622b9d28bd80397e72"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-jsonpatch",
+    "version": "1.19+really1.16-1fakesync1",
+    "swhid": "swh:1:dir:11d2d35f7a8c23fdce40795dbd9babf76968cd3b"
+  },
+  {
+    "distro": "debian",
+    "package": "libgomp1",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "gzip",
+    "version": "1.6-5+b1",
+    "swhid": "swh:1:dir:a2cc22ed400b2ef4450282242bca8c051139a3d5"
+  },
+  {
+    "distro": "debian",
+    "package": "libsepol1-dev",
+    "version": "2.6-2",
+    "swhid": "swh:1:dir:ec0c6b190e44e8d22402891cf9594a8c2c8a4a84"
+  },
+  {
+    "distro": "debian",
+    "package": "libpangox-1.0-0",
+    "version": "0.0.2-5+b2",
+    "swhid": "swh:1:dir:2cc317910e3fd6f7159f7d7883a209f981fa2e98"
+  },
+  {
+    "distro": "debian",
+    "package": "sed",
+    "version": "4.4-1",
+    "swhid": "swh:1:dir:5a114b1ad360c6a184b6f424e5a755ec5367c009"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "initramfs-tools-bin",
+    "version": "0.130ubuntu3.9",
+    "swhid": "swh:1:dir:74b4ab1e8784161ad23ab3018cedb2c4e242eb0e"
+  },
+  {
+    "distro": "debian",
+    "package": "libinput-bin",
+    "version": "1.6.3-1",
+    "swhid": "swh:1:dir:c9d518d488b9e352ceef07a99f8c075de1b1f9de"
+  },
+  {
+    "distro": "debian",
+    "package": "libxfont-dev",
+    "version": "1:2.0.1-3+deb9u1",
+    "swhid": "swh:1:dir:c8c4af2d34da45eb07788e36be72ee8c42199f5f"
+  },
+  {
+    "distro": "debian",
+    "package": "postgresql-9.6",
+    "version": "9.6.17-0+deb9u1",
+    "swhid": "swh:1:dir:16cb1b8f72af007f25c5e7d82600cf979ba82335"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "wireless-regdb",
+    "version": "2018.05.09-0ubuntu1~18.04.1",
+    "swhid": "swh:1:dir:91e4131cdc6639b6fb130b4af7ae98f555b0ffae"
+  },
+  {
+    "distro": "debian",
+    "package": "libpaper-utils",
+    "version": "1.1.24+nmu5",
+    "swhid": "swh:1:dir:26b880b23a7d7932a42974b8c0b491686f8e786e"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-graphicfilter",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "x11-common",
+    "version": "1:7.7+19ubuntu7.1",
+    "swhid": "swh:1:dir:c8badc8868e793fcf16c66393f6e856cd02169bb"
+  },
+  {
+    "distro": "debian",
+    "package": "libreoffice5.3-en-us",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "debian",
+    "package": "libfakeroot",
+    "version": "1.21-3.1",
+    "swhid": "swh:1:dir:46af556dda5377bcb598c9abaf1adb455c0ebc88"
+  },
+  {
+    "distro": "debian",
+    "package": "libghc-pandoc-citeproc-data",
+    "version": "0.10.2.2-1",
+    "swhid": "swh:1:dir:76f4ec0f4684c986a7424512e7d4cf0225e6455f"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libssl-dev",
+    "version": "1.1.1-1ubuntu2.1~18.04.6",
+    "swhid": "swh:1:dir:b94532cd88fde32de47d0ad69d7c733f0b24c415"
+  },
+  {
+    "distro": "debian",
+    "package": "libgcc-4.9-dev",
+    "version": "4.9.2-10",
+    "swhid": "swh:1:dir:094455ccc1962ca706502412b77d4e1d49545bba"
+  },
+  {
+    "distro": "debian",
+    "package": "libk5crypto3",
+    "version": "1.15-1+deb9u1",
+    "swhid": "swh:1:dir:48a343801882bdf13c066be2b59dc6dd5decddc2"
+  },
+  {
+    "distro": "debian",
+    "package": "insserv",
+    "version": "1.14.0-5.4+b1",
+    "swhid": "swh:1:dir:5fb933618c3afc9bdbea5cc824ba2243157f2ab8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "sensible-utils",
+    "version": "0.0.12",
+    "swhid": "swh:1:dir:6f2ec23644e85ba2ccf67ace35e2f05c21e42e8f"
+  },
+  {
+    "distro": "debian",
+    "package": "libkrb5-3",
+    "version": "1.15-1+deb9u1",
+    "swhid": "swh:1:dir:48a343801882bdf13c066be2b59dc6dd5decddc2"
+  },
+  {
+    "distro": "debian",
+    "package": "libxpm4",
+    "version": "1:3.5.12-1",
+    "swhid": "swh:1:dir:14a8342fc601f3ad40991563da1883de2ad23752"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libsigc++-2.0-0v5",
+    "version": "2.10.0-2",
+    "swhid": "swh:1:dir:785e72b38e0d9215684ff4e228d1324fe56f67a6"
+  },
+  {
+    "distro": "debian",
+    "package": "libprotobuf-c1",
+    "version": "1.2.1-2",
+    "swhid": "swh:1:dir:eb652116c35e68bc77ddd478ac02e3ab7edc0688"
+  },
+  {
+    "distro": "debian",
+    "package": "libilmbase12",
+    "version": "2.2.0-12",
+    "swhid": "swh:1:dir:06193e9e5719e1a58d7c5d7b125af120eae4d1dd"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libnfnetlink0",
+    "version": "1.0.1-3",
+    "swhid": "swh:1:dir:c6ed0e7cfcf22db8f04684e32e7927258ed0d269"
+  },
+  {
+    "distro": "debian",
+    "package": "uil",
+    "version": "2.3.4-13",
+    "swhid": "swh:1:dir:47b2e381df21282f3305b65e8d3c95b8ccd46248"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-xkb1",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-en-us-base",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "pidgin",
+    "version": "2.12.0-1",
+    "swhid": "swh:1:dir:63ac0395cf8c37f5dcb1d88385ee99a1739c3647"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "grub-common",
+    "version": "2.02-2ubuntu8.15",
+    "swhid": "swh:1:dir:d16fad91d791e11a6e41eea6376dfce091051bdf"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "apparmor",
+    "version": "2.12-4ubuntu5.1",
+    "swhid": "swh:1:dir:5ad58253f744510ba21876c5b3f5d71ca322c536"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-debianbts",
+    "version": "2.6.1",
+    "swhid": "swh:1:dir:a86027aae20f425cd285fc2afbaa0549c5d0aed6"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgdbm-compat4",
+    "version": "1.14.1-6",
+    "swhid": "swh:1:dir:d7636ac5a8cb98d45011ca0946d1cdac546e888d"
+  },
+  {
+    "distro": "debian",
+    "package": "libhtml-tree-perl",
+    "version": "5.03-2",
+    "swhid": "swh:1:dir:297af442c8608a2ed0ce0f1184198855be10b3b4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "multiarch-support",
+    "version": "2.27-3ubuntu1",
+    "swhid": "swh:1:dir:22cb79e66f368b54b876d305c576f6b7af4b37bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libxi6",
+    "version": "2:1.7.9-1",
+    "swhid": "swh:1:dir:3be8667ca048799b3fd20de339584809089cafb7"
+  },
+  {
+    "distro": "debian",
+    "package": "libxtst6",
+    "version": "2:1.2.3-1",
+    "swhid": "swh:1:dir:a2d549095e24c56722225d00a1950ea93766db02"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-pycurl",
+    "version": "7.43.0-2",
+    "swhid": "swh:1:dir:68af2bb929c01c50650addf69f335535f60bd110"
+  },
+  {
+    "distro": "debian",
+    "package": "ruby-did-you-mean",
+    "version": "1.0.0-2",
+    "swhid": "swh:1:dir:d05039cfc54b38ea8c32f4c551bdf89fbce0b39e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libmpdec2",
+    "version": "2.4.2-1ubuntu1",
+    "swhid": "swh:1:dir:eb58ea31b3b1f2e4050399d51190bb22e6ed388a"
+  },
+  {
+    "distro": "debian",
+    "package": "python-openssl",
+    "version": "16.2.0-1",
+    "swhid": "swh:1:dir:8eebb19670a08ae51f196298d97941486d690e34"
+  },
+  {
+    "distro": "debian",
+    "package": "gfortran",
+    "version": "4:6.3.0-4",
+    "swhid": "swh:1:dir:092486dd2ad6dc75d28590f63357eb64790eafb5"
+  },
+  {
+    "distro": "debian",
+    "package": "m4",
+    "version": "1.4.18-1",
+    "swhid": "swh:1:dir:8fb3405262d659bffc4dfbb9d15b63337eb0b39a"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-ooolinguistic",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libffi6",
+    "version": "3.2.1-6",
+    "swhid": "swh:1:dir:8dbd0f5b6773a24fbafbc3d3afacd14d913f501d"
+  },
+  {
+    "distro": "debian",
+    "package": "rake",
+    "version": "10.5.0-2",
+    "swhid": "swh:1:dir:ac1e1fbe962cbfe357d403e902918c7b001a7202"
+  },
+  {
+    "distro": "debian",
+    "package": "libprocps3",
+    "version": "2:3.3.9-9",
+    "swhid": "swh:1:dir:2591c9c58ac71e2aabdcd4ab474715c6e8233e4e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "file",
+    "version": "1:5.32-2ubuntu0.4",
+    "swhid": "swh:1:dir:a252abd00257d436ca177cead9d835f3f14b8c3a"
+  },
+  {
+    "distro": "debian",
+    "package": "firmware-linux-free",
+    "version": "3.4",
+    "swhid": "swh:1:dir:6626ad31b94ddb2c1f28eeca287c3f83f019c0c6"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-calc",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpci3",
+    "version": "1:3.5.2-1ubuntu1.1",
+    "swhid": "swh:1:dir:e72938004abd99c50a27667c1319613f16df2cfb"
+  },
+  {
+    "distro": "debian",
+    "package": "libgraphite2-dev",
+    "version": "1.3.10-1",
+    "swhid": "swh:1:dir:a982fdf737367423e72d254f34a880709088983e"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt5core5a",
+    "version": "5.7.1+dfsg-3+deb9u2",
+    "swhid": "swh:1:dir:4cf9a8b87cdf3ae5923042e21d624741812aa3be"
+  },
+  {
+    "distro": "debian",
+    "package": "perl-tk",
+    "version": "1:804.033-1+b3",
+    "swhid": "swh:1:dir:8a6a871891e937983e58c232a2cd960b9fc08610"
+  },
+  {
+    "distro": "debian",
+    "package": "base-passwd",
+    "version": "3.5.43",
+    "swhid": "swh:1:dir:b5148facbee8bea15c5360e9986e498e5a448c23"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libzstd1",
+    "version": "1.3.3+dfsg-2ubuntu1.1",
+    "swhid": "swh:1:dir:2bb86c549dfdc01f21184157a6b16e27dc937e52"
+  },
+  {
+    "distro": "debian",
+    "package": "djvulibre-desktop",
+    "version": "3.5.27.1-7",
+    "swhid": "swh:1:dir:fcbc0495559fd29bfb928bdeb28b5d1c9ab0fed3"
+  },
+  {
+    "distro": "debian",
+    "package": "netcat-traditional",
+    "version": "1.10-41+b1",
+    "swhid": "swh:1:dir:781613d2d6e2523e3b4f71d76ce20be39538f1f1"
+  },
+  {
+    "distro": "debian",
+    "package": "libcups2",
+    "version": "2.2.1-8+deb9u5",
+    "swhid": "swh:1:dir:ffcf70ff6066a779383120cbb4813ac0acfca8f8"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb1",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "m4",
+    "version": "1.4.18-1",
+    "swhid": "swh:1:dir:8fb3405262d659bffc4dfbb9d15b63337eb0b39a"
+  },
+  {
+    "distro": "debian",
+    "package": "libcwidget3v5",
+    "version": "0.5.17-4+b1",
+    "swhid": "swh:1:dir:48c7a4623d952d7f114bbb221237dc232dd11b10"
+  },
+  {
+    "distro": "debian",
+    "package": "libpolkit-agent-1-0",
+    "version": "0.105-18+deb9u1",
+    "swhid": "swh:1:dir:42dadd81ec51223f0888640d97a3e14a81d60442"
+  },
+  {
+    "distro": "debian",
+    "package": "exim4-daemon-light",
+    "version": "4.89-2+deb9u7",
+    "swhid": "swh:1:dir:22be5b34ba95a57829e04336db8e3ce1f4c8fe4d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libncurses5",
+    "version": "6.1-1ubuntu1.18.04",
+    "swhid": "swh:1:dir:bcb30bb5cf5e481ede78486696f81e709cd9af5d"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-draw",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libcgi-pm-perl",
+    "version": "4.38-1",
+    "swhid": "swh:1:dir:94d165410a47a2f1638f89745b5de2243b577c77"
+  },
+  {
+    "distro": "debian",
+    "package": "libnet-ssleay-perl",
+    "version": "1.80-1",
+    "swhid": "swh:1:dir:d1afceafe263a7166e07bd6370a953767f1e35a9"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libharfbuzz0b",
+    "version": "1.7.2-1ubuntu1",
+    "swhid": "swh:1:dir:8c55dd1e856e54b9ccc829fce3c33ec66b3470fc"
+  },
+  {
+    "distro": "debian",
+    "package": "vim-tiny",
+    "version": "2:8.0.0197-4+deb9u3",
+    "swhid": "swh:1:dir:d4b3ad519adf45ef1caf7c32356be2257c15a748"
+  },
+  {
+    "distro": "debian",
+    "package": "ttf-xfree86-nonfree",
+    "version": "4.2.1-5",
+    "swhid": "swh:1:dir:1568f4c4691656eacaf6c46419e2450c3d068222"
+  },
+  {
+    "distro": "debian",
+    "package": "libtie-ixhash-perl",
+    "version": "1.23-2",
+    "swhid": "swh:1:dir:fb1ec0aa3921bb719940f5d18283e0f82065af1e"
+  },
+  {
+    "distro": "debian",
+    "package": "librhino-java",
+    "version": "1.7.7.1-1",
+    "swhid": "swh:1:dir:a24109a2cbfea6ec7bd15dbe0c5625769abd73da"
+  },
+  {
+    "distro": "debian",
+    "package": "libxft-dev",
+    "version": "2.3.2-1+b2",
+    "swhid": "swh:1:dir:c4646dab2dbfbd7e68f8e534c1478469b04d9686"
+  },
+  {
+    "distro": "debian",
+    "package": "publicsuffix",
+    "version": "20190415.1030-0+deb9u1",
+    "swhid": "swh:1:dir:9f5ff016110135fb21f45bb02b9a54e1b8c546d5"
+  },
+  {
+    "distro": "debian",
+    "package": "patch",
+    "version": "2.7.5-1+deb9u2",
+    "swhid": "swh:1:dir:f3217cc9c5fd78b6068cd8598ef63aedf634f2cb"
+  },
+  {
+    "distro": "debian",
+    "package": "libnet-smtp-ssl-perl",
+    "version": "1.04-1",
+    "swhid": "swh:1:dir:c38c19cf15926d0618b1a2a18921246c6cb98878"
+  },
+  {
+    "distro": "debian",
+    "package": "libwavpack1",
+    "version": "5.0.0-2+deb9u2",
+    "swhid": "swh:1:dir:754b3356ab10bfeda06bda7ce186b7f8619314fe"
+  },
+  {
+    "distro": "debian",
+    "package": "sgml-data",
+    "version": "2.0.10",
+    "swhid": "swh:1:dir:7a2d876101b040463ed4e11a7267ed795f056bd0"
+  },
+  {
+    "distro": "debian",
+    "package": "libxml-xpathengine-perl",
+    "version": "0.13-1",
+    "swhid": "swh:1:dir:8ece715fa4f686929c7ab1c1c3cd5040b398d68e"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-reportbug",
+    "version": "7.1.7+deb9u3",
+    "swhid": "swh:1:dir:18e69fd8e34b96a21736aa6c0a109b4ffa87b7d0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libhogweed4",
+    "version": "3.4-1",
+    "swhid": "swh:1:dir:113add74284b780e6efc17d8815f2089d1b01f34"
+  },
+  {
+    "distro": "debian",
+    "package": "passwd",
+    "version": "1:4.4-4.1",
+    "swhid": "swh:1:dir:f680c01442c693b84ab8018b5b11de0a5b3d3a32"
+  },
+  {
+    "distro": "debian",
+    "package": "apt-listchanges",
+    "version": "3.10",
+    "swhid": "swh:1:dir:9604f37f8b0f71b794fd86c6651f0d217dcecde6"
+  },
+  {
+    "distro": "debian",
+    "package": "psmisc",
+    "version": "22.21-2.1+b2",
+    "swhid": "swh:1:dir:48452acc184b79069d21340bc98b290fa0538d30"
+  },
+  {
+    "distro": "debian",
+    "package": "fuse",
+    "version": "2.9.7-1+deb9u2",
+    "swhid": "swh:1:dir:18e4bcd7816e6aee69b1b661e95024f3349e6e73"
+  },
+  {
+    "distro": "debian",
+    "package": "libdpkg-perl",
+    "version": "1.18.25",
+    "swhid": "swh:1:dir:968f1082c2db82866391ab42f0a44e700de48bfe"
+  },
+  {
+    "distro": "debian",
+    "package": "gnupg-agent",
+    "version": "2.1.18-8~deb9u4",
+    "swhid": "swh:1:dir:27f3a322e28d1c9f2a2ef9cbc542954f468f7027"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "tcl8.6",
+    "version": "8.6.8+dfsg-3",
+    "swhid": "swh:1:dir:a0e5a231cfe797131498db753fa4a754d37e83ba"
+  },
+  {
+    "distro": "debian",
+    "package": "evemu-tools",
+    "version": "2.6.0-0.1",
+    "swhid": "swh:1:dir:473a52df4fcb124401b4e3dcf3c936cade3e3091"
+  },
+  {
+    "distro": "debian",
+    "package": "krb5-locales",
+    "version": "1.15-1+deb9u1",
+    "swhid": "swh:1:dir:48a343801882bdf13c066be2b59dc6dd5decddc2"
+  },
+  {
+    "distro": "debian",
+    "package": "libxerces2-java",
+    "version": "2.11.0-7",
+    "swhid": "swh:1:dir:dea4805f0415392bbcbc7f85844403f53b72b9a1"
+  },
+  {
+    "distro": "debian",
+    "package": "dash",
+    "version": "0.5.8-2.4",
+    "swhid": "swh:1:dir:bb833441e465cef1f87fa8282406f8822c0590b0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libcgraph6",
+    "version": "2.40.1-2",
+    "swhid": "swh:1:dir:59e89b224e3ff3ac93dcd77cbd3828ae7f87ae2d"
+  },
+  {
+    "distro": "debian",
+    "package": "liblz4-1",
+    "version": "0.0~r131-2+b1",
+    "swhid": "swh:1:dir:8774f6071b91f0124b97387b02fb62eeac2085e7"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt5test5",
+    "version": "5.7.1+dfsg-3+deb9u2",
+    "swhid": "swh:1:dir:4cf9a8b87cdf3ae5923042e21d624741812aa3be"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "cryptsetup-bin",
+    "version": "2:2.0.2-1ubuntu1.1",
+    "swhid": "swh:1:dir:d7ce65a330490b5f14269a70a04cbeb8f77db3bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libopencv-objdetect2.4v5",
+    "version": "2.4.9.1+dfsg1-2",
+    "swhid": "swh:1:dir:8c48d5da54dd6f953aefb1fffc6a27439fd296e3"
+  },
+  {
+    "distro": "debian",
+    "package": "libzmq5",
+    "version": "4.2.1-4+deb9u2",
+    "swhid": "swh:1:dir:ede3ed11a4bc7a14be1fca9e97659913f53eac60"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "ca-certificates-java",
+    "version": "20180516ubuntu1~18.04.1",
+    "swhid": "swh:1:dir:2d13167cf7fc4d5aebf6242847b8ef9050baff61"
+  },
+  {
+    "distro": "debian",
+    "package": "time",
+    "version": "1.7-25.1+b1",
+    "swhid": "swh:1:dir:aafdde88b2aae7129e55bbab1e290b9e12022b4e"
+  },
+  {
+    "distro": "debian",
+    "package": "libwebpmux2",
+    "version": "0.5.2-1",
+    "swhid": "swh:1:dir:cfd00e010ee97a366c2a01a6ae03bc35b3a511a2"
+  },
+  {
+    "distro": "debian",
+    "package": "libpython3.5-stdlib",
+    "version": "3.5.3-1+deb9u1",
+    "swhid": "swh:1:dir:09d850978b959c429713f8994c49aed25b71ac4d"
+  },
+  {
+    "distro": "debian",
+    "package": "postgresql-client-9.6",
+    "version": "9.6.17-0+deb9u1",
+    "swhid": "swh:1:dir:16cb1b8f72af007f25c5e7d82600cf979ba82335"
+  },
+  {
+    "distro": "debian",
+    "package": "code",
+    "version": "1.46.1-1592428892",
+    "swhid": "swh:1:dir:8e5c6c991abe8c7d1dc452af90907e22a1fc96be"
+  },
+  {
+    "distro": "debian",
+    "package": "startpar",
+    "version": "0.59-3.1",
+    "swhid": "swh:1:dir:56779cee59f6c562c41bd3f3cdfde5ed3bbaebb0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libdevmapper-event1.02.1",
+    "version": "2:1.02.145-4.1ubuntu3.18.04.3",
+    "swhid": "swh:1:dir:1ad291f41cc430d99ced1497aa526b86892c9065"
+  },
+  {
+    "distro": "debian",
+    "package": "hexchat",
+    "version": "2.12.4-3",
+    "swhid": "swh:1:dir:0556fe0fa1519fa96d1db86652dba094fee522b4"
+  },
+  {
+    "distro": "debian",
+    "package": "libharfbuzz-icu0",
+    "version": "1.4.2-1",
+    "swhid": "swh:1:dir:0cd71a8d46386d404225e160d8fd2705eb094a9f"
+  },
+  {
+    "distro": "debian",
+    "package": "libhogweed2",
+    "version": "2.7.1-5+deb8u2",
+    "swhid": "swh:1:dir:f36d52af8897298e2d2fe90559567f1e42302dd3"
+  },
+  {
+    "distro": "debian",
+    "package": "sgmlspl",
+    "version": "1.03ii-36",
+    "swhid": "swh:1:dir:15850a820b1a8941466410ef3ab4e9d63d436f19"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgpg-error0",
+    "version": "1.27-6",
+    "swhid": "swh:1:dir:056b86bc17da50edfc4e0356813688f89a5ab9d8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "bc",
+    "version": "1.07.1-2",
+    "swhid": "swh:1:dir:95d1127bd326549e6038d48fa16b8ee44bedefcf"
+  },
+  {
+    "distro": "debian",
+    "package": "libblas-common",
+    "version": "3.7.0-2",
+    "swhid": "swh:1:dir:82711d5bb296d3e8eeaeb900cfab61fe46693888"
+  },
+  {
+    "distro": "debian",
+    "package": "libustr-1.0-1",
+    "version": "1.0.4-6",
+    "swhid": "swh:1:dir:d4b9bd779c25356dea4a4cb4c32e57a0fc587bb6"
+  },
+  {
+    "distro": "debian",
+    "package": "libglew2.0",
+    "version": "2.0.0-3+b1",
+    "swhid": "swh:1:dir:e3c4e5ce40f65ffba3aab722d267a59756e7377e"
+  },
+  {
+    "distro": "debian",
+    "package": "dpkg-dev",
+    "version": "1.18.25",
+    "swhid": "swh:1:dir:968f1082c2db82866391ab42f0a44e700de48bfe"
+  },
+  {
+    "distro": "debian",
+    "package": "adwaita-icon-theme",
+    "version": "3.22.0-1+deb9u1",
+    "swhid": "swh:1:dir:2801005f2dc7295029e7a95c62ddc7136cd41a70"
+  },
+  {
+    "distro": "debian",
+    "package": "glib-networking-services",
+    "version": "2.50.0-1+b1",
+    "swhid": "swh:1:dir:9524e003e1eae00cc8ec6c52f8b07360c2f7f84a"
+  },
+  {
+    "distro": "debian",
+    "package": "keyutils",
+    "version": "1.5.9-9",
+    "swhid": "swh:1:dir:fb5c2d708dd4055293ae694e0e94c5d1afd118bc"
+  },
+  {
+    "distro": "debian",
+    "package": "libdns-export100",
+    "version": "1:9.9.5.dfsg-9+deb8u10",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libjpeg8",
+    "version": "8c-2ubuntu8",
+    "swhid": "swh:1:dir:22d25e6319b220ca12d396ba7e5facc4ae56e924"
+  },
+  {
+    "distro": "debian",
+    "package": "sysv-rc",
+    "version": "2.88dsf-59.9",
+    "swhid": "swh:1:dir:94a88c21d72d16e7aeca43ee4b17b3d133ef28a7"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libatomic1",
+    "version": "8.4.0-1ubuntu1~18.04",
+    "swhid": "swh:1:dir:d49af0c20553df7786c37c2c2f91ac5808a9d6ec"
+  },
+  {
+    "distro": "debian",
+    "package": "libsnappy1v5",
+    "version": "1.1.3-3",
+    "swhid": "swh:1:dir:3789ad0d5128e841c81a1551191bcd1c9fe35ef8"
+  },
+  {
+    "distro": "debian",
+    "package": "lynx-common",
+    "version": "2.8.9dev11-1",
+    "swhid": "swh:1:dir:63d413bb5c64ea2d5b912065ddbbb648c78365a6"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libfdisk1",
+    "version": "2.31.1-0.4ubuntu3.6",
+    "swhid": "swh:1:dir:219ac324d6a820363ecccef42df3a5c6bb53f289"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtkmm-3.0-1v5",
+    "version": "3.22.0-1",
+    "swhid": "swh:1:dir:f0f038b28c79739bfaf4df2ae5f2a56a6cd411eb"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.1-pyuno",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "djview4",
+    "version": "4.10.6-1",
+    "swhid": "swh:1:dir:b59cc7b08721a7d459493a5285f71ce0307a1941"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libdrm2",
+    "version": "2.4.101-2~18.04.1",
+    "swhid": "swh:1:dir:227f8dd567be578c85a00d0bded441f340b6b5c0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-extra-5.3.0-62-generic",
+    "version": "5.3.0-62.56~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-certifi",
+    "version": "2018.1.18-2",
+    "swhid": "swh:1:dir:59c6a963077119da5952daf068648b84edab3279"
+  },
+  {
+    "distro": "debian",
+    "package": "libcdio13",
+    "version": "0.83-4.3+b1",
+    "swhid": "swh:1:dir:ff1f3b2b13254edc74ed046499cb205cefa9a73f"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libparted2",
+    "version": "3.2-20ubuntu0.2",
+    "swhid": "swh:1:dir:69f60f6fd06e4b2ebfb9461e72223a70ac7588e8"
+  },
+  {
+    "distro": "debian",
+    "package": "libldb1",
+    "version": "2:1.1.27-1+deb9u1",
+    "swhid": "swh:1:dir:9bb2d58f9d4cbd8b876652d6dbb7933245408648"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-core-dev",
+    "version": "7.0.31-1",
+    "swhid": "swh:1:dir:275c5b8d33be741fdc0005ea179cbcdd42445ee4"
+  },
+  {
+    "distro": "debian",
+    "package": "libtiff5-dev",
+    "version": "4.0.8-2+deb9u5",
+    "swhid": "swh:1:dir:11ac4c1d9ec5e17d538643c1c9dd2fc1204d209e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgpm2",
+    "version": "1.20.7-5",
+    "swhid": "swh:1:dir:7ae162f1dba0694a7984c38d9c34bce8aedbdb4c"
+  },
+  {
+    "distro": "debian",
+    "package": "libdca0",
+    "version": "0.0.5-10",
+    "swhid": "swh:1:dir:9ef08b39d96b7fe2797640583c8653fff897c492"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-automat",
+    "version": "0.6.0-1",
+    "swhid": "swh:1:dir:03ac1eabed84a0d494218786458885f211653384"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-fixes-dev",
+    "version": "1:5.0-2",
+    "swhid": "swh:1:dir:5d1715bbb84db89d184223d42574895fceebc1ad"
+  },
+  {
+    "distro": "debian",
+    "package": "libdns162",
+    "version": "1:9.10.3.dfsg.P4-12.3+deb9u6",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "debian",
+    "package": "apt",
+    "version": "1.4.10",
+    "swhid": "swh:1:dir:e511fec46be8b258dff3596887adc9f6f459299c"
+  },
+  {
+    "distro": "debian",
+    "package": "traceroute",
+    "version": "1:2.1.0-2",
+    "swhid": "swh:1:dir:16b7d93dd24d1ea26b14301d0498b964201303c6"
+  },
+  {
+    "distro": "debian",
+    "package": "libblkid1",
+    "version": "2.29.2-1+deb9u1",
+    "swhid": "swh:1:dir:726b78b92e3809d74cd1437dd51e373607bdd8ad"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-present-dev",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "libvpx4",
+    "version": "1.6.1-3+deb9u2",
+    "swhid": "swh:1:dir:f1dd908cedf8f96283fc86a760bd7d2fd8c3884e"
+  },
+  {
+    "distro": "debian",
+    "package": "libwmf-bin",
+    "version": "0.2.8.4-10.6",
+    "swhid": "swh:1:dir:29caeb31b6c0c35dc47d0399e80eb8d8d75f2857"
+  },
+  {
+    "distro": "debian",
+    "package": "libcups2-dev",
+    "version": "2.2.1-8+deb9u5",
+    "swhid": "swh:1:dir:ffcf70ff6066a779383120cbb4813ac0acfca8f8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libdevmapper1.02.1",
+    "version": "2:1.02.145-4.1ubuntu3.18.04.3",
+    "swhid": "swh:1:dir:1ad291f41cc430d99ced1497aa526b86892c9065"
+  },
+  {
+    "distro": "debian",
+    "package": "bsd-mailx",
+    "version": "8.1.2-0.20160123cvs-4",
+    "swhid": "swh:1:dir:6380bfb05341b67d3beabc52b9e293a014d3cc4d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "pinentry-curses",
+    "version": "1.1.0-1",
+    "swhid": "swh:1:dir:a19cda64f787a682211e001d668176398f544e74"
+  },
+  {
+    "distro": "debian",
+    "package": "libboost-regex1.62.0",
+    "version": "1.62.0+dfsg-4",
+    "swhid": "swh:1:dir:c31773045a388de5de3ffc831aa3b9923f305efc"
+  },
+  {
+    "distro": "debian",
+    "package": "libwayland-client0",
+    "version": "1.12.0-1+deb9u1",
+    "swhid": "swh:1:dir:7ae99977dfa91080724f154bc6d6c8132b3369ac"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "git",
+    "version": "1:2.17.1-1ubuntu0.7",
+    "swhid": "swh:1:dir:5ce499343e937249b3bcf34bb75ead41742340b2"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "iptables-persistent",
+    "version": "1.0.4+nmu2ubuntu1",
+    "swhid": "swh:1:dir:3ecbe1b7d521cef1f7f28f6b4062e718d9c288e3"
+  },
+  {
+    "distro": "debian",
+    "package": "xxd",
+    "version": "2:8.0.0197-4+deb9u3",
+    "swhid": "swh:1:dir:d4b3ad519adf45ef1caf7c32356be2257c15a748"
+  },
+  {
+    "distro": "debian",
+    "package": "gir1.2-glib-2.0",
+    "version": "1.50.0-1+b1",
+    "swhid": "swh:1:dir:e5668e4fbee5fcde656b4fa6a6d654d3a0edd46f"
+  },
+  {
+    "distro": "debian",
+    "package": "hexchat-common",
+    "version": "2.12.4-3",
+    "swhid": "swh:1:dir:0556fe0fa1519fa96d1db86652dba094fee522b4"
+  },
+  {
+    "distro": "debian",
+    "package": "laptop-detect",
+    "version": "0.13.8",
+    "swhid": "swh:1:dir:2b38937918ff48468d9ce2df2812d5538b178592"
+  },
+  {
+    "distro": "debian",
+    "package": "xmlto",
+    "version": "0.0.28-1",
+    "swhid": "swh:1:dir:f3b6ca24ff0d6293259eb295e3879d78f59970a5"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "uuid-runtime",
+    "version": "2.31.1-0.4ubuntu3.6",
+    "swhid": "swh:1:dir:219ac324d6a820363ecccef42df3a5c6bb53f289"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "tcl-dev",
+    "version": "8.6.0+9",
+    "swhid": "swh:1:dir:a3d6d01d73d762852f01ead3a3cd3db2c739416a"
+  },
+  {
+    "distro": "debian",
+    "package": "libfreetype6",
+    "version": "2.6.3-3.2+deb9u1",
+    "swhid": "swh:1:dir:bc6c264557982d5812a2bb1f891d590f154a2063"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-netifaces",
+    "version": "0.10.4-0.1build4",
+    "swhid": "swh:1:dir:6a7b41a067ab596c5028cc2a3629fb206fc71f86"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-dri2-dev",
+    "version": "2.8-2",
+    "swhid": "swh:1:dir:c0d34802fb435afd3a19cf9db0c1fe652af39394"
+  },
+  {
+    "distro": "debian",
+    "package": "libelfg0",
+    "version": "0.8.13-5",
+    "swhid": "swh:1:dir:905a775d479581743529cb8e0c6a120d90fd9560"
+  },
+  {
+    "distro": "debian",
+    "package": "libltdl7",
+    "version": "2.4.6-2",
+    "swhid": "swh:1:dir:98af7b7f6241228c735da3acc3c0bd9c6dabc271"
+  },
+  {
+    "distro": "debian",
+    "package": "dpkg",
+    "version": "1.18.25",
+    "swhid": "swh:1:dir:968f1082c2db82866391ab42f0a44e700de48bfe"
+  },
+  {
+    "distro": "debian",
+    "package": "gir1.2-atk-1.0",
+    "version": "2.22.0-1",
+    "swhid": "swh:1:dir:2488e8e45e74a7547938afdbe0cc99129b08b5e0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libc6",
+    "version": "2.27-3ubuntu1",
+    "swhid": "swh:1:dir:22cb79e66f368b54b876d305c576f6b7af4b37bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libcairo2",
+    "version": "1.14.8-1",
+    "swhid": "swh:1:dir:2710df1e5a22f4411ffdd356d7f67656d35715d5"
+  },
+  {
+    "distro": "debian",
+    "package": "libpixman-1-0",
+    "version": "0.34.0-1",
+    "swhid": "swh:1:dir:da91d0dd7f786788f28ffd4f1249524c7fad1c0c"
+  },
+  {
+    "distro": "debian",
+    "package": "hwdata",
+    "version": "0.290-1",
+    "swhid": "swh:1:dir:6da3cd7b1c3c1517d3590509cfe9e373acf7f2b9"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "manpages-dev",
+    "version": "4.15-1",
+    "swhid": "swh:1:dir:19544bea5a4e6de18f83ff70fce209d3fa3f7f70"
+  },
+  {
+    "distro": "debian",
+    "package": "libelf1",
+    "version": "0.168-1",
+    "swhid": "swh:1:dir:905a775d479581743529cb8e0c6a120d90fd9560"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gawk",
+    "version": "1:4.1.4+dfsg-1build1",
+    "swhid": "swh:1:dir:2ae9b986382c9d6987ddc3765f8ebf1355b5e167"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgirepository-1.0-1",
+    "version": "1.56.1-1",
+    "swhid": "swh:1:dir:5b0169871a9e3497404c8043684e829ca719b58e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libkrb5-3",
+    "version": "1.16-2ubuntu0.1",
+    "swhid": "swh:1:dir:f924dff2b731844d81fd732405b83d5919fc6edb"
+  },
+  {
+    "distro": "debian",
+    "package": "libgs9",
+    "version": "9.26a~dfsg-0+deb9u6",
+    "swhid": "swh:1:dir:e9dbe324ed9e9c5258ad45d1f4c27e2199947c12"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtkmm-3.0-1",
+    "version": "3.14.0-1",
+    "swhid": "swh:1:dir:ed861f95d7c3c25132df698ca5b3d15723952145"
+  },
+  {
+    "distro": "debian",
+    "package": "pandoc-citeproc",
+    "version": "0.10.2.2-1+b2",
+    "swhid": "swh:1:dir:76f4ec0f4684c986a7424512e7d4cf0225e6455f"
+  },
+  {
+    "distro": "debian",
+    "package": "libslang2",
+    "version": "2.3.1-5",
+    "swhid": "swh:1:dir:64185ae7fa3b5373d2d68eb63d726dac030adcab"
+  },
+  {
+    "distro": "debian",
+    "package": "libavcodec57",
+    "version": "7:3.2.14-1~deb9u1",
+    "swhid": "swh:1:dir:085de4bd8865a7e8540c32a9243afcc364d1c5aa"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-impress",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "debconf-i18n",
+    "version": "1.5.66ubuntu1",
+    "swhid": "swh:1:dir:29ffa898dcf4201e1b7e70fbaff77e0adb3bdc5c"
+  },
+  {
+    "distro": "debian",
+    "package": "libtinfo-dev",
+    "version": "6.0+20161126-1+deb9u2",
+    "swhid": "swh:1:dir:144b0df8a64d3677989d30a7a5003c7e32703b64"
+  },
+  {
+    "distro": "debian",
+    "package": "libmspack0",
+    "version": "0.5-1+deb9u3",
+    "swhid": "swh:1:dir:83ecb8cbb92f08d29c055601e4853f5ba09cb213"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "btrfs-tools",
+    "version": "4.15.1-1build1",
+    "swhid": "swh:1:dir:7a7b66ebb726ce733a813d1ec03533b6c8cd12ea"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libice6",
+    "version": "2:1.0.9-2",
+    "swhid": "swh:1:dir:18b983ff4678b4cc2a9ff124c61be8747ada1385"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-filter-data",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libbind9-160",
+    "version": "1:9.11.3+dfsg-1ubuntu1.12",
+    "swhid": "swh:1:dir:882614b2f02ab5f03af61ec07bf12068ebc5e66a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgcrypt20",
+    "version": "1.8.1-4ubuntu1.2",
+    "swhid": "swh:1:dir:e5000fc2a116b97815a43dd3b28cd9466fc4f903"
+  },
+  {
+    "distro": "debian",
+    "package": "libdvdread4",
+    "version": "5.0.3-2",
+    "swhid": "swh:1:dir:62bd53ac5c9a319d513a31846926f436bbe15adb"
+  },
+  {
+    "distro": "debian",
+    "package": "libva-x11-1",
+    "version": "1.7.3-2",
+    "swhid": "swh:1:dir:4d394cfca6ccb3a7f7ee9807f2596acffbd3111b"
+  },
+  {
+    "distro": "debian",
+    "package": "pinentry-gtk2",
+    "version": "1.0.0-2",
+    "swhid": "swh:1:dir:a4737368547a4444bc36ef9c1f0aed4e6989b3c1"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "cloud-initramfs-dyn-netconf",
+    "version": "0.40ubuntu1.1",
+    "swhid": "swh:1:dir:79ae5dfaedfc4b6b57fdc323b1963e8c39ecb058"
+  },
+  {
+    "distro": "debian",
+    "package": "libindicator7",
+    "version": "0.5.0-3+b1",
+    "swhid": "swh:1:dir:8fc0f9b69eb58645c42d5d18026e75f3f1911bd8"
+  },
+  {
+    "distro": "debian",
+    "package": "diffutils",
+    "version": "1:3.5-3",
+    "swhid": "swh:1:dir:e215aad14da25f6da9cfa6c47bbacdd855ad40e0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "aptitude-common",
+    "version": "0.8.10-6ubuntu1",
+    "swhid": "swh:1:dir:9b6edc04ad7a28355ea9c8d1f48cc8d6cc572628"
+  },
+  {
+    "distro": "debian",
+    "package": "libnetfilter-conntrack3",
+    "version": "1.0.6-2",
+    "swhid": "swh:1:dir:2ac511ea58e033b6a4b49570dc5296291fbd7236"
+  },
+  {
+    "distro": "debian",
+    "package": "liblapack3",
+    "version": "3.7.0-2",
+    "swhid": "swh:1:dir:82711d5bb296d3e8eeaeb900cfab61fe46693888"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "zerofree",
+    "version": "1.0.4-1",
+    "swhid": "swh:1:dir:64d2375e580713c815e287b25544b9c9f6f00ed5"
+  },
+  {
+    "distro": "debian",
+    "package": "python3.5",
+    "version": "3.5.3-1+deb9u1",
+    "swhid": "swh:1:dir:09d850978b959c429713f8994c49aed25b71ac4d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libxtables12",
+    "version": "1.6.1-2ubuntu2",
+    "swhid": "swh:1:dir:32dea11f72b1fb4d16ceefccb6b7f15e351f0ad9"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "liblab-gamut1",
+    "version": "2.40.1-2",
+    "swhid": "swh:1:dir:59e89b224e3ff3ac93dcd77cbd3828ae7f87ae2d"
+  },
+  {
+    "distro": "debian",
+    "package": "libtag1v5",
+    "version": "1.11.1+dfsg.1-0.1",
+    "swhid": "swh:1:dir:d76ed5f9b9837286aa4948f5d0e1a29ceab056f9"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-xv0-dev",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "liblwp-mediatypes-perl",
+    "version": "6.02-1",
+    "swhid": "swh:1:dir:0c7b00bd0f8c4dc98d2492fa1c8928f08884d10c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpopt0",
+    "version": "1.16-11",
+    "swhid": "swh:1:dir:b5034a50d0d57364349b96e852cc654432573294"
+  },
+  {
+    "distro": "debian",
+    "package": "python-enum34",
+    "version": "1.1.6-1",
+    "swhid": "swh:1:dir:2d1b5f110a9b9ec99e00067a6d5839af908235ac"
+  },
+  {
+    "distro": "debian",
+    "package": "libasprintf0c2",
+    "version": "0.19.3-2",
+    "swhid": "swh:1:dir:2f37717c6de8057641b8b43b686b7769693fefe0"
+  },
+  {
+    "distro": "debian",
+    "package": "libgpm2",
+    "version": "1.20.4-6.2+b1",
+    "swhid": "swh:1:dir:8afe921c73f2a0b93da07b3467b9cbb44de964d4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gpg-agent",
+    "version": "2.2.4-1ubuntu1.2",
+    "swhid": "swh:1:dir:52ef802d5c3136126809128e408ef580b6980625"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpsl5",
+    "version": "0.19.1-5build1",
+    "swhid": "swh:1:dir:4617f5275b7333b910634e30984f75deb0982237"
+  },
+  {
+    "distro": "debian",
+    "package": "python-gi",
+    "version": "3.22.0-2",
+    "swhid": "swh:1:dir:68352604151cd3f3fb78da4f681a64559e86c06a"
+  },
+  {
+    "distro": "debian",
+    "package": "libreoffice6.1-math",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "debian",
+    "package": "qttranslations5-l10n",
+    "version": "5.7.1~20161021-1",
+    "swhid": "swh:1:dir:900690188d56285995e57a9aa7b8f5baaaa1eeb4"
+  },
+  {
+    "distro": "debian",
+    "package": "intltool-debian",
+    "version": "0.35.0+20060710.4",
+    "swhid": "swh:1:dir:15030e3b3e49f7fd76ba0a84ded206b1fe1c82b7"
+  },
+  {
+    "distro": "debian",
+    "package": "liblockfile1",
+    "version": "1.14-1+b1",
+    "swhid": "swh:1:dir:bacf5d1a5ffc55946da7ee5c5540dfbe7aa67b5f"
+  },
+  {
+    "distro": "debian",
+    "package": "libzlcore-data",
+    "version": "0.12.10dfsg2-2",
+    "swhid": "swh:1:dir:6925d9bbc60370f4c466169c96491b0e08ff88b9"
+  },
+  {
+    "distro": "debian",
+    "package": "libgdraw5",
+    "version": "1:20161005~dfsg-4+deb9u1",
+    "swhid": "swh:1:dir:13ed4b595bf2d54d6fbcf5195778e489cbfa1da1"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-images",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libxmlsec1",
+    "version": "1.2.25-1build1",
+    "swhid": "swh:1:dir:6684fe9c616959b9e551bcc86e32893f9afbbc22"
+  },
+  {
+    "distro": "debian",
+    "package": "libgts-bin",
+    "version": "0.7.6+darcs121130-4",
+    "swhid": "swh:1:dir:822a99dbf57a109ce62236622b9d28bd80397e72"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpython3.6",
+    "version": "3.6.9-1~18.04ubuntu1",
+    "swhid": "swh:1:dir:ebd7f07bdd6e815949ba195b960824d1e74b2cea"
+  },
+  {
+    "distro": "debian",
+    "package": "libpolkit-gobject-1-0",
+    "version": "0.105-18+deb9u1",
+    "swhid": "swh:1:dir:42dadd81ec51223f0888640d97a3e14a81d60442"
+  },
+  {
+    "distro": "debian",
+    "package": "libmtdev1",
+    "version": "1.1.5-1+b1",
+    "swhid": "swh:1:dir:28b2c2b5f080f57269d4064da5f56ee0fbf498b0"
+  },
+  {
+    "distro": "debian",
+    "package": "libavdevice57",
+    "version": "7:3.2.14-1~deb9u1",
+    "swhid": "swh:1:dir:085de4bd8865a7e8540c32a9243afcc364d1c5aa"
+  },
+  {
+    "distro": "debian",
+    "package": "python3.5-minimal",
+    "version": "3.5.3-1+deb9u1",
+    "swhid": "swh:1:dir:09d850978b959c429713f8994c49aed25b71ac4d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "init",
+    "version": "1.51",
+    "swhid": "swh:1:dir:4e1ebd674fe6b7b055d7b895906ddabec4b657a1"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "ubuntu-standard",
+    "version": "1.417.4",
+    "swhid": "swh:1:dir:ab922597af73114917562eaa69953d295a827b71"
+  },
+  {
+    "distro": "debian",
+    "package": "libpython2.7-dev",
+    "version": "2.7.13-2+deb9u3",
+    "swhid": "swh:1:dir:5d0dde871ed19d3a96a4137bede70a1aee6d4bd7"
+  },
+  {
+    "distro": "debian",
+    "package": "procps",
+    "version": "2:3.3.12-3+deb9u1",
+    "swhid": "swh:1:dir:2591c9c58ac71e2aabdcd4ab474715c6e8233e4e"
+  },
+  {
+    "distro": "debian",
+    "package": "libwrap0",
+    "version": "7.6.q-26",
+    "swhid": "swh:1:dir:3527214331cbfeaff34bd200fd8d9b5cfb033eb8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libboost-system1.65.1",
+    "version": "1.65.1+dfsg-0ubuntu5",
+    "swhid": "swh:1:dir:1d131aec06a71646bd0fb2b99d507edeec883ef9"
+  },
+  {
+    "distro": "debian",
+    "package": "exfat-utils",
+    "version": "1.2.5-2",
+    "swhid": "swh:1:dir:178be04b59b6d5007305884486eca469d7b1b70d"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-httplib2",
+    "version": "0.9.2+dfsg-1",
+    "swhid": "swh:1:dir:b171c78e1f43cea4843031658a8b3261093ec069"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-draw",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-chardet",
+    "version": "3.0.4-1",
+    "swhid": "swh:1:dir:d5300aa826e2169c99c785b70268f10901d79297"
+  },
+  {
+    "distro": "debian",
+    "package": "docbook-xml",
+    "version": "4.5-8",
+    "swhid": "swh:1:dir:8a89cab69de7a39a6ee8a73d3038b1c4da35773b"
+  },
+  {
+    "distro": "debian",
+    "package": "libwww-robotrules-perl",
+    "version": "6.01-1",
+    "swhid": "swh:1:dir:9c6ce2937924796dfd57284bb13120361ae5dd1a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libffi6",
+    "version": "3.2.1-8",
+    "swhid": "swh:1:dir:d121e305714c0bb2139ed68bd605c14b75257185"
+  },
+  {
+    "distro": "debian",
+    "package": "libfontenc-dev",
+    "version": "1:1.1.3-1+b2",
+    "swhid": "swh:1:dir:e9d9d8d090d77a54416f5874da5698e2f95efc37"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libcilkrts5",
+    "version": "7.5.0-3ubuntu1~18.04",
+    "swhid": "swh:1:dir:1c05dc7c4afc412096a0cf418dfc5acd9e415b57"
+  },
+  {
+    "distro": "debian",
+    "package": "libgl1-mesa-glx",
+    "version": "13.0.6-1+b2",
+    "swhid": "swh:1:dir:18fb39f3821d80388eb01f24efcde508a5a22a74"
+  },
+  {
+    "distro": "debian",
+    "package": "libcairo-perl",
+    "version": "1.106-1+b2",
+    "swhid": "swh:1:dir:692fa2ebaa08f53fca8d501c0212a2720feeff54"
+  },
+  {
+    "distro": "debian",
+    "package": "python-ledger",
+    "version": "3.1.2~pre1+g3a00e1c+dfsg1-2+b1",
+    "swhid": "swh:1:dir:a4a9a0baed1215d69cb041679b61d9b36263c2b2"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libirs160",
+    "version": "1:9.11.3+dfsg-1ubuntu1.12",
+    "swhid": "swh:1:dir:882614b2f02ab5f03af61ec07bf12068ebc5e66a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "binutils-x86-64-linux-gnu",
+    "version": "2.30-21ubuntu1~18.04.3",
+    "swhid": "swh:1:dir:a3434e1a99f25516ab50a70a08c1d6e36ca1851d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "pollinate",
+    "version": "4.33-0ubuntu1~18.04.1",
+    "swhid": "swh:1:dir:04337f65361e9448068a53fa8be8a3039e955fb2"
+  },
+  {
+    "distro": "debian",
+    "package": "net-tools",
+    "version": "1.60+git20161116.90da8a0-1",
+    "swhid": "swh:1:dir:c98c6b05227a9f2031eb992b3694ef3cb7e36740"
+  },
+  {
+    "distro": "debian",
+    "package": "libusb-1.0-0",
+    "version": "2:1.0.21-1",
+    "swhid": "swh:1:dir:af8d8f38352a39df469974eb8e935e43a667707f"
+  },
+  {
+    "distro": "debian",
+    "package": "libofa0",
+    "version": "0.9.3-15",
+    "swhid": "swh:1:dir:884c6106c65c0b64571db99477c51c3f77697246"
+  },
+  {
+    "distro": "debian",
+    "package": "libreoffice6.1-writer",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "debian",
+    "package": "libclass-isa-perl",
+    "version": "0.36-5",
+    "swhid": "swh:1:dir:31038de5b3f65898e426e0021b866f348ad707b4"
+  },
+  {
+    "distro": "debian",
+    "package": "gir1.2-javascriptcoregtk-3.0",
+    "version": "2.4.11-3",
+    "swhid": "swh:1:dir:90b7527fb880e8688ee4a9d27b7fb024918ae4bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libebur128-1",
+    "version": "1.2.2-2",
+    "swhid": "swh:1:dir:0abd8e31df9f804db42b481fcf2431e22fc862c8"
+  },
+  {
+    "distro": "debian",
+    "package": "libjavascriptcoregtk-3.0-0",
+    "version": "2.4.11-3",
+    "swhid": "swh:1:dir:90b7527fb880e8688ee4a9d27b7fb024918ae4bf"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libx11-data",
+    "version": "2:1.6.4-3ubuntu0.2",
+    "swhid": "swh:1:dir:7073c7ee16536ad29751225f7650e1ed3e1e00a7"
+  },
+  {
+    "distro": "debian",
+    "package": "libmono-security4.0-cil",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt5websockets5",
+    "version": "5.7.1~20161021-4",
+    "swhid": "swh:1:dir:2e589a987ded10e5f1f311df6e4d6ec3a8c123a3"
+  },
+  {
+    "distro": "debian",
+    "package": "installation-report",
+    "version": "2.62",
+    "swhid": "swh:1:dir:aa940cb3df4d58c878c1e6058af5af4c52991bf0"
+  },
+  {
+    "distro": "debian",
+    "package": "hexchat-perl",
+    "version": "2.12.4-3",
+    "swhid": "swh:1:dir:0556fe0fa1519fa96d1db86652dba094fee522b4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "cpp",
+    "version": "4:7.4.0-1ubuntu2.3",
+    "swhid": "swh:1:dir:478d5ce963dc6eb2fbc61072f31c320e2741957a"
+  },
+  {
+    "distro": "debian",
+    "package": "libappindicator3-1",
+    "version": "0.4.92-4",
+    "swhid": "swh:1:dir:9d329f3e09112c084a249630159cc509e8821e3d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libargon2-0",
+    "version": "0~20161029-1.1",
+    "swhid": "swh:1:dir:1e02f8906e97a8b2b5930fdfbf3e2069b807aec0"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtk-3-dev",
+    "version": "3.22.11-1",
+    "swhid": "swh:1:dir:da4b173bc1e67d38acbdc97b98c4ba5d1c907db3"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.1-postgresql-sdbc",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "ca-certificates",
+    "version": "20200601~deb9u1",
+    "swhid": "swh:1:dir:498ad5fe24a78babb4777cf675d65795a5a8b2c5"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-dri3-dev",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "doxygen",
+    "version": "1.8.13-4+b1",
+    "swhid": "swh:1:dir:1d1435594d96df2ab2eeed5958988c208fc5d000"
+  },
+  {
+    "distro": "debian",
+    "package": "imagemagick-6-common",
+    "version": "8:6.9.7.4+dfsg-11+deb9u8",
+    "swhid": "swh:1:dir:6bbc153bc8bf9caed2cc1af0df6628529fd5e388"
+  },
+  {
+    "distro": "debian",
+    "package": "python-pycurl",
+    "version": "7.43.0-2",
+    "swhid": "swh:1:dir:68af2bb929c01c50650addf69f335535f60bd110"
+  },
+  {
+    "distro": "debian",
+    "package": "python-gtkspellcheck",
+    "version": "4.0.5-1",
+    "swhid": "swh:1:dir:cc27aac8581c832c0d473e4c579c251e4d07a567"
+  },
+  {
+    "distro": "debian",
+    "package": "libgmime-2.6-0",
+    "version": "2.6.22+dfsg2-1",
+    "swhid": "swh:1:dir:5e056933f6364e79a1d5d497b5cdb2a6b29f070e"
+  },
+  {
+    "distro": "debian",
+    "package": "libmagick++-6.q16-7",
+    "version": "8:6.9.7.4+dfsg-11+deb9u8",
+    "swhid": "swh:1:dir:6bbc153bc8bf9caed2cc1af0df6628529fd5e388"
+  },
+  {
+    "distro": "debian",
+    "package": "libapt-pkg4.12",
+    "version": "1.0.9.8.4",
+    "swhid": "swh:1:dir:e511fec46be8b258dff3596887adc9f6f459299c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "monitoring-plugins-common",
+    "version": "2.2-3ubuntu3",
+    "swhid": "swh:1:dir:6242bacbcc8a2035f67c065058be8ab6ece639fc"
+  },
+  {
+    "distro": "debian",
+    "package": "uuid-dev",
+    "version": "2.29.2-1+deb9u1",
+    "swhid": "swh:1:dir:726b78b92e3809d74cd1437dd51e373607bdd8ad"
+  },
+  {
+    "distro": "debian",
+    "package": "gcc-6",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-cairo",
+    "version": "1.10.0+dfsg-5+b1",
+    "swhid": "swh:1:dir:58cf0a5ade4badab268b65fe9e524e6e407eca31"
+  },
+  {
+    "distro": "debian",
+    "package": "libsoxr0",
+    "version": "0.1.2-2",
+    "swhid": "swh:1:dir:00c1f8d6d75bcdc523b23267f7969784d5152096"
+  },
+  {
+    "distro": "debian",
+    "package": "libann0",
+    "version": "1.1.2+doc-6",
+    "swhid": "swh:1:dir:375ab1d0761c94523e8d6f11b327fc3dc2013a7c"
+  },
+  {
+    "distro": "debian",
+    "package": "postgresql-common",
+    "version": "181+deb9u3",
+    "swhid": "swh:1:dir:d26f738dc5108546dcba3076906774ce8a5c3450"
+  },
+  {
+    "distro": "debian",
+    "package": "libtinfo5",
+    "version": "6.0+20161126-1+deb9u2",
+    "swhid": "swh:1:dir:144b0df8a64d3677989d30a7a5003c7e32703b64"
+  },
+  {
+    "distro": "debian",
+    "package": "libnotify4",
+    "version": "0.7.7-2",
+    "swhid": "swh:1:dir:953552ee36f3a050d13778a0603bceaaae6d2107"
+  },
+  {
+    "distro": "debian",
+    "package": "tex-common",
+    "version": "6.06",
+    "swhid": "swh:1:dir:38f3959af832c2ab765e598abc67cc1083d02a04"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-image-generic-hwe-18.04",
+    "version": "5.3.0.62.115",
+    "swhid": "swh:1:dir:ef4aae5d376e3c0dfb3cace2367da45c31a2cba4"
+  },
+  {
+    "distro": "debian",
+    "package": "libzvbi-common",
+    "version": "0.2.35-13",
+    "swhid": "swh:1:dir:ae3e08b5acb68c2f43f5a87caa02322160f646f8"
+  },
+  {
+    "distro": "debian",
+    "package": "libegl1-mesa",
+    "version": "13.0.6-1+b2",
+    "swhid": "swh:1:dir:18fb39f3821d80388eb01f24efcde508a5a22a74"
+  },
+  {
+    "distro": "debian",
+    "package": "libxvidcore4",
+    "version": "2:1.3.4-1+b2",
+    "swhid": "swh:1:dir:65618c2c4166242b08db8e98b6525421c6521db1"
+  },
+  {
+    "distro": "debian",
+    "package": "libv4lconvert0",
+    "version": "1.12.3-1",
+    "swhid": "swh:1:dir:81b4dad92c1d36a2683ddb4eeef002cad870f560"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "cmake-data",
+    "version": "3.10.2-1ubuntu2.18.04.1",
+    "swhid": "swh:1:dir:6e7d89062e12e32dc4ebd2b0fb0c6f7b6140592a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-extra-5.3.0-42-generic",
+    "version": "5.3.0-42.34~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-software-properties",
+    "version": "0.96.24.32.13",
+    "swhid": "swh:1:dir:881552e74744ac022d237ce3c85bdb7efcadfd03"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "install-info",
+    "version": "6.5.0.dfsg.1-2",
+    "swhid": "swh:1:dir:55fa755be4992c30a602219c504d1f0a932002bf"
+  },
+  {
+    "distro": "debian",
+    "package": "qt5-gtk-platformtheme",
+    "version": "5.7.1+dfsg-3+deb9u2",
+    "swhid": "swh:1:dir:4cf9a8b87cdf3ae5923042e21d624741812aa3be"
+  },
+  {
+    "distro": "debian",
+    "package": "fonts-droid",
+    "version": "1:4.4.4r2-6",
+    "swhid": "swh:1:dir:4fdb8110e818f5785aac9695c660f75d6fe50ee9"
+  },
+  {
+    "distro": "debian",
+    "package": "lynx-cur",
+    "version": "2.8.9dev11-1",
+    "swhid": "swh:1:dir:63d413bb5c64ea2d5b912065ddbbb648c78365a6"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpango-1.0-0",
+    "version": "1.40.14-1ubuntu0.1",
+    "swhid": "swh:1:dir:a0293261eac62fd91a2a89d30ea57742e5e2d3f6"
+  },
+  {
+    "distro": "debian",
+    "package": "libijs-0.35",
+    "version": "0.35-12",
+    "swhid": "swh:1:dir:b179f76d903b40e5253d63f768e2b6b61844b1a5"
+  },
+  {
+    "distro": "debian",
+    "package": "gpgsm",
+    "version": "2.1.18-8~deb9u4",
+    "swhid": "swh:1:dir:27f3a322e28d1c9f2a2ef9cbc542954f468f7027"
+  },
+  {
+    "distro": "debian",
+    "package": "libapparmor1",
+    "version": "2.11.0-3+deb9u2",
+    "swhid": "swh:1:dir:4492149ff13ed0fd60910b3e79532aeebe691075"
+  },
+  {
+    "distro": "debian",
+    "package": "python-httplib2",
+    "version": "0.9.2+dfsg-1",
+    "swhid": "swh:1:dir:b171c78e1f43cea4843031658a8b3261093ec069"
+  },
+  {
+    "distro": "debian",
+    "package": "libxss-dev",
+    "version": "1:1.2.2-1",
+    "swhid": "swh:1:dir:898712a74cbca66973244d609a0d8c974ec6d620"
+  },
+  {
+    "distro": "debian",
+    "package": "xdg-utils",
+    "version": "1.1.1-1+deb9u1",
+    "swhid": "swh:1:dir:7944f7d9228cd7f22e845d46c35e7fb388a6a754"
+  },
+  {
+    "distro": "debian",
+    "package": "libcupsfilters1",
+    "version": "1.11.6-3+deb9u1",
+    "swhid": "swh:1:dir:d3e530742cfc6f438aebdfc5f6f89e3361ced625"
+  },
+  {
+    "distro": "debian",
+    "package": "libmime-types-perl",
+    "version": "2.13-1",
+    "swhid": "swh:1:dir:6ac44ce771e761ee5c1b29eac642419a6b464b8c"
+  },
+  {
+    "distro": "debian",
+    "package": "mono-runtime",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "debian",
+    "package": "python-xdg",
+    "version": "0.25-4",
+    "swhid": "swh:1:dir:533d36dc970ab655c94259a505b9dda77be5dc36"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt5printsupport5",
+    "version": "5.7.1+dfsg-3+deb9u2",
+    "swhid": "swh:1:dir:4cf9a8b87cdf3ae5923042e21d624741812aa3be"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "keyboard-configuration",
+    "version": "1.178ubuntu2.9",
+    "swhid": "swh:1:dir:12052fb27a7324cfa2b9985791272a8d2c90c322"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "intel-microcode",
+    "version": "3.20200609.0ubuntu0.18.04.1",
+    "swhid": "swh:1:dir:af80a013280894800c95ea00288148bba8b5bd46"
+  },
+  {
+    "distro": "debian",
+    "package": "pandoc-data",
+    "version": "1.17.2~dfsg-3",
+    "swhid": "swh:1:dir:5d933f518b4fe0ba7f55e3f94a16ced2e04c825f"
+  },
+  {
+    "distro": "debian",
+    "package": "libicu52",
+    "version": "52.1-8+deb8u4",
+    "swhid": "swh:1:dir:4546bf12ae7fc94706e0fab1136392de6d4ecd72"
+  },
+  {
+    "distro": "debian",
+    "package": "gramps",
+    "version": "5.1.1-1",
+    "swhid": "swh:1:dir:7e53eb7d9bcc718b51c2c23c971e75a421544087"
+  },
+  {
+    "distro": "debian",
+    "package": "libde265-0",
+    "version": "1.0.2-2+b2",
+    "swhid": "swh:1:dir:8cc393cbb5ad8972bfb414eb382dea07772e69f1"
+  },
+  {
+    "distro": "debian",
+    "package": "libpod-latex-perl",
+    "version": "0.61-2",
+    "swhid": "swh:1:dir:6f5798af804dfcd576db92515c7f179a7b9a7995"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libbsd0",
+    "version": "0.8.7-1ubuntu0.1",
+    "swhid": "swh:1:dir:5c64d98e93c5df16b4778283e74f5350aed52640"
+  },
+  {
+    "distro": "debian",
+    "package": "tzdata",
+    "version": "2019c-0+deb9u1",
+    "swhid": "swh:1:dir:1753e4883025c8aadedc6ba6046c9d751dd30859"
+  },
+  {
+    "distro": "debian",
+    "package": "youtube-dl",
+    "version": "2017.05.18.1-1",
+    "swhid": "swh:1:dir:a1583981a1edcbf12e8888bc1c5f444497296675"
+  },
+  {
+    "distro": "debian",
+    "package": "libxrender-dev",
+    "version": "1:0.9.10-1",
+    "swhid": "swh:1:dir:7bb50f1b611dabb0ce380ad1291f4e07a1f9f81e"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-keysyms1-dev",
+    "version": "0.4.0-1+b2",
+    "swhid": "swh:1:dir:ee9ecbf60bbba769fb6eb7eaeeb27d55f202c6b4"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-present-dev",
+    "version": "1.1-1",
+    "swhid": "swh:1:dir:3b05f37a3b6f77982446292a2ac39da73b632130"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-damage0-dev",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "libavahi-common-data",
+    "version": "0.6.32-2",
+    "swhid": "swh:1:dir:0670284751c68987708f9a9b4525c7be1ece81e7"
+  },
+  {
+    "distro": "debian",
+    "package": "libreoffice6.0-dict-es",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "debian",
+    "package": "liblocale-gettext-perl",
+    "version": "1.07-3+b1",
+    "swhid": "swh:1:dir:dd0a2ff41d99038d98a8b00e812a78903878dc3c"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-ecdsa",
+    "version": "0.13-2+deb9u1",
+    "swhid": "swh:1:dir:7883384d97a64e09c1497ea1e3ee639fd1342495"
+  },
+  {
+    "distro": "debian",
+    "package": "libdjvulibre21",
+    "version": "3.5.27.1-7",
+    "swhid": "swh:1:dir:fcbc0495559fd29bfb928bdeb28b5d1c9ab0fed3"
+  },
+  {
+    "distro": "debian",
+    "package": "libatk1.0-data",
+    "version": "2.22.0-1",
+    "swhid": "swh:1:dir:2488e8e45e74a7547938afdbe0cc99129b08b5e0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "perl-modules-5.26",
+    "version": "5.26.1-6ubuntu0.3",
+    "swhid": "swh:1:dir:f3e6dc19d7fddbe8f23c3eaacd1cc757b8b93bdd"
+  },
+  {
+    "distro": "debian",
+    "package": "docutils-doc",
+    "version": "0.13.1+dfsg-2",
+    "swhid": "swh:1:dir:b4fa7979272ac56b9e88b3c63afa8114e9d7e85f"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "pastebinit",
+    "version": "1.5-2",
+    "swhid": "swh:1:dir:6eb0505be74392a7070abf62436bad0dfa32628f"
+  },
+  {
+    "distro": "debian",
+    "package": "xutils-dev",
+    "version": "1:7.7+5+b1",
+    "swhid": "swh:1:dir:46741bc48b5562aa4f918b731535ba198a2f8326"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "thermald",
+    "version": "1.7.0-5ubuntu5",
+    "swhid": "swh:1:dir:55195cc6bae945965e8304ed19c3fc6c92a4f9f6"
+  },
+  {
+    "distro": "debian",
+    "package": "libnetfilter-acct1",
+    "version": "1.0.2-1.1",
+    "swhid": "swh:1:dir:73e4423142d0cc8f223c5342c1d098a589403517"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-keysyms1",
+    "version": "0.4.0-1+b2",
+    "swhid": "swh:1:dir:ee9ecbf60bbba769fb6eb7eaeeb27d55f202c6b4"
+  },
+  {
+    "distro": "debian",
+    "package": "libsasl2-modules",
+    "version": "2.1.27~101-g0780600+dfsg-3+deb9u1",
+    "swhid": "swh:1:dir:9ad10de12cd7e2db69271d8cfe79812b2e727b05"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libaudit1",
+    "version": "1:2.8.2-1ubuntu1",
+    "swhid": "swh:1:dir:2548767e0c15cf1f895672d5bf03fcaee94b414b"
+  },
+  {
+    "distro": "debian",
+    "package": "e2fsprogs",
+    "version": "1.43.4-2+deb9u1",
+    "swhid": "swh:1:dir:442e05534be40d453141c0ba8bbf62d5bf7010e2"
+  },
+  {
+    "distro": "debian",
+    "package": "libxv1",
+    "version": "2:1.0.11-1",
+    "swhid": "swh:1:dir:1eb94103bdafcd96a5fbd828ce0886eab2bc9779"
+  },
+  {
+    "distro": "debian",
+    "package": "libmono-system4.0-cil",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "debian",
+    "package": "python-qrcode",
+    "version": "5.3-1",
+    "swhid": "swh:1:dir:0c23f015e37edaf4189c1d29de529adb9cb3c6b5"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.1-extension-report-builder",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libdrm-common",
+    "version": "2.4.101-2~18.04.1",
+    "swhid": "swh:1:dir:227f8dd567be578c85a00d0bded441f340b6b5c0"
+  },
+  {
+    "distro": "debian",
+    "package": "libdbi-dev",
+    "version": "0.9.0-4+deb9u1",
+    "swhid": "swh:1:dir:65412780d91a4768cc5c51b8627dcf4adf1f0f32"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libtsan0",
+    "version": "8.4.0-1ubuntu1~18.04",
+    "swhid": "swh:1:dir:d49af0c20553df7786c37c2c2f91ac5808a9d6ec"
+  },
+  {
+    "distro": "debian",
+    "package": "libproxy1v5",
+    "version": "0.4.14-2",
+    "swhid": "swh:1:dir:f0d9913b94a630f502cdd712e8fcaf86e386cda3"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-en-us",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libmono-system-configuration4.0-cil",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "debian",
+    "package": "libopenjpeg5",
+    "version": "1:1.5.2-3",
+    "swhid": "swh:1:dir:da68f20eaa7f22511cdd0d99a6e3cbd27e06eeb7"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtk2.0-common",
+    "version": "2.24.31-2",
+    "swhid": "swh:1:dir:12abc38b4986653ff32c445493930f45813f0065"
+  },
+  {
+    "distro": "debian",
+    "package": "libsoundtouch1",
+    "version": "1.9.2-2+deb9u1",
+    "swhid": "swh:1:dir:2d692425a6d9dc2d586ab1a71479d9cee7319118"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-composite-dev",
+    "version": "1:0.4.2-2",
+    "swhid": "swh:1:dir:029d9fcbd7f965b3ad6cee5ee6750402fbff15ae"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtkmm-2.4-1v5",
+    "version": "1:2.24.5-1",
+    "swhid": "swh:1:dir:ed861f95d7c3c25132df698ca5b3d15723952145"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "pigz",
+    "version": "2.4-1",
+    "swhid": "swh:1:dir:2accce8b61ade190ffaa6f8fb5669bcac04ebd19"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "ltrace",
+    "version": "0.7.3-6ubuntu1",
+    "swhid": "swh:1:dir:1a86eefd9427cbf95394d090afdaa0a84d46e0c1"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "procps",
+    "version": "2:3.3.12-3ubuntu1.2",
+    "swhid": "swh:1:dir:9565cf96242cdff59d056497308423ec3b6bcc48"
+  },
+  {
+    "distro": "debian",
+    "package": "libsord-0-0",
+    "version": "0.16.0~dfsg0-1+b1",
+    "swhid": "swh:1:dir:b1eb7139d2df98414774cc7ba8a12ade1d366acd"
+  },
+  {
+    "distro": "debian",
+    "package": "host",
+    "version": "1:9.10.3.dfsg.P4-12.3+deb9u6",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "debian",
+    "package": "libicu-dev",
+    "version": "57.1-6+deb9u4",
+    "swhid": "swh:1:dir:4546bf12ae7fc94706e0fab1136392de6d4ecd72"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libisns0",
+    "version": "0.97-2build1",
+    "swhid": "swh:1:dir:a406e824144d1158f3c7db786928f427ed800532"
+  },
+  {
+    "distro": "debian",
+    "package": "libcairomm-1.0-1v5",
+    "version": "1.12.0-1+b1",
+    "swhid": "swh:1:dir:d4ff3bcc7f192656103226742e5e536bc293063e"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-extension-javascript-script-provider",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "gstreamer1.0-alsa",
+    "version": "1.10.4-1+deb9u1",
+    "swhid": "swh:1:dir:a64ae2db408f11b82f339bd91ba7becdc78bb98a"
+  },
+  {
+    "distro": "debian",
+    "package": "libipc-system-simple-perl",
+    "version": "1.25-3",
+    "swhid": "swh:1:dir:2b30e8eb5b50ee47e5e06dfd735b149b7e75de62"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libhttp-message-perl",
+    "version": "6.14-1",
+    "swhid": "swh:1:dir:01bc1c031b1ccace7c4533c27a22d7d05643a1df"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-glx0",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "shared-mime-info",
+    "version": "1.8-1+deb9u1",
+    "swhid": "swh:1:dir:7012b0cf6bdcd2e4644d5e122cf35bcd7e1567c6"
+  },
+  {
+    "distro": "debian",
+    "package": "libasound2-plugins",
+    "version": "1.1.1-1",
+    "swhid": "swh:1:dir:9cd90d79d8123a3cc32ff46de7a18291f4fb666e"
+  },
+  {
+    "distro": "debian",
+    "package": "libio-html-perl",
+    "version": "1.001-1",
+    "swhid": "swh:1:dir:e9d71339995ee88334392fbabe1b56d37ee1d1ed"
+  },
+  {
+    "distro": "debian",
+    "package": "libavc1394-0",
+    "version": "0.5.4-4+b1",
+    "swhid": "swh:1:dir:e00872ccac884baea3283f351f815de7332c66a7"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-image-5.3.0-51-generic",
+    "version": "5.3.0-51.44~18.04.2",
+    "swhid": "swh:1:dir:52a377f1738da74986c39f67c3d7a305c80cafbe"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gdisk",
+    "version": "1.0.3-1",
+    "swhid": "swh:1:dir:df46bb06c03583a2b9861287045475af3cfeb51d"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-pysimplesoap",
+    "version": "1.16-2",
+    "swhid": "swh:1:dir:82cafa1171bd3cc1234e0990e24325053362d894"
+  },
+  {
+    "distro": "debian",
+    "package": "libwww-perl",
+    "version": "6.15-1",
+    "swhid": "swh:1:dir:06325476a4758b5af762e1848a76bf500ab2d99c"
+  },
+  {
+    "distro": "debian",
+    "package": "libopencv-video2.4v5",
+    "version": "2.4.9.1+dfsg1-2",
+    "swhid": "swh:1:dir:8c48d5da54dd6f953aefb1fffc6a27439fd296e3"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-5.3.0-42-generic",
+    "version": "5.3.0-42.34~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "debian",
+    "package": "libisl10",
+    "version": "0.12.2-2",
+    "swhid": "swh:1:dir:b3c4820cb5fe029a82fe6a3dfa55ed4296de8965"
+  },
+  {
+    "distro": "debian",
+    "package": "libvisio-0.1-1",
+    "version": "0.1.5-4+b1",
+    "swhid": "swh:1:dir:a07f1a05da9423c70ad4300ae5fe473782932888"
+  },
+  {
+    "distro": "debian",
+    "package": "libprotobuf10",
+    "version": "3.0.0-9",
+    "swhid": "swh:1:dir:968fbab8c9c1065498785ae935d2a90b80a1ca85"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-libc-dev",
+    "version": "4.15.0-109.110",
+    "swhid": "swh:1:dir:55b5be0d585b3233d6c96e9e8d158630258f262c"
+  },
+  {
+    "distro": "debian",
+    "package": "libbsd0",
+    "version": "0.8.3-1",
+    "swhid": "swh:1:dir:c0225eb89731a1aba0b03b9ddbfd492e0726fa1b"
+  },
+  {
+    "distro": "debian",
+    "package": "libxml-parser-perl",
+    "version": "2.44-2+b1",
+    "swhid": "swh:1:dir:13a5e950c5a04f022260e72c9a30c9d3cc360ee6"
+  },
+  {
+    "distro": "debian",
+    "package": "libxml2",
+    "version": "2.9.4+dfsg1-2.2+deb9u2",
+    "swhid": "swh:1:dir:46d2c3824bddcc5e784d5871540600523a1a42f5"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt4-dbus",
+    "version": "4:4.8.7+dfsg-11",
+    "swhid": "swh:1:dir:96697ee08e13d2823db56f2404f25d5c31d4e2a0"
+  },
+  {
+    "distro": "debian",
+    "package": "libpciaccess0",
+    "version": "0.13.4-1+b2",
+    "swhid": "swh:1:dir:6839271c9e63e09c454b7f7d6e6d29beccf3cbae"
+  },
+  {
+    "distro": "debian",
+    "package": "x11-xkb-utils",
+    "version": "7.7+3+b1",
+    "swhid": "swh:1:dir:cd4585f92315e1c6714cd3d5e155465373b665b3"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-pil",
+    "version": "4.0.0-4+deb9u1",
+    "swhid": "swh:1:dir:e6ba5a181683797f1b5c4d63db995ce7f5b6bac8"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtk2-perl",
+    "version": "2:1.2499-1",
+    "swhid": "swh:1:dir:019dfc5a944a45507bdc15eed52ce392c2648008"
+  },
+  {
+    "distro": "debian",
+    "package": "libobjc4",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "libxfixes-dev",
+    "version": "1:5.0.3-1",
+    "swhid": "swh:1:dir:e99097774820a5c309e797a7d559869d664e4674"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libavahi-client3",
+    "version": "0.7-3.1ubuntu1.2",
+    "swhid": "swh:1:dir:c65af1251b862117281b43de11c75c928ca0acdf"
+  },
+  {
+    "distro": "debian",
+    "package": "libgcc-6-dev",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "hdparm",
+    "version": "9.54+ds-1",
+    "swhid": "swh:1:dir:19e272dcb857030a63d1b1c8605830950ccc90bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libkeyutils1",
+    "version": "1.5.9-9",
+    "swhid": "swh:1:dir:fb5c2d708dd4055293ae694e0e94c5d1afd118bc"
+  },
+  {
+    "distro": "debian",
+    "package": "dconf-gsettings-backend",
+    "version": "0.26.0-2+b1",
+    "swhid": "swh:1:dir:4eea97445bb2f9a20b496ae5f434575259155bf2"
+  },
+  {
+    "distro": "debian",
+    "package": "libparted2",
+    "version": "3.2-17",
+    "swhid": "swh:1:dir:094edac47008cb14c68e2b1f88d447f2dbbd977e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libhx509-5-heimdal",
+    "version": "7.5.0+dfsg-1",
+    "swhid": "swh:1:dir:9fc403274b47db80856cf6380eb3061bb181fba1"
+  },
+  {
+    "distro": "debian",
+    "package": "notification-daemon",
+    "version": "0.7.6-2",
+    "swhid": "swh:1:dir:cfc3f2758f1d94c11a827b55b377ef646b78e79e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "acl",
+    "version": "2.2.52-3build1",
+    "swhid": "swh:1:dir:efef03a21cf594ec35727ebf177f6d3382b4fe08"
+  },
+  {
+    "distro": "debian",
+    "package": "libnpth0",
+    "version": "1.3-1",
+    "swhid": "swh:1:dir:b6e2b1e241e3545fb0a02ba836371d8a394476d9"
+  },
+  {
+    "distro": "debian",
+    "package": "libreoffice6.1-draw",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-pyasn1",
+    "version": "0.4.2-3",
+    "swhid": "swh:1:dir:272ecb5660a7a9dca24553dd04b25bcd5c5db187"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "fonts-dejavu-core",
+    "version": "2.37-1",
+    "swhid": "swh:1:dir:c26aee746149a46bb2b632d247b4bdb1590c5aee"
+  },
+  {
+    "distro": "debian",
+    "package": "libbibutils2",
+    "version": "4.12-5+b2",
+    "swhid": "swh:1:dir:1e7edd8150d157f1c193c1b93af27689ad63a1bb"
+  },
+  {
+    "distro": "debian",
+    "package": "init-system-helpers",
+    "version": "1.48",
+    "swhid": "swh:1:dir:0dced046670849041b96c1ee307beba55d8ed346"
+  },
+  {
+    "distro": "debian",
+    "package": "gstreamer1.0-plugins-good",
+    "version": "1.10.4-1",
+    "swhid": "swh:1:dir:4050f238753efec9f5de3f1079ea3c69f21db31a"
+  },
+  {
+    "distro": "debian",
+    "package": "libglib2.0-dev",
+    "version": "2.50.3-2+deb9u2",
+    "swhid": "swh:1:dir:09eeae72a54975e065d3ec47c0f85290b498f646"
+  },
+  {
+    "distro": "debian",
+    "package": "libtalloc2",
+    "version": "2.1.8-1",
+    "swhid": "swh:1:dir:f9af16d284db7108864326e4058f99b0449d37f8"
+  },
+  {
+    "distro": "debian",
+    "package": "gcc-6-base",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "libirs-export91",
+    "version": "1:9.9.5.dfsg-9+deb8u10",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "whiptail",
+    "version": "0.52.20-1ubuntu1",
+    "swhid": "swh:1:dir:5e230206d4b01d0d37f1a80b8e565b03a48f8945"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gpgsm",
+    "version": "2.2.4-1ubuntu1.2",
+    "swhid": "swh:1:dir:52ef802d5c3136126809128e408ef580b6980625"
+  },
+  {
+    "distro": "debian",
+    "package": "libmpg123-0",
+    "version": "1.23.8-1+b1",
+    "swhid": "swh:1:dir:155eac265ff1514cdaa722aab487f30b65d7b8f1"
+  },
+  {
+    "distro": "debian",
+    "package": "libvorbis0a",
+    "version": "1.3.5-4+deb9u2",
+    "swhid": "swh:1:dir:7c5d6d87b0a6a47a49ad0dd58031899bafda3197"
+  },
+  {
+    "distro": "debian",
+    "package": "libpng-dev",
+    "version": "1.6.28-1+deb9u1",
+    "swhid": "swh:1:dir:75688ac520e4a1bf0dcbcd3a7f03f6e52ee90476"
+  },
+  {
+    "distro": "debian",
+    "package": "xserver-xorg-core",
+    "version": "2:1.19.2-1+deb9u5",
+    "swhid": "swh:1:dir:83dfa18af6ccc916cbd120a564319db259c4bfa2"
+  },
+  {
+    "distro": "debian",
+    "package": "gnustep-base-common",
+    "version": "1.24.9-3.1+deb9u1",
+    "swhid": "swh:1:dir:32d3e8f13dbbb57482bc266811f73c3c92ee219a"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-extension-beanshell-script-provider",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "x11proto-damage-dev",
+    "version": "1:1.2.1-2",
+    "swhid": "swh:1:dir:13d57065424167ea963cab22125fd13cbf22f33a"
+  },
+  {
+    "distro": "debian",
+    "package": "libgail18",
+    "version": "2.24.31-2",
+    "swhid": "swh:1:dir:12abc38b4986653ff32c445493930f45813f0065"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-urllib3",
+    "version": "1.22-1ubuntu0.18.04.1",
+    "swhid": "swh:1:dir:10bb55f7d7c8ac925decb63a843ec46f17c2feca"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libsepol1",
+    "version": "2.7-1",
+    "swhid": "swh:1:dir:0fe4a77f982335e73a7610dacded6136f43ccef6"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.1-extension-pdf-import",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-kde-integration",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libwpg-0.3-3",
+    "version": "0.3.1-3",
+    "swhid": "swh:1:dir:7af614edda50b5b2c8798ec89ca09de330a33b2c"
+  },
+  {
+    "distro": "debian",
+    "package": "libsepol1",
+    "version": "2.6-2",
+    "swhid": "swh:1:dir:ec0c6b190e44e8d22402891cf9594a8c2c8a4a84"
+  },
+  {
+    "distro": "debian",
+    "package": "libvorbisfile3",
+    "version": "1.3.5-4+deb9u2",
+    "swhid": "swh:1:dir:7c5d6d87b0a6a47a49ad0dd58031899bafda3197"
+  },
+  {
+    "distro": "debian",
+    "package": "libpulse0",
+    "version": "10.0-1+deb9u1",
+    "swhid": "swh:1:dir:633f63290970363ad5f65237d2f3c50766a2928c"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtkmm-3.0-dev",
+    "version": "3.22.0-1",
+    "swhid": "swh:1:dir:f0f038b28c79739bfaf4df2ae5f2a56a6cd411eb"
+  },
+  {
+    "distro": "debian",
+    "package": "libopenal1",
+    "version": "1:1.17.2-4+b2",
+    "swhid": "swh:1:dir:6f99d83796163a6504ab2120d9370e14591eb0f6"
+  },
+  {
+    "distro": "debian",
+    "package": "initramfs-tools",
+    "version": "0.130",
+    "swhid": "swh:1:dir:5fe2e753846310fd605e29ececec205a448dd7c8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "ethtool",
+    "version": "1:4.15-0ubuntu1",
+    "swhid": "swh:1:dir:2a125bc0edff5a43623ca8e0e79172fe4843a4a4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libnetfilter-conntrack3",
+    "version": "1.0.6-2",
+    "swhid": "swh:1:dir:2ac511ea58e033b6a4b49570dc5296291fbd7236"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gir1.2-glib-2.0",
+    "version": "1.56.1-1",
+    "swhid": "swh:1:dir:5b0169871a9e3497404c8043684e829ca719b58e"
+  },
+  {
+    "distro": "debian",
+    "package": "libsm-dev",
+    "version": "2:1.2.2-1+b3",
+    "swhid": "swh:1:dir:b5678c679ed14f298b3c9824beae3a36e18dd097"
+  },
+  {
+    "distro": "debian",
+    "package": "libcommons-parent-java",
+    "version": "39-3",
+    "swhid": "swh:1:dir:b9a1afef9f14da612593124be40c7bdb76a9ff4c"
+  },
+  {
+    "distro": "debian",
+    "package": "gir1.2-freedesktop",
+    "version": "1.50.0-1+b1",
+    "swhid": "swh:1:dir:e5668e4fbee5fcde656b4fa6a6d654d3a0edd46f"
+  },
+  {
+    "distro": "debian",
+    "package": "python-six",
+    "version": "1.10.0-3",
+    "swhid": "swh:1:dir:7aab37c6e28201ba559449245e762e47fea83e96"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "unar",
+    "version": "1.10.1-2build3",
+    "swhid": "swh:1:dir:0200afd14e51f6b5ecee14b42e918f7be83d8871"
+  },
+  {
+    "distro": "debian",
+    "package": "mono-4.0-gac",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "ssh-import-id",
+    "version": "5.7-0ubuntu1.1",
+    "swhid": "swh:1:dir:f01a192bf1a69b52fd107fcbe3c34ca98ecdba28"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-present0",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gpgv",
+    "version": "2.2.4-1ubuntu1.2",
+    "swhid": "swh:1:dir:52ef802d5c3136126809128e408ef580b6980625"
+  },
+  {
+    "distro": "debian",
+    "package": "libdns-export162",
+    "version": "1:9.10.3.dfsg.P4-12.3+deb9u6",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-problem-report",
+    "version": "2.20.9-0ubuntu7.15",
+    "swhid": "swh:1:dir:c8b4bb0da4aae0e1f8db4d7592fe062ea04ffdc5"
+  },
+  {
+    "distro": "debian",
+    "package": "libsratom-0-0",
+    "version": "0.6.0~dfsg0-1",
+    "swhid": "swh:1:dir:b1285e461e860ad2a27651c794478682c6f026ae"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libxmu6",
+    "version": "2:1.1.2-2",
+    "swhid": "swh:1:dir:309bb0263973086d3c0dcbcc783a9f4f460287bd"
+  },
+  {
+    "distro": "debian",
+    "package": "libwbclient0",
+    "version": "2:4.5.16+dfsg-1+deb9u2",
+    "swhid": "swh:1:dir:7a436c30359252fc5f542645c1572e8d7bf2c9ae"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "nagios-nrpe-server",
+    "version": "3.2.1-1ubuntu1",
+    "swhid": "swh:1:dir:79e57f93b0ed3d613a9b90d8f8c0700d81802130"
+  },
+  {
+    "distro": "debian",
+    "package": "libfile-copy-recursive-perl",
+    "version": "0.38-1",
+    "swhid": "swh:1:dir:ba4fe20e3333e6c84fb5c84fa9f6b50991884a8d"
+  },
+  {
+    "distro": "debian",
+    "package": "libluajit-5.1-2",
+    "version": "2.0.4+dfsg-1+b1",
+    "swhid": "swh:1:dir:645e0195a9a5914d048c3cb330728541b396209c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libheimntlm0-heimdal",
+    "version": "7.5.0+dfsg-1",
+    "swhid": "swh:1:dir:9fc403274b47db80856cf6380eb3061bb181fba1"
+  },
+  {
+    "distro": "debian",
+    "package": "libonig4",
+    "version": "6.1.3-2",
+    "swhid": "swh:1:dir:c3e3d1ed2ebcd268b285f1ee810b0ab06b408fc6"
+  },
+  {
+    "distro": "debian",
+    "package": "libhtml-format-perl",
+    "version": "2.12-1",
+    "swhid": "swh:1:dir:0d241d4d0b7af02ff0d50c589aa35b658f6c10bd"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "base-passwd",
+    "version": "3.5.44",
+    "swhid": "swh:1:dir:e9d0a2aab4bd4f3b318c0cee406ef6fbd40d1d9d"
+  },
+  {
+    "distro": "debian",
+    "package": "libpng16-16",
+    "version": "1.6.28-1+deb9u1",
+    "swhid": "swh:1:dir:75688ac520e4a1bf0dcbcd3a7f03f6e52ee90476"
+  },
+  {
+    "distro": "debian",
+    "package": "libreoffice6.1-ure",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "debian",
+    "package": "libnice10",
+    "version": "0.1.13-2",
+    "swhid": "swh:1:dir:110ad2805b9397250b1c506a7a11ba0158f82b39"
+  },
+  {
+    "distro": "debian",
+    "package": "libltdl-dev",
+    "version": "2.4.6-2",
+    "swhid": "swh:1:dir:98af7b7f6241228c735da3acc3c0bd9c6dabc271"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-util0",
+    "version": "0.3.8-3+b2",
+    "swhid": "swh:1:dir:6823a2e66834d600a7806a8f95bc55c75a6876dd"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "plymouth",
+    "version": "0.9.3-1ubuntu7.18.04.2",
+    "swhid": "swh:1:dir:daec225431fe3a9d370dcf3ac0d3ad08dcbc72d9"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt5sql5",
+    "version": "5.7.1+dfsg-3+deb9u2",
+    "swhid": "swh:1:dir:4cf9a8b87cdf3ae5923042e21d624741812aa3be"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgcc-7-dev",
+    "version": "7.5.0-3ubuntu1~18.04",
+    "swhid": "swh:1:dir:1c05dc7c4afc412096a0cf418dfc5acd9e415b57"
+  },
+  {
+    "distro": "debian",
+    "package": "libgles1-mesa",
+    "version": "13.0.6-1+b2",
+    "swhid": "swh:1:dir:18fb39f3821d80388eb01f24efcde508a5a22a74"
+  },
+  {
+    "distro": "debian",
+    "package": "grep",
+    "version": "2.27-2",
+    "swhid": "swh:1:dir:bdbc54dd2ff4e1229971e6ab2b13f55afceb86e5"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.1-graphicfilter",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libsemanage1",
+    "version": "2.6-2",
+    "swhid": "swh:1:dir:847a000099f0bf4396f6591afcee7d51f19300f0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "make",
+    "version": "4.1-9.1ubuntu1",
+    "swhid": "swh:1:dir:443600feab0f10e66c357872364fd28332951c24"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "graphviz",
+    "version": "2.40.1-2",
+    "swhid": "swh:1:dir:59e89b224e3ff3ac93dcd77cbd3828ae7f87ae2d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libasn1-8-heimdal",
+    "version": "7.5.0+dfsg-1",
+    "swhid": "swh:1:dir:9fc403274b47db80856cf6380eb3061bb181fba1"
+  },
+  {
+    "distro": "debian",
+    "package": "qml-module-qtquick-privatewidgets",
+    "version": "5.7.1~20161021-2",
+    "swhid": "swh:1:dir:e7b27b3107acc714e00356b4a54cce95986dc55c"
+  },
+  {
+    "distro": "debian",
+    "package": "imagemagick",
+    "version": "8:6.9.7.4+dfsg-11+deb9u8",
+    "swhid": "swh:1:dir:6bbc153bc8bf9caed2cc1af0df6628529fd5e388"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libnih1",
+    "version": "1.0.3-6ubuntu2",
+    "swhid": "swh:1:dir:0ed1b51deab5d0bea9db15fba226add48133f80e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-headers-5.3.0-61-generic",
+    "version": "5.3.0-61.55~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libssl1.1",
+    "version": "1.1.1-1ubuntu2.1~18.04.6",
+    "swhid": "swh:1:dir:b94532cd88fde32de47d0ad69d7c733f0b24c415"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "time",
+    "version": "1.7-25.1build1",
+    "swhid": "swh:1:dir:df086807ab48441f648db0c9b7896e735684944e"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt5multimediawidgets5",
+    "version": "5.7.1~20161021-2",
+    "swhid": "swh:1:dir:12aae20550284c69bea01b391c49c5a97ab9b097"
+  },
+  {
+    "distro": "debian",
+    "package": "vim-runtime",
+    "version": "2:8.0.0197-4+deb9u3",
+    "swhid": "swh:1:dir:d4b3ad519adf45ef1caf7c32356be2257c15a748"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "cryptsetup",
+    "version": "2:2.0.2-1ubuntu1.1",
+    "swhid": "swh:1:dir:d7ce65a330490b5f14269a70a04cbeb8f77db3bf"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-systemd",
+    "version": "234-1build1",
+    "swhid": "swh:1:dir:2c838196d13dd23d8f9e78922468de6503704a0f"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libalgorithm-merge-perl",
+    "version": "0.08-3",
+    "swhid": "swh:1:dir:ec5083d6748dd212d9008dd5ea8bf9fbc626c92c"
+  },
+  {
+    "distro": "debian",
+    "package": "libmono-cairo4.0-cil",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "debian",
+    "package": "libhttp-message-perl",
+    "version": "6.11-1",
+    "swhid": "swh:1:dir:454ec503967ecfea3132ffe30d642759c8d6e055"
+  },
+  {
+    "distro": "debian",
+    "package": "libgnutls-deb0-28",
+    "version": "3.3.8-6+deb8u4",
+    "swhid": "swh:1:dir:32d3e8f13dbbb57482bc266811f73c3c92ee219a"
+  },
+  {
+    "distro": "debian",
+    "package": "libavresample2",
+    "version": "6:11.8-1~deb8u1",
+    "swhid": "swh:1:dir:085de4bd8865a7e8540c32a9243afcc364d1c5aa"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "nplan",
+    "version": "0.99-0ubuntu3~18.04.3",
+    "swhid": "swh:1:dir:cc67d4008958e6ab8146391b8cc4815b81462fae"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "bash-completion",
+    "version": "1:2.8-1ubuntu1",
+    "swhid": "swh:1:dir:957a1603725ddc747be2747c363a288314b5e1da"
+  },
+  {
+    "distro": "debian",
+    "package": "libip4tc0",
+    "version": "1.6.0+snapshot20161117-6",
+    "swhid": "swh:1:dir:f99a366f5c19a4a7cdc6d55c9c3fc44577ba3fe9"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-writer",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libqtcore4",
+    "version": "4:4.8.7+dfsg-11",
+    "swhid": "swh:1:dir:96697ee08e13d2823db56f2404f25d5c31d4e2a0"
+  },
+  {
+    "distro": "debian",
+    "package": "fonts-dejavu-core",
+    "version": "2.37-1",
+    "swhid": "swh:1:dir:c26aee746149a46bb2b632d247b4bdb1590c5aee"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libopts25",
+    "version": "1:5.18.12-4",
+    "swhid": "swh:1:dir:80f53cffd1ea5e5698dcff4daeca4395a6334fd8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "usbutils",
+    "version": "1:007-4build1",
+    "swhid": "swh:1:dir:493bdc59b7b7b726b9a9c0340ad2907d145beccf"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.1-onlineupdate",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libnfsidmap2",
+    "version": "0.25-5.1",
+    "swhid": "swh:1:dir:e165615f9551192a758d3f359fc716107cd57988"
+  },
+  {
+    "distro": "debian",
+    "package": "libopencv-core2.4v5",
+    "version": "2.4.9.1+dfsg1-2",
+    "swhid": "swh:1:dir:8c48d5da54dd6f953aefb1fffc6a27439fd296e3"
+  },
+  {
+    "distro": "debian",
+    "package": "libssh2-1",
+    "version": "1.7.0-1+deb9u1",
+    "swhid": "swh:1:dir:cd5d21eeb4949a0ad0dc164609462b687890039e"
+  },
+  {
+    "distro": "debian",
+    "package": "libidn2-0",
+    "version": "0.16-1+deb9u1",
+    "swhid": "swh:1:dir:524a95a899320c1831aa48797a4bfa9547ba8d66"
+  },
+  {
+    "distro": "debian",
+    "package": "libpci3",
+    "version": "1:3.5.2-1",
+    "swhid": "swh:1:dir:3da63cdbd80bea1933384167677971751a0a77e2"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpam-modules",
+    "version": "1.1.8-3.6ubuntu2.18.04.1",
+    "swhid": "swh:1:dir:0fad40dbe5151c6d1d292f3069c82c471b91dd4c"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-firebird",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "ncurses-base",
+    "version": "6.0+20161126-1+deb9u2",
+    "swhid": "swh:1:dir:144b0df8a64d3677989d30a7a5003c7e32703b64"
+  },
+  {
+    "distro": "debian",
+    "package": "bsdutils",
+    "version": "1:2.29.2-1+deb9u1",
+    "swhid": "swh:1:dir:726b78b92e3809d74cd1437dd51e373607bdd8ad"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libkmod2",
+    "version": "24-1ubuntu3.4",
+    "swhid": "swh:1:dir:cfcced290d3ddb0a43a23c9addc2d579fb408432"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-newt",
+    "version": "0.52.20-1ubuntu1",
+    "swhid": "swh:1:dir:5e230206d4b01d0d37f1a80b8e565b03a48f8945"
+  },
+  {
+    "distro": "debian",
+    "package": "perl",
+    "version": "5.24.1-3+deb9u6",
+    "swhid": "swh:1:dir:2446041d81dbc2812c691389a82b6016068f79c5"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "wget",
+    "version": "1.19.4-1ubuntu2.2",
+    "swhid": "swh:1:dir:02b67d411f1a0611b8540ec59bb5f09bd76ac925"
+  },
+  {
+    "distro": "debian",
+    "package": "libsystemd-dev",
+    "version": "232-25+deb9u12",
+    "swhid": "swh:1:dir:197caa63e861576322e63abc9e6d7107587b7e06"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "iucode-tool",
+    "version": "2.3.1-1",
+    "swhid": "swh:1:dir:96a19d8998bf5f3eba353f8c9529ed93e97686e1"
+  },
+  {
+    "distro": "debian",
+    "package": "ienglish-common",
+    "version": "3.4.00-5",
+    "swhid": "swh:1:dir:d11162c1328670275e41ff7ad7565ee3945408df"
+  },
+  {
+    "distro": "debian",
+    "package": "libgmpxx4ldbl",
+    "version": "2:6.1.2+dfsg-1",
+    "swhid": "swh:1:dir:e1349719b076aaf121bee06ef7fd624f327e30b4"
+  },
+  {
+    "distro": "debian",
+    "package": "libkadm5clnt-mit11",
+    "version": "1.15-1+deb9u1",
+    "swhid": "swh:1:dir:48a343801882bdf13c066be2b59dc6dd5decddc2"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "screen",
+    "version": "4.6.2-1ubuntu1",
+    "swhid": "swh:1:dir:789bf2ae3bbc6563528de91dfca958f045e96903"
+  },
+  {
+    "distro": "debian",
+    "package": "libxkbcommon0",
+    "version": "0.7.1-2~deb9u1",
+    "swhid": "swh:1:dir:b0e83ec177e9148dc2b65db0c91ad151bc0ea84d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-5.3.0-62-generic",
+    "version": "5.3.0-62.56~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "debian",
+    "package": "libcloog-isl4",
+    "version": "0.18.4-1+b1",
+    "swhid": "swh:1:dir:8457e551abcfc5c9ab55f3daa91b1393016cbab8"
+  },
+  {
+    "distro": "debian",
+    "package": "libproxy1",
+    "version": "0.4.11-4+b2",
+    "swhid": "swh:1:dir:968fbab8c9c1065498785ae935d2a90b80a1ca85"
+  },
+  {
+    "distro": "debian",
+    "package": "libwxbase3.0-0",
+    "version": "3.0.2-1+b1",
+    "swhid": "swh:1:dir:9c6ce2937924796dfd57284bb13120361ae5dd1a"
+  },
+  {
+    "distro": "debian",
+    "package": "libcolord2",
+    "version": "1.3.3-2",
+    "swhid": "swh:1:dir:5e7df8e868edfb50f0893e5cb88b537501cf4550"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-kde-integration",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "apport-symptoms",
+    "version": "0.20",
+    "swhid": "swh:1:dir:a6f3a8f1f77acf72fac8fa89e4c417e090777f69"
+  },
+  {
+    "distro": "debian",
+    "package": "libyaml-0-2",
+    "version": "0.1.7-2",
+    "swhid": "swh:1:dir:f24c37620e0a6746b0bf6720dbb3a13f733f7568"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "liblvm2app2.2",
+    "version": "2.02.176-4.1ubuntu3.18.04.3",
+    "swhid": "swh:1:dir:1ad291f41cc430d99ced1497aa526b86892c9065"
+  },
+  {
+    "distro": "debian",
+    "package": "libpathplan4",
+    "version": "2.38.0-17",
+    "swhid": "swh:1:dir:a1316aee79b47201079d36f6240c368a98afa19e"
+  },
+  {
+    "distro": "debian",
+    "package": "libibus-1.0-5",
+    "version": "1.5.14-3+deb9u2",
+    "swhid": "swh:1:dir:7eb63f19b75149c7bac0d395f8e13a093b263b71"
+  },
+  {
+    "distro": "debian",
+    "package": "firmware-iwlwifi",
+    "version": "20161130-5",
+    "swhid": "swh:1:dir:afbf56a5e4161611792c6c808daa7ffc488e88e9"
+  },
+  {
+    "distro": "debian",
+    "package": "libavahi-client3",
+    "version": "0.6.32-2",
+    "swhid": "swh:1:dir:0670284751c68987708f9a9b4525c7be1ece81e7"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "ebtables",
+    "version": "2.0.10.4-3.5ubuntu2.18.04.3",
+    "swhid": "swh:1:dir:c374883f04ac4c795a896d608d6d0e5ce601ee27"
+  },
+  {
+    "distro": "debian",
+    "package": "libx11-xcb1",
+    "version": "2:1.6.4-3+deb9u1",
+    "swhid": "swh:1:dir:56f66cce36d99cd6a52ff9ff3eae47f8b1865b74"
+  },
+  {
+    "distro": "debian",
+    "package": "linux-image-4.9.0-7-amd64",
+    "version": "4.9.110-3+deb9u2",
+    "swhid": "swh:1:dir:70722afb6c92e51df227926c81d8727ffc8cde3e"
+  },
+  {
+    "distro": "debian",
+    "package": "libcwidget3",
+    "version": "0.5.17-2",
+    "swhid": "swh:1:dir:3913431db16553d7505485767f84ad33644af7c3"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-asn1crypto",
+    "version": "0.24.0-1",
+    "swhid": "swh:1:dir:1c1b7e2022b140ae4cc1e9c102f00d4112703734"
+  },
+  {
+    "distro": "debian",
+    "package": "libxdamage1",
+    "version": "1:1.1.4-2+b3",
+    "swhid": "swh:1:dir:99fa385cc7a9b2de253a41bae29783a188e8862f"
+  },
+  {
+    "distro": "debian",
+    "package": "kbd",
+    "version": "2.0.3-2+b1",
+    "swhid": "swh:1:dir:f1ea7ed36699561d97cbc2db3c6bcb9796d785cb"
+  },
+  {
+    "distro": "debian",
+    "package": "firmware-misc-nonfree",
+    "version": "20161130-5",
+    "swhid": "swh:1:dir:afbf56a5e4161611792c6c808daa7ffc488e88e9"
+  },
+  {
+    "distro": "debian",
+    "package": "libksba8",
+    "version": "1.3.5-2",
+    "swhid": "swh:1:dir:bf7cdf4068e88bf1420d5d17ed32741b0de7244c"
+  },
+  {
+    "distro": "debian",
+    "package": "lsb-base",
+    "version": "9.20161125",
+    "swhid": "swh:1:dir:635150679c62b1f4814e431150b00e0154c81e58"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "netfilter-persistent",
+    "version": "1.0.4+nmu2ubuntu1",
+    "swhid": "swh:1:dir:3ecbe1b7d521cef1f7f28f6b4062e718d9c288e3"
+  },
+  {
+    "distro": "debian",
+    "package": "libgmp10",
+    "version": "2:6.1.2+dfsg-1",
+    "swhid": "swh:1:dir:e1349719b076aaf121bee06ef7fd624f327e30b4"
+  },
+  {
+    "distro": "debian",
+    "package": "default-jre",
+    "version": "2:1.8-58+deb9u1",
+    "swhid": "swh:1:dir:7d61a83ca735ced3f4698cb2c7a50a990b01eef2"
+  },
+  {
+    "distro": "debian",
+    "package": "libxfixes3",
+    "version": "1:5.0.3-1",
+    "swhid": "swh:1:dir:e99097774820a5c309e797a7d559869d664e4674"
+  },
+  {
+    "distro": "debian",
+    "package": "libgpm-dev",
+    "version": "1.20.4-6.2+b1",
+    "swhid": "swh:1:dir:8afe921c73f2a0b93da07b3467b9cbb44de964d4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpixman-1-0",
+    "version": "0.34.0-2",
+    "swhid": "swh:1:dir:053ea839256df7f8a490704ed3cfb91462d8e8d5"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpython3.6-stdlib",
+    "version": "3.6.9-1~18.04ubuntu1",
+    "swhid": "swh:1:dir:ebd7f07bdd6e815949ba195b960824d1e74b2cea"
+  },
+  {
+    "distro": "debian",
+    "package": "pulseaudio-utils",
+    "version": "10.0-1+deb9u1",
+    "swhid": "swh:1:dir:633f63290970363ad5f65237d2f3c50766a2928c"
+  },
+  {
+    "distro": "debian",
+    "package": "libdc1394-22",
+    "version": "2.2.5-1",
+    "swhid": "swh:1:dir:07db1f793ca8597b4c129ca581499a967ca12911"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libnuma1",
+    "version": "2.0.11-2.1ubuntu0.1",
+    "swhid": "swh:1:dir:8536aeb5fbc0dc3a885e54e17085c7a26e147bde"
+  },
+  {
+    "distro": "debian",
+    "package": "libxmu6",
+    "version": "2:1.1.2-2",
+    "swhid": "swh:1:dir:309bb0263973086d3c0dcbcc783a9f4f460287bd"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "patch",
+    "version": "2.7.6-2ubuntu1.1",
+    "swhid": "swh:1:dir:b9b81a3a11257b72f582303596956c6726893b88"
+  },
+  {
+    "distro": "debian",
+    "package": "libx11-xcb-dev",
+    "version": "2:1.6.4-3+deb9u1",
+    "swhid": "swh:1:dir:56f66cce36d99cd6a52ff9ff3eae47f8b1865b74"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-extension-pdf-import",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libcc1-0",
+    "version": "8.4.0-1ubuntu1~18.04",
+    "swhid": "swh:1:dir:d49af0c20553df7786c37c2c2f91ac5808a9d6ec"
+  },
+  {
+    "distro": "debian",
+    "package": "vdpau-driver-all",
+    "version": "1.1.1-6",
+    "swhid": "swh:1:dir:6463c1060dcdd30f65e062c02a58797d82daeab5"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-xf86dri0-dev",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis5.3-onlineupdate",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "containerd.io",
+    "version": "1.2.10-3",
+    "swhid": "swh:1:dir:12052fb27a7324cfa2b9985791272a8d2c90c322"
+  },
+  {
+    "distro": "debian",
+    "package": "libthai-data",
+    "version": "0.1.26-1",
+    "swhid": "swh:1:dir:32a9616cd739546564e3aa536b44a0f03d696767"
+  },
+  {
+    "distro": "debian",
+    "package": "liblwp-protocol-https-perl",
+    "version": "6.06-2",
+    "swhid": "swh:1:dir:7fc0e3f4a147f85c4384e07962dd0d6fad91943b"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libunistring2",
+    "version": "0.9.9-0ubuntu2",
+    "swhid": "swh:1:dir:27a566d1db8f851aaf6014ab863925190e111092"
+  },
+  {
+    "distro": "debian",
+    "package": "libwebp6",
+    "version": "0.5.2-1",
+    "swhid": "swh:1:dir:cfd00e010ee97a366c2a01a6ae03bc35b3a511a2"
+  },
+  {
+    "distro": "debian",
+    "package": "python-enchant",
+    "version": "1.6.7-1",
+    "swhid": "swh:1:dir:c06bf7240bf75af70b522c93bf428d31c970b26e"
+  },
+  {
+    "distro": "debian",
+    "package": "libdrm-intel1",
+    "version": "2.4.74-1",
+    "swhid": "swh:1:dir:9f4ec9c3246435e566a6cc24a9038de5a579beda"
+  },
+  {
+    "distro": "debian",
+    "package": "libargon2-0",
+    "version": "0~20160821-1+b1",
+    "swhid": "swh:1:dir:fe0fe7110f0c3d2c11669341ff6fc41788d465cb"
+  },
+  {
+    "distro": "debian",
+    "package": "whiptail",
+    "version": "0.52.19-1+b1",
+    "swhid": "swh:1:dir:d314d163b3c4d2f488d1d0c61657f3d10aa5be4e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libip6tc0",
+    "version": "1.6.1-2ubuntu2",
+    "swhid": "swh:1:dir:32dea11f72b1fb4d16ceefccb6b7f15e351f0ad9"
+  },
+  {
+    "distro": "debian",
+    "package": "mime-support",
+    "version": "3.60",
+    "swhid": "swh:1:dir:474b91068291f3342cb0573e8697677629a3a004"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-hyperlink",
+    "version": "17.3.1-2",
+    "swhid": "swh:1:dir:f0ea4bfe937bab258c35084e49e19fcf6f9bde95"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "kmod",
+    "version": "24-1ubuntu3.4",
+    "swhid": "swh:1:dir:cfcced290d3ddb0a43a23c9addc2d579fb408432"
+  },
+  {
+    "distro": "debian",
+    "package": "va-driver-all",
+    "version": "1.7.3-2",
+    "swhid": "swh:1:dir:4d394cfca6ccb3a7f7ee9807f2596acffbd3111b"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "gnustep-base-runtime",
+    "version": "1.25.1-2ubuntu3",
+    "swhid": "swh:1:dir:112b98c2620f17cdb8e21ded1dcfc0b3ffecf7d7"
+  },
+  {
+    "distro": "debian",
+    "package": "libxmuu-dev",
+    "version": "2:1.1.2-2",
+    "swhid": "swh:1:dir:309bb0263973086d3c0dcbcc783a9f4f460287bd"
+  },
+  {
+    "distro": "debian",
+    "package": "libglibmm-2.4-dev",
+    "version": "2.50.0-1",
+    "swhid": "swh:1:dir:b5875627784774b8baf49e8b86c6c7a76efab278"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-ewmh-dev",
+    "version": "0.4.1-1",
+    "swhid": "swh:1:dir:e3f6e50a4c9c401c70204bdfbc93384196d7b7f5"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libnl-3-200",
+    "version": "3.2.29-0ubuntu3",
+    "swhid": "swh:1:dir:47622d616e634133cc5f08d849cc29de0560aaeb"
+  },
+  {
+    "distro": "debian",
+    "package": "perl-openssl-defaults",
+    "version": "3",
+    "swhid": "swh:1:dir:28b73464910fbc02d90d0c85fdcaf353fa3a01f1"
+  },
+  {
+    "distro": "debian",
+    "package": "libunibreak1",
+    "version": "1.1-2",
+    "swhid": "swh:1:dir:c480dc8418b43e5918eabd8b2b83c0851ba9f859"
+  },
+  {
+    "distro": "debian",
+    "package": "libtiffxx5",
+    "version": "4.0.8-2+deb9u5",
+    "swhid": "swh:1:dir:11ac4c1d9ec5e17d538643c1c9dd2fc1204d209e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libnetplan0",
+    "version": "0.99-0ubuntu3~18.04.3",
+    "swhid": "swh:1:dir:cc67d4008958e6ab8146391b8cc4815b81462fae"
+  },
+  {
+    "distro": "debian",
+    "package": "libasan3",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "libtmglib-dev",
+    "version": "3.7.0-2",
+    "swhid": "swh:1:dir:82711d5bb296d3e8eeaeb900cfab61fe46693888"
+  },
+  {
+    "distro": "debian",
+    "package": "build-essential",
+    "version": "12.3",
+    "swhid": "swh:1:dir:6e08dbc08882c7ac2649fec8048bbb42f1a6756c"
+  },
+  {
+    "distro": "debian",
+    "package": "libpcre3-dev",
+    "version": "2:8.39-3",
+    "swhid": "swh:1:dir:9108bd4114b8751cdab77aae090e0f0bd7cdef55"
+  },
+  {
+    "distro": "debian",
+    "package": "python3-gi",
+    "version": "3.22.0-2",
+    "swhid": "swh:1:dir:68352604151cd3f3fb78da4f681a64559e86c06a"
+  },
+  {
+    "distro": "debian",
+    "package": "libdevel-globaldestruction-perl",
+    "version": "0.14-1",
+    "swhid": "swh:1:dir:b18df9f5a28a156e9c42a709bc9580e6c55441a1"
+  },
+  {
+    "distro": "debian",
+    "package": "libxtables10",
+    "version": "1.4.21-2+b1",
+    "swhid": "swh:1:dir:2ae482004a63057ef060fd9b31ad864c2183a3c9"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libapparmor1",
+    "version": "2.12-4ubuntu5.1",
+    "swhid": "swh:1:dir:5ad58253f744510ba21876c5b3f5d71ca322c536"
+  },
+  {
+    "distro": "debian",
+    "package": "libkmod2",
+    "version": "23-2",
+    "swhid": "swh:1:dir:a8306b48197c39616c130281ca55b8b4ef8de7dc"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-image0-dev",
+    "version": "0.4.0-1+b2",
+    "swhid": "swh:1:dir:4eabfa46b26313908eca84e463a5ffe8377ad6b6"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpython3-stdlib",
+    "version": "3.6.7-1~18.04",
+    "swhid": "swh:1:dir:7cae6c5e77b7425d10484312f89f6e095d93ff80"
+  },
+  {
+    "distro": "debian",
+    "package": "libsmbclient",
+    "version": "2:4.5.16+dfsg-1+deb9u2",
+    "swhid": "swh:1:dir:7a436c30359252fc5f542645c1572e8d7bf2c9ae"
+  },
+  {
+    "distro": "debian",
+    "package": "libatspi2.0-dev",
+    "version": "2.22.0-6+deb9u1",
+    "swhid": "swh:1:dir:c516116bcbd2898ba1e7b71602f992281489f4e4"
+  },
+  {
+    "distro": "debian",
+    "package": "libatk-wrapper-java-jni",
+    "version": "0.33.3-13+deb9u1",
+    "swhid": "swh:1:dir:a03f1ce1352511019a0ec122edb963d23a846af4"
+  },
+  {
+    "distro": "debian",
+    "package": "libgl1-mesa-dri",
+    "version": "13.0.6-1+b2",
+    "swhid": "swh:1:dir:18fb39f3821d80388eb01f24efcde508a5a22a74"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libxext6",
+    "version": "2:1.3.3-1",
+    "swhid": "swh:1:dir:8bcfeab36aea39665b760fb9b6b4420b42b36ef4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libc-dev-bin",
+    "version": "2.27-3ubuntu1",
+    "swhid": "swh:1:dir:22cb79e66f368b54b876d305c576f6b7af4b37bf"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "liblxc-common",
+    "version": "3.0.3-0ubuntu1~18.04.1",
+    "swhid": "swh:1:dir:5b00322a110230ab3373c45fd11ad471f494a260"
+  },
+  {
+    "distro": "debian",
+    "package": "liblsan0",
+    "version": "6.3.0-18+deb9u1",
+    "swhid": "swh:1:dir:b10b6bb8450fef0f8f623c9086fc12494b8b9f42"
+  },
+  {
+    "distro": "debian",
+    "package": "fig2dev",
+    "version": "1:3.2.6a-2+deb9u3",
+    "swhid": "swh:1:dir:b32c36433a0ae92157927de21792de4aeb36104b"
+  },
+  {
+    "distro": "debian",
+    "package": "libboost-iostreams1.62.0",
+    "version": "1.62.0+dfsg-4",
+    "swhid": "swh:1:dir:c31773045a388de5de3ffc831aa3b9923f305efc"
+  },
+  {
+    "distro": "debian",
+    "package": "libmono-i18n-west4.0-cil",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-update-manager",
+    "version": "1:18.04.11.13",
+    "swhid": "swh:1:dir:0d2e20a616ecec749fe2b5c83224d87a54054799"
+  },
+  {
+    "distro": "debian",
+    "package": "xml-core",
+    "version": "0.17",
+    "swhid": "swh:1:dir:521b043660191e429d7ff2e736bfeecfb271096a"
+  },
+  {
+    "distro": "debian",
+    "package": "libsemanage-common",
+    "version": "2.6-2",
+    "swhid": "swh:1:dir:847a000099f0bf4396f6591afcee7d51f19300f0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "fuse",
+    "version": "2.9.7-1ubuntu1",
+    "swhid": "swh:1:dir:b9400f685085e69bf097b0e6484d88e342caa897"
+  },
+  {
+    "distro": "debian",
+    "package": "libsasl2-modules-db",
+    "version": "2.1.27~101-g0780600+dfsg-3+deb9u1",
+    "swhid": "swh:1:dir:9ad10de12cd7e2db69271d8cfe79812b2e727b05"
+  },
+  {
+    "distro": "debian",
+    "package": "python-minimal",
+    "version": "2.7.13-2",
+    "swhid": "swh:1:dir:7580554401c95f22fc5b1acd191182dbd397c30f"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "vim-common",
+    "version": "2:8.0.1453-1ubuntu1.3",
+    "swhid": "swh:1:dir:81cb416587546001824fea95f3fc5ef5a1e8a909"
+  },
+  {
+    "distro": "debian",
+    "package": "debtags",
+    "version": "2.1.2",
+    "swhid": "swh:1:dir:1c87e3cb816b1f2bda20d80dd46d4aa3531cbaf6"
+  },
+  {
+    "distro": "debian",
+    "package": "libsoup2.4-1",
+    "version": "2.56.0-2+deb9u2",
+    "swhid": "swh:1:dir:7b579097079b912eed40ae4389695cb2236ed049"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libpython2.7-minimal",
+    "version": "2.7.17-1~18.04ubuntu1",
+    "swhid": "swh:1:dir:42640b2065ca6588b08bc072be706fae56d597b9"
+  },
+  {
+    "distro": "debian",
+    "package": "libkadm5srv-mit11",
+    "version": "1.15-1+deb9u1",
+    "swhid": "swh:1:dir:48a343801882bdf13c066be2b59dc6dd5decddc2"
+  },
+  {
+    "distro": "debian",
+    "package": "popularity-contest",
+    "version": "1.64",
+    "swhid": "swh:1:dir:8135629a6df630e1f63e6c464880a913d9c9133f"
+  },
+  {
+    "distro": "debian",
+    "package": "debianutils",
+    "version": "4.8.1.1",
+    "swhid": "swh:1:dir:343bdaef13076fed6307865a908a93530590361c"
+  },
+  {
+    "distro": "debian",
+    "package": "libcdio-cdda1",
+    "version": "0.83-4.3+b1",
+    "swhid": "swh:1:dir:ff1f3b2b13254edc74ed046499cb205cefa9a73f"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "netbase",
+    "version": "5.4",
+    "swhid": "swh:1:dir:10664409478cab10f85549c0130f2f87fcc9f28c"
+  },
+  {
+    "distro": "debian",
+    "package": "ca-certificates-mono",
+    "version": "4.6.2.7+dfsg-1",
+    "swhid": "swh:1:dir:0337be756fcbe9327bf59c5cd32b97830e537183"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "git-man",
+    "version": "1:2.17.1-1ubuntu0.7",
+    "swhid": "swh:1:dir:5ce499343e937249b3bcf34bb75ead41742340b2"
+  },
+  {
+    "distro": "debian",
+    "package": "fop",
+    "version": "1:2.1-6",
+    "swhid": "swh:1:dir:42a7b16f8ebd3a1ceec844f10364f4db9c260a3d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "irqbalance",
+    "version": "1.3.0-0.1ubuntu0.18.04.1",
+    "swhid": "swh:1:dir:115109eafeb3933fc18878bca121871d16b53c19"
+  },
+  {
+    "distro": "debian",
+    "package": "libxaw7-dev",
+    "version": "2:1.0.13-1+b2",
+    "swhid": "swh:1:dir:5768247d53ee868fb3dc60d48e7897fa9ce0201b"
+  },
+  {
+    "distro": "debian",
+    "package": "ncftp",
+    "version": "2:3.2.5-2",
+    "swhid": "swh:1:dir:a10502f926f7b0774f4be1cd71263754a1af9c6f"
+  },
+  {
+    "distro": "debian",
+    "package": "libgles2-mesa-dev",
+    "version": "13.0.6-1+b2",
+    "swhid": "swh:1:dir:18fb39f3821d80388eb01f24efcde508a5a22a74"
+  },
+  {
+    "distro": "debian",
+    "package": "libxdamage-dev",
+    "version": "1:1.1.4-2+b3",
+    "swhid": "swh:1:dir:99fa385cc7a9b2de253a41bae29783a188e8862f"
+  },
+  {
+    "distro": "debian",
+    "package": "lsb-release",
+    "version": "9.20161125",
+    "swhid": "swh:1:dir:635150679c62b1f4814e431150b00e0154c81e58"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libgd3",
+    "version": "2.2.5-4ubuntu0.4",
+    "swhid": "swh:1:dir:76ebc39c42d1726f274fdc87a6deb3629bf628bd"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "librhash0",
+    "version": "1.3.6-2",
+    "swhid": "swh:1:dir:9082f022e7cafbb986cb0a05db7c790d772b3020"
+  },
+  {
+    "distro": "debian",
+    "package": "cpp-4.9",
+    "version": "4.9.2-10",
+    "swhid": "swh:1:dir:092486dd2ad6dc75d28590f63357eb64790eafb5"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-extra-5.3.0-40-generic",
+    "version": "5.3.0-40.32~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "debian",
+    "package": "sops",
+    "version": "3.5.0",
+    "swhid": "swh:1:dir:7012b0cf6bdcd2e4644d5e122cf35bcd7e1567c6"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "update-manager-core",
+    "version": "1:18.04.11.13",
+    "swhid": "swh:1:dir:0d2e20a616ecec749fe2b5c83224d87a54054799"
+  },
+  {
+    "distro": "debian",
+    "package": "libjxr-tools",
+    "version": "1.1-6+b1",
+    "swhid": "swh:1:dir:622e58c2e153a2de1df10fed88764ae995d973a0"
+  },
+  {
+    "distro": "debian",
+    "package": "libssl1.0.2",
+    "version": "1.0.2u-1~deb9u1",
+    "swhid": "swh:1:dir:14dd3b0d092973c47d979f5d37d188da867c8a7a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "man-db",
+    "version": "2.8.3-2ubuntu0.1",
+    "swhid": "swh:1:dir:3ca848bd416e5dee8f12092b4d4aaea3f332f908"
+  },
+  {
+    "distro": "debian",
+    "package": "libfontconfig1",
+    "version": "2.11.0-6.7+b1",
+    "swhid": "swh:1:dir:56198bbf268ed1e3386864e3dbb9b53a9bdb614a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-5.3.0-59-generic",
+    "version": "5.3.0-59.53~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libobjc4",
+    "version": "8.4.0-1ubuntu1~18.04",
+    "swhid": "swh:1:dir:d49af0c20553df7786c37c2c2f91ac5808a9d6ec"
+  },
+  {
+    "distro": "debian",
+    "package": "libopus0",
+    "version": "1.2~alpha2-1",
+    "swhid": "swh:1:dir:c47869518aa4976fd7bec3c1646e2379275f962f"
+  },
+  {
+    "distro": "debian",
+    "package": "libonig2",
+    "version": "5.9.5-3.2",
+    "swhid": "swh:1:dir:2de126f9d8b793fc542992dc8b172ae7400e3512"
+  },
+  {
+    "distro": "debian",
+    "package": "w3m",
+    "version": "0.5.3-34+deb9u1",
+    "swhid": "swh:1:dir:2d2417f73328a7a40549aa28c6f14eb8aac0b4b9"
+  },
+  {
+    "distro": "debian",
+    "package": "vivaldi-stable",
+    "version": "3.1.1929.45-1",
+    "swhid": "swh:1:dir:f65ae9579c6869240e41ecb2819e28ae8fdad101"
+  },
+  {
+    "distro": "debian",
+    "package": "libtiff5",
+    "version": "4.0.8-2+deb9u5",
+    "swhid": "swh:1:dir:11ac4c1d9ec5e17d538643c1c9dd2fc1204d209e"
+  },
+  {
+    "distro": "debian",
+    "package": "libgtk-3-0",
+    "version": "3.22.11-1",
+    "swhid": "swh:1:dir:da4b173bc1e67d38acbdc97b98c4ba5d1c907db3"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libcups2",
+    "version": "2.2.7-1ubuntu2.8",
+    "swhid": "swh:1:dir:09ea8a45b1ba0f278aadae0bc7a2935720e970ef"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-xinerama0",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "openssl",
+    "version": "1.1.1-1ubuntu2.1~18.04.6",
+    "swhid": "swh:1:dir:b94532cd88fde32de47d0ad69d7c733f0b24c415"
+  },
+  {
+    "distro": "debian",
+    "package": "python-debianbts",
+    "version": "2.6.1",
+    "swhid": "swh:1:dir:a86027aae20f425cd285fc2afbaa0549c5d0aed6"
+  },
+  {
+    "distro": "debian",
+    "package": "isc-dhcp-common",
+    "version": "4.3.5-3+deb9u1",
+    "swhid": "swh:1:dir:eec421e23630856d30032102fba5e46299ae9297"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "lsof",
+    "version": "4.89+dfsg-0.1",
+    "swhid": "swh:1:dir:9e4b74f6a9857bfe57617d4127c4c67f7e69ba30"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libthai-data",
+    "version": "0.1.27-2",
+    "swhid": "swh:1:dir:691ccd3e94df48124f6a6254230d51a487a918fd"
+  },
+  {
+    "distro": "debian",
+    "package": "libqt5gui5",
+    "version": "5.7.1+dfsg-3+deb9u2",
+    "swhid": "swh:1:dir:4cf9a8b87cdf3ae5923042e21d624741812aa3be"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-xsltfilter",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "python-pil",
+    "version": "4.0.0-4+deb9u1",
+    "swhid": "swh:1:dir:e6ba5a181683797f1b5c4d63db995ce7f5b6bac8"
+  },
+  {
+    "distro": "debian",
+    "package": "libopenexr22",
+    "version": "2.2.0-11+b1",
+    "swhid": "swh:1:dir:14463166fcd8d23db3c2f934b1f5d789b548d357"
+  },
+  {
+    "distro": "debian",
+    "package": "guile-2.0-libs",
+    "version": "2.0.13+1-4",
+    "swhid": "swh:1:dir:7a425dcdc5b0d70e2a029fc5920b8991b70ef99e"
+  },
+  {
+    "distro": "debian",
+    "package": "libtext-unidecode-perl",
+    "version": "1.30-1",
+    "swhid": "swh:1:dir:4c79ef120c755bf2b883f13cbe9850e998b52684"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libwavpack1",
+    "version": "5.1.0-2ubuntu1.4",
+    "swhid": "swh:1:dir:4d31171eedb3601d9d3d3952fe52a7d5f92252db"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.0-extension-mediawiki-publisher",
+    "version": "6.0.5.2-2",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "debian",
+    "package": "libgcrypt20",
+    "version": "1.7.6-2+deb9u3",
+    "swhid": "swh:1:dir:e04756f0e29fdc41ee4e647a704fafdcbe42b57b"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "apt-transport-https",
+    "version": "1.6.12ubuntu0.1",
+    "swhid": "swh:1:dir:87427f14ed2a85fbbc52ed06d2d388bca88ea55b"
+  },
+  {
+    "distro": "debian",
+    "package": "libpciaccess-dev",
+    "version": "0.13.4-1+b2",
+    "swhid": "swh:1:dir:6839271c9e63e09c454b7f7d6e6d29beccf3cbae"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "locales",
+    "version": "2.27-3ubuntu1",
+    "swhid": "swh:1:dir:22cb79e66f368b54b876d305c576f6b7af4b37bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libpam0g",
+    "version": "1.1.8-3.6",
+    "swhid": "swh:1:dir:f0fb8fdccffbb827b5b3d2efd86169463605cb89"
+  },
+  {
+    "distro": "debian",
+    "package": "default-jre-headless",
+    "version": "2:1.8-58+deb9u1",
+    "swhid": "swh:1:dir:7d61a83ca735ced3f4698cb2c7a50a990b01eef2"
+  },
+  {
+    "distro": "debian",
+    "package": "gstreamer1.0-plugins-base",
+    "version": "1.10.4-1+deb9u1",
+    "swhid": "swh:1:dir:a64ae2db408f11b82f339bd91ba7becdc78bb98a"
+  },
+  {
+    "distro": "debian",
+    "package": "fontconfig",
+    "version": "2.11.0-6.7+b1",
+    "swhid": "swh:1:dir:56198bbf268ed1e3386864e3dbb9b53a9bdb614a"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-modules-5.0.0-36-generic",
+    "version": "5.0.0-36.39~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "debian",
+    "package": "libnotmuch4",
+    "version": "0.23.7-3",
+    "swhid": "swh:1:dir:502d5f3ab359c1eea723c514fdde073a3682c12d"
+  },
+  {
+    "distro": "debian",
+    "package": "libdjvulibre-text",
+    "version": "3.5.27.1-7",
+    "swhid": "swh:1:dir:fcbc0495559fd29bfb928bdeb28b5d1c9ab0fed3"
+  },
+  {
+    "distro": "debian",
+    "package": "task-ssh-server",
+    "version": "3.39",
+    "swhid": "swh:1:dir:e06aedabc5b26916197c61adcd58c748ee43e7b4"
+  },
+  {
+    "distro": "debian",
+    "package": "libspiro0",
+    "version": "1:0.5.20150702-4",
+    "swhid": "swh:1:dir:28c05100d35b3f592a06e5c4463edcfd88a6fad8"
+  },
+  {
+    "distro": "debian",
+    "package": "libklibc",
+    "version": "2.0.4-9",
+    "swhid": "swh:1:dir:0008b955fa3705ac677bc682c300fb80f11889ec"
+  },
+  {
+    "distro": "debian",
+    "package": "python2.7-dev",
+    "version": "2.7.13-2+deb9u3",
+    "swhid": "swh:1:dir:5d0dde871ed19d3a96a4137bede70a1aee6d4bd7"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libyaml-0-2",
+    "version": "0.1.7-2ubuntu3",
+    "swhid": "swh:1:dir:124dac68d6668b5a04f6dff908c6d2890e12bcb4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libc-bin",
+    "version": "2.27-3ubuntu1",
+    "swhid": "swh:1:dir:22cb79e66f368b54b876d305c576f6b7af4b37bf"
+  },
+  {
+    "distro": "debian",
+    "package": "libxcb-dpms0-dev",
+    "version": "1.12-1",
+    "swhid": "swh:1:dir:745caaf63945d5ca3afe7a3ce3583962afc1f262"
+  },
+  {
+    "distro": "debian",
+    "package": "librplay3",
+    "version": "3.3.2-16+b2",
+    "swhid": "swh:1:dir:5202e3a83889f9d3ddb4401f3be7a1a38ae031e7"
+  },
+  {
+    "distro": "debian",
+    "package": "opensp",
+    "version": "1.5.2-13+b1",
+    "swhid": "swh:1:dir:290374c497765f7646872d3cb7f4ce298f806164"
+  },
+  {
+    "distro": "debian",
+    "package": "libogg0",
+    "version": "1.3.2-1",
+    "swhid": "swh:1:dir:2de126f9d8b793fc542992dc8b172ae7400e3512"
+  },
+  {
+    "distro": "debian",
+    "package": "krb5-multidev",
+    "version": "1.15-1+deb9u1",
+    "swhid": "swh:1:dir:48a343801882bdf13c066be2b59dc6dd5decddc2"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "open-iscsi",
+    "version": "2.0.874-5ubuntu2.7",
+    "swhid": "swh:1:dir:9685106055a46772d4e9ca9680d3d41315d0bffc"
+  },
+  {
+    "distro": "debian",
+    "package": "libjq1",
+    "version": "1.5+dfsg-1.3",
+    "swhid": "swh:1:dir:1d294a8c0b1b1eae78349a8a9f25392365d5ca88"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libfile-fcntllock-perl",
+    "version": "0.22-3build2",
+    "swhid": "swh:1:dir:a35e74f4dbee0aa46d39c282762c0a6c630e0491"
+  },
+  {
+    "distro": "debian",
+    "package": "apt-transport-https",
+    "version": "1.4.10",
+    "swhid": "swh:1:dir:e511fec46be8b258dff3596887adc9f6f459299c"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libtasn1-6",
+    "version": "4.13-2",
+    "swhid": "swh:1:dir:4560d0fb8f222f7185609415010ead496404402d"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "os-prober",
+    "version": "1.74ubuntu1",
+    "swhid": "swh:1:dir:91897337d32531db2078b4b621f823af2e870e23"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "dmidecode",
+    "version": "3.1-1ubuntu0.1",
+    "swhid": "swh:1:dir:36ad60c1c6c612a5cbbae94c841d870ec1cac861"
+  },
+  {
+    "distro": "debian",
+    "package": "libnghttp2-14",
+    "version": "1.18.1-1+deb9u1",
+    "swhid": "swh:1:dir:137d7affda3e9f16f4b34e0ace7439c501cff35a"
+  },
+  {
+    "distro": "debian",
+    "package": "libgettextpo-dev",
+    "version": "0.19.8.1-2+deb9u1",
+    "swhid": "swh:1:dir:2f37717c6de8057641b8b43b686b7769693fefe0"
+  },
+  {
+    "distro": "debian",
+    "package": "debconf-i18n",
+    "version": "1.5.61",
+    "swhid": "swh:1:dir:88af4771d036f16fcd5e4d4bb23fc2dea7906450"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "kbd",
+    "version": "2.0.4-2ubuntu1",
+    "swhid": "swh:1:dir:517face76cf7843b3e0db86975c3bba4398ac7c7"
+  },
+  {
+    "distro": "debian",
+    "package": "libisccfg140",
+    "version": "1:9.10.3.dfsg.P4-12.3+deb9u6",
+    "swhid": "swh:1:dir:ba72a41437d77152b35a7d265ca6bff2180a20f1"
+  },
+  {
+    "distro": "debian",
+    "package": "asciidoc-fop",
+    "version": "8.6.9-5",
+    "swhid": "swh:1:dir:c71abd63d79ec811a772083b7431f1d1715a2849"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libisc-export169",
+    "version": "1:9.11.3+dfsg-1ubuntu1.12",
+    "swhid": "swh:1:dir:882614b2f02ab5f03af61ec07bf12068ebc5e66a"
+  },
+  {
+    "distro": "debian",
+    "package": "libio-stringy-perl",
+    "version": "2.111-2",
+    "swhid": "swh:1:dir:f3a45304230cad62148f115450fd570ae2c5dc3a"
+  },
+  {
+    "distro": "debian",
+    "package": "aptitude",
+    "version": "0.8.7-1",
+    "swhid": "swh:1:dir:b8bc1533c2585297c7e64a182f7ffef6216c25ae"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "iproute2",
+    "version": "4.15.0-2ubuntu1.1",
+    "swhid": "swh:1:dir:ab9c68a407817f2fa73b2e052e744e126be5cce8"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "linux-headers-5.3.0-62-generic",
+    "version": "5.3.0-62.56~18.04.1",
+    "swhid": "swh:1:dir:988b8d8164b3964a6b4da5b74e776ab82e02b32c"
+  },
+  {
+    "distro": "debian",
+    "package": "libmp3lame0",
+    "version": "3.99.5+repack1-9+b2",
+    "swhid": "swh:1:dir:0410a98fc143453572ab42cd28d11e5a44b49b9d"
+  },
+  {
+    "distro": "debian",
+    "package": "libreoffice5.3-dict-es",
+    "version": "5.3.4.2-2",
+    "swhid": "swh:1:dir:3095b784e901836ca66e3fdb0b5f3bb666d5f018"
+  },
+  {
+    "distro": "debian",
+    "package": "libisl15",
+    "version": "0.18-1",
+    "swhid": "swh:1:dir:b3c4820cb5fe029a82fe6a3dfa55ed4296de8965"
+  },
+  {
+    "distro": "debian",
+    "package": "postgresql-client-common",
+    "version": "181+deb9u3",
+    "swhid": "swh:1:dir:d26f738dc5108546dcba3076906774ce8a5c3450"
+  },
+  {
+    "distro": "debian",
+    "package": "libx11-protocol-perl",
+    "version": "0.56-7",
+    "swhid": "swh:1:dir:e84ffef50084b7883e387bfae5d350a34277394a"
+  },
+  {
+    "distro": "debian",
+    "package": "libdevmapper1.02.1",
+    "version": "2:1.02.137-2",
+    "swhid": "swh:1:dir:7bf7e0b70ecd341d21a9e88053a11b0e8e4a09db"
+  },
+  {
+    "distro": "debian",
+    "package": "librubberband2",
+    "version": "1.8.1-7",
+    "swhid": "swh:1:dir:dab7a7598ff55b4fd133d1034d00a160c70d02bb"
+  },
+  {
+    "distro": "debian",
+    "package": "xserver-common",
+    "version": "2:1.19.2-1+deb9u5",
+    "swhid": "swh:1:dir:83dfa18af6ccc916cbd120a564319db259c4bfa2"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-gdbm",
+    "version": "3.6.9-1~18.04",
+    "swhid": "swh:1:dir:22e694dce7bf105be7971177d1f9dcd94b9c8416"
+  },
+  {
+    "distro": "debian",
+    "package": "libcgraph6",
+    "version": "2.38.0-17",
+    "swhid": "swh:1:dir:a1316aee79b47201079d36f6240c368a98afa19e"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libmagic-mgc",
+    "version": "1:5.32-2ubuntu0.4",
+    "swhid": "swh:1:dir:a252abd00257d436ca177cead9d835f3f14b8c3a"
+  },
+  {
+    "distro": "debian",
+    "package": "liblcms2-2",
+    "version": "2.8-4+deb9u1",
+    "swhid": "swh:1:dir:122ce2b0edd97a12a27dcc013f2ea9ec1ac8e0fb"
+  },
+  {
+    "distro": "debian",
+    "package": "xterm",
+    "version": "327-2",
+    "swhid": "swh:1:dir:bb108dcb602d19c3a7597cdc5f3a125ed4d82feb"
+  },
+  {
+    "distro": "debian",
+    "package": "libtext-wrapi18n-perl",
+    "version": "0.06-7.1",
+    "swhid": "swh:1:dir:01d5ecde5aa1369ff31fab91f9360a9d2d3a1ec0"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libcap2-bin",
+    "version": "1:2.25-1.2",
+    "swhid": "swh:1:dir:cb4254acb96f0e06371277ee1196542fde35f69b"
+  },
+  {
+    "distro": "debian",
+    "package": "fonts-liberation",
+    "version": "1:1.07.4-2",
+    "swhid": "swh:1:dir:b2448967b0af4e5b0ad2180e12dbe3b1865202e6"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libmpc3",
+    "version": "1.1.0-1",
+    "swhid": "swh:1:dir:944f84e624797295d22d021ed3bc0c7b30d555ba"
+  },
+  {
+    "distro": "debian",
+    "package": "aptitude-common",
+    "version": "0.8.7-1",
+    "swhid": "swh:1:dir:b8bc1533c2585297c7e64a182f7ffef6216c25ae"
+  },
+  {
+    "distro": "debian",
+    "package": "libxml-sax-expat-perl",
+    "version": "0.40-2",
+    "swhid": "swh:1:dir:9e4875c304fa015f702996bcedd18607553c0ca4"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "python3-configobj",
+    "version": "5.0.6-2",
+    "swhid": "swh:1:dir:7179a21d8d6e64ca3aad80122c0b59b5b385a775"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libwrap0",
+    "version": "7.6.q-27",
+    "swhid": "swh:1:dir:e9e730baa9b50b69e3f13781202761b64ba5d910"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "libapt-pkg5.0",
+    "version": "1.6.12ubuntu0.1",
+    "swhid": "swh:1:dir:87427f14ed2a85fbbc52ed06d2d388bca88ea55b"
+  },
+  {
+    "distro": "debian",
+    "package": "libobasis6.1-impress",
+    "version": "6.1.0.3-3",
+    "swhid": "swh:1:dir:be9528c05aeb436cb268fdf6f84eb3ae72fe96af"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "busybox-initramfs",
+    "version": "1:1.27.2-2ubuntu3.2",
+    "swhid": "swh:1:dir:b58bf04145f3f574a980a9a000b75d148fb3fca5"
+  },
+  {
+    "distro": "debian",
+    "package": "libpixman-1-dev",
+    "version": "0.34.0-1",
+    "swhid": "swh:1:dir:da91d0dd7f786788f28ffd4f1249524c7fad1c0c"
+  },
+  {
+    "distro": "debian",
+    "package": "libmono-addins-gui0.2-cil",
+    "version": "1.0+git20130406.adcd75b-4",
+    "swhid": "swh:1:dir:c4beb8ba59ea5a84817958f45bf6d4e74232aeb1"
+  },
+  {
+    "distro": "ubuntu",
+    "package": "tzdata",
+    "version": "2020a-0ubuntu0.18.04",
+    "swhid": "swh:1:dir:355ea56914e709d60cc7de1bb3346a19d1cc582b"
+  }
+]
