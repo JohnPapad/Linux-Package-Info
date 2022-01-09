@@ -32,3 +32,9 @@ class PackageViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.
             models.PackageVersion.objects.create(package=pkg, **req_data_pkg_ver)
 
         return Response({'status': 'versions set'}, status=status.HTTP_201_CREATED)
+
+
+class PackageVersionViewSet(viewsets.ModelViewSet):
+    queryset = models.PackageVersion.objects.all()
+    serializer_class = PackageVersionSerializer
+    permission_classes = [AllowAny]
