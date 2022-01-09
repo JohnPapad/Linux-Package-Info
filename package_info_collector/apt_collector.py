@@ -10,10 +10,10 @@ import time
 
 
 info_to_parse = {
-    "Section": "section", 
-    "Installed-Size": "size", 
-    "Homepage": "homepage", 
-    "Description": "description", 
+    "Section": "section",
+    # "Installed-Size": "size",
+    "Homepage": "homepage",
+    "Description": "description",
     "Original-Maintainer": "maintainer"
 }
 
@@ -25,24 +25,53 @@ def get_pkg_version_hash_id(package_info, version):
     return version + pkg_homepage + pkg_maintainer + pkg_section
 
 
-def parse_packages_info(distro, base_URL):
+def group_package_versions():
     packages_output = (os.popen('apt list --all-versions')).readlines()
-    # random.shuffle(packages_output)
-    print("Number of packages found:", (len(packages_output) // 2)-1)
+    packages_versions = {}
+    for line in packages_output:
+        line = line.rstrip("\n")
+        # print(line)
+        if line == '' or line == "Listing...":
+            continue
+
+        pkg_name, splitted_line = line.split("/")
+        pkg_version, pkg_arch = extract_package_version(splitted_line)
+
+        # print(pkg_name, pkg_version, pkg_arch)
+
+        if pkg_name not in packages_versions:
+            packages_versions[pkg_name] = {
+                pkg_version: {
+                    "architecture": pkg_arch
+                }
+            }
+        else:
+            if pkg_version not in packages_versions[pkg_name]: # package version not in existing versions
+                packages_versions[pkg_name][pkg_version] = {
+                    "architecture": pkg_arch
+                }
+            else: # one of the two archs already exists
+                packages_versions[pkg_name][pkg_version]["architecture"] = "amd64 i386"
+
+        # print("-"*35)
+
+    # print(packages_versions)
+    print("-> Number of packages found:", len(packages_versions))
+    return packages_versions
+
+
+def parse_packages_info(distro, base_URL, max_concurrency):
+    packages_versions = group_package_versions()
     ray_ids = []
     ray.init()
     pkg_counter = 0
     start_time = time.time()
-    for line in packages_output:
-        line = line.rstrip("\n")
-        if line == '' or line == "Listing...":
-            continue
-
-        if len(ray_ids) > 50:
-            num_ready = pkg_counter-50
+    for pkg_name, pkg_versions in packages_versions.items():
+        if len(ray_ids) > max_concurrency:
+            num_ready = pkg_counter-max_concurrency
             ray.wait(ray_ids, num_returns=num_ready)
 
-        ray_id = parallel_processing.remote(distro, base_URL, line, pkg_counter)
+        ray_id = parallel_processing.remote(distro, base_URL, pkg_name, pkg_versions, pkg_counter)
         ray_ids.append(ray_id)
         pkg_counter += 1
 
@@ -57,13 +86,14 @@ def parse_packages_info(distro, base_URL):
     print('-> Elapsed time: ', end_time - start_time)
     
 
-def get_package_versions(string):
+def extract_package_version(string):
     splitted_package_version = string.split(" ")
     package_version = splitted_package_version[1]
     package_arch = splitted_package_version[2]
-    return {
-        package_version: package_arch
-    }
+    if package_arch == "all":
+        package_arch = "amd64 i386"
+
+    return package_version, package_arch
 
 
 def convert_size_to_MBs(size):
@@ -83,27 +113,33 @@ def convert_size_to_MBs(size):
     return number
 
 
+def extract_package_versions_size(package_name, package_versions):
+    info_output = (os.popen(f"apt show {package_name} -a | grep -w 'Version\|Installed-Size'")).readlines()
+    cur_version = None
+    for info_line in info_output:
+        info_key, info_value = info_line.rstrip('\n').split(": ")
+        if info_key == "Version":
+            cur_version = info_value
+        elif info_key == "Installed-Size":
+            assert cur_version in package_versions, f"ERROR in package: ({package_name}), version: ({cur_version}) size extraction: unknown version (should have been previously found)"
+            package_versions[cur_version]["size"] = convert_size_to_MBs(info_value)
+        else:
+            assert True, f"ERROR in package: ({package_name}), version: ({cur_version}) size extraction: unknown info key word ({info_key})"
+
+
 def extract_package_info(package_name):
     info = {}
     info_output = (os.popen(f'apt show {package_name}')).readlines()
     for info_line in info_output:
         # print(info_line)
         splitted_info = info_line.rstrip('\n').split(": ")
-        if len(splitted_info) == 1 and splitted_info != '':
-            # description = splitted_info[0].lstrip(" ").rstrip("\n")
-            # info["description"] += " " + description
-            pass
-        elif len(splitted_info) > 1:
+        if len(splitted_info) > 1:
             info_key = splitted_info[0]
             if info_key not in info_to_parse:
                 continue
 
             info_key = info_to_parse[info_key]
-            info_value = splitted_info[1]
-            if info_key == "size":
-                info_value = convert_size_to_MBs(info_value)
-
-            info[info_key] = info_value
+            info[info_key] = splitted_info[1]
 
     return info
 
@@ -210,48 +246,47 @@ def add_new_package(distro, base_URL, package_name, package_info, pkg_versions_t
     package_info["distro"] = distro
     package_info["name"] = package_name
 
-    print("package_info: ", package_info)
+    # print("package_info: ", package_info)
 
     try:
         res = requests.post(f'{base_URL}/packages/', json=package_info)
-        print("status: ", res.status_code, res.json())
+        # print("status: ", res.status_code, res.json())
     except:
         pass
     
 
 @ray.remote
-def parallel_processing(distro, base_URL, line, i):
-    package_name, splitted_line = line.split("/")
+def parallel_processing(distro, base_URL, package_name, package_versions, i):
     print(f"package: '{package_name}' - #{i}")
-    package_versions = get_package_versions(splitted_line)
 
     pkg_existing_info = fetch_package_info(distro, base_URL, package_name)
 
     if pkg_existing_info == None: # package not included
         package_info = extract_package_info(package_name)
+        extract_package_versions_size(package_name, package_versions)
         pkg_existing_versions = None
     else: # package is included not need to re-parse its info
         package_info = None
         pkg_existing_versions = get_package_existing_versions(pkg_existing_info['versions'])
 
+    # print("package_versions", package_versions)
     pkg_versions_to_add = []
     pkg_versions_to_update = {}
-    for package_version, package_arch in package_versions.items():
-        if pkg_existing_versions and package_version in pkg_existing_versions: # version exists
-            existing_version_arch = pkg_existing_versions[package_version]["architecture"]
-            if package_arch != existing_version_arch and existing_version_arch != "amd64 i386":
+    for pkg_version, pkg_version_info in package_versions.items():
+        pkg_version_arch = pkg_version_info["architecture"]
+        if pkg_existing_versions and pkg_version in pkg_existing_versions: # version exists
+            existing_version_arch = pkg_existing_versions[pkg_version]["architecture"]
+            if pkg_version_arch != existing_version_arch and existing_version_arch != "amd64 i386":
             # if the particular version supports both architectures no need to update (already supports one of the 2 archs)
-                existing_version_id = pkg_existing_versions[package_version]["id"]
+                existing_version_id = pkg_existing_versions[pkg_version]["id"]
                 pkg_versions_to_update[existing_version_id] = "amd64 i386"
         else: # new version
-            if package_arch == "all":
-                package_arch = "amd64 i386"
-
             pkg_versions_to_add.append({
-                "version": package_version,
-                "architecture": package_arch
+                "version": pkg_version,
+                "architecture": pkg_version_arch,
+                "size": pkg_version_info["size"]
             })
- 
+
     if pkg_existing_info != None: # package is already included no need to re-entry its info to the db
         package_id = pkg_existing_info["id"]
         add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, package_id) # add only the possible new versions
@@ -266,4 +301,5 @@ if __name__ == "__main__":
     print("-> Package collector started..")
     distro="Ubuntu"
     base_URL="http://localhost:8000/api/v1"
-    parse_packages_info(distro, base_URL)
+    max_concurrency = 50
+    parse_packages_info(distro, base_URL, max_concurrency)
