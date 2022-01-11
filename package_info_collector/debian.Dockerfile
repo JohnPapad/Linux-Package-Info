@@ -6,13 +6,13 @@ FROM debian:10
 RUN sed -i 's/^deb.*/&\n@&/' /etc/apt/sources.list
 RUN sed -i 's/@deb/deb-src/g' /etc/apt/sources.list
 
-RUN apt update
-RUN apt install -y python3-pip
+RUN apt-get update
+RUN apt-get install -y python3-pip
 
 WORKDIR /collector
 COPY requirements.txt /collector
-RUN pip3 install --no-cache-dir --upgrade pip && \
-    pip3 install --no-cache-dir -r requirements.txt
+RUN python3 -m pip install --no-cache-dir --upgrade pip && \
+    python3 -m pip install --no-cache-dir -r requirements.txt
 
 COPY apt_collector.py /collector
 
