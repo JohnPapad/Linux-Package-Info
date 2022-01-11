@@ -7,6 +7,7 @@ import json
 import requests
 import random
 import time
+import argparse
 
 
 info_to_parse = {
@@ -16,13 +17,6 @@ info_to_parse = {
     "Description": "description",
     "Original-Maintainer": "maintainer"
 }
-
-
-def get_pkg_version_hash_id(package_info, version):
-    pkg_homepage = package_info.get("homepage", version)
-    pkg_section = package_info.get("section", "")
-    pkg_maintainer = package_info.get("maintainer", "")
-    return version + pkg_homepage + pkg_maintainer + pkg_section
 
 
 def group_package_versions():
@@ -121,10 +115,10 @@ def extract_package_versions_size(package_name, package_versions):
         if info_key == "Version":
             cur_version = info_value
         elif info_key == "Installed-Size":
-            assert cur_version in package_versions, f"ERROR in package: ({package_name}), version: ({cur_version}) size extraction: unknown version (should have been previously found)"
+            assert cur_version in package_versions, f"ERROR in package ({package_name}), version ({cur_version}) size extraction: unknown version (should have been previously found)"
             package_versions[cur_version]["size"] = convert_size_to_MBs(info_value)
         else:
-            assert True, f"ERROR in package: ({package_name}), version: ({cur_version}) size extraction: unknown info key word ({info_key})"
+            assert True, f"ERROR in package ({package_name}), version ({cur_version}) size extraction: unknown info key word ({info_key})"
 
 
 def extract_package_info(package_name):
@@ -142,44 +136,6 @@ def extract_package_info(package_name):
             info[info_key] = splitted_info[1]
 
     return info
-
-
-def SWHID_resolve(SWHID):
-    if SWHID == None:
-        return None
-        
-    exists = None
-    try:
-        response = requests.get('https://archive.softwareheritage.org/api/1/resolve/' + SWHID)
-        if response.status_code == 200:
-            exists = True
-        elif response.status_code == 404:
-            exists = False
-    except:
-        pass
-        
-    return exists
-    
-
-def calc_SWHID(package_name, package_version):
-    dir_name = package_name + '-' + package_version
-    cmd = f'''
-        mkdir output/{dir_name} && 
-        cd output/{dir_name} &&
-        apt-get source {package_name}={package_version} &&
-        rm -rf *.dsc *.tar.* &&
-        swh identify --no-filename $(ls -d */) &&
-        cd ../../ &&
-        rm -rf output/{dir_name}
-    '''
-    output = (os.popen(cmd)).readlines()
-
-    SWHID = output[-1].rstrip("\n")
-    if not SWHID.startswith("swh"):
-        SWHID = None
-
-    # print("SWHID", SWHID, " package", package_name, " version", package_version)
-    return SWHID
 
 
 def get_package_existing_versions(package_versions_list):
@@ -206,7 +162,7 @@ def fetch_package_info(distro, base_URL, package_name):
 
         # successfully retrieved package info
         res_data = response.json() # expecting a list with 1 item max
-        assert len(res_data) < 2, f'duplicate packages "{package_name}" were found'
+        assert len(res_data) < 2, f'ERROR in fetching package info: duplicate packages "{package_name}" were found'
         if len(res_data) == 1:
             return res_data[0]
     except:
@@ -217,11 +173,16 @@ def fetch_package_info(distro, base_URL, package_name):
 
 def add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, package_id):
     if len(pkg_versions_to_add) == 0:
-        return
+        return False
+
     try:
-        requests.post(f'{base_URL}/packages/{package_id}/versions/', json=pkg_versions_to_add)
+        res = requests.post(f'{base_URL}/packages/{package_id}/versions/', json=pkg_versions_to_add)
+        if res.status_code == 201:
+            return True
     except:
         pass
+
+    return False
 
 
 def update_existing_package_versions(base_URL, pkg_versions_to_update):
@@ -250,14 +211,18 @@ def add_new_package(distro, base_URL, package_name, package_info, pkg_versions_t
 
     try:
         res = requests.post(f'{base_URL}/packages/', json=package_info)
+        if res.status_code == 201:
+            return True
         # print("status: ", res.status_code, res.json())
     except:
         pass
+
+    return False
     
 
 @ray.remote
 def parallel_processing(distro, base_URL, package_name, package_versions, i):
-    print(f"package: '{package_name}' - #{i}")
+    # print(f"-> Now processing package: '{package_name}' - #{i}")
 
     pkg_existing_info = fetch_package_info(distro, base_URL, package_name)
 
@@ -287,19 +252,52 @@ def parallel_processing(distro, base_URL, package_name, package_versions, i):
                 "size": pkg_version_info["size"]
             })
 
+    report_msg = f"-> Package #{i} - {package_name}: "
     if pkg_existing_info != None: # package is already included no need to re-entry its info to the db
         package_id = pkg_existing_info["id"]
-        add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, package_id) # add only the possible new versions
-        update_existing_package_versions(base_URL, pkg_versions_to_update) # update versions' info of existing packages
+        new_versions_flag = add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, package_id) # add only the possible new versions
+        update_versions_flag = update_existing_package_versions(base_URL, pkg_versions_to_update) # update versions' info of existing packages
+        
+        if new_versions_flag:
+            report_msg += "successfully added new versions "
+        else:
+            report_msg += "no new version was added "
+
+        # if update_versions_flag:
+        #     report_msg += "- successfully updated existing versions"
+        # else:
+        #     report_msg += "- failed to update existing versions"
+
     else: # package not included
-        add_new_package(distro, base_URL, package_name, package_info, pkg_versions_to_add)
+        package_saved_flag = add_new_package(distro, base_URL, package_name, package_info, pkg_versions_to_add)
+        if package_saved_flag:
+            report_msg += "successfully added"
+        else:
+            report_msg += "failed to be added"
 
-    return f"-> Package #{i} - {package_name} collected"
-
+    return report_msg
+    
 
 if __name__ == "__main__":
-    print("-> Package collector started..")
-    distro="Ubuntu"
-    base_URL="http://localhost:8000/api/v1"
-    max_concurrency = 50
-    parse_packages_info(distro, base_URL, max_concurrency)
+    cmdParser = argparse.ArgumentParser(
+        allow_abbrev=False, 
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description="A script that parses useful info about all software packages (along with all their corresponding available versions) of a Linux distribution, that uses the 'apt' package manager, and sends them to a backend through an API in order to be saved in a database",
+        epilog='''for example in order to parse info about the Ubuntu:20.04 packages (given the fact that the backend runs on the same machine):
+$ python3 apt_collector.py -d Ubuntu:20.04 -u http://localhost:8000/api/v1'''
+    )
+    cmdParser.add_argument('--max-concurrency', '-c', type=int, dest='max_concurrency', metavar='<int>', help='[default: 50] Number of maximum packages that will be processed concurrently', default=50)
+    cmdParser.add_argument('--distro', '-d', type=str, dest='distro', metavar='<str>', help='The linux distribution name', required=True)
+    cmdParser.add_argument('--url', '-u', type=str, dest='base_URL', metavar='<url>', help="API's base URL", required=True)
+
+    cmdArgs = vars(cmdParser.parse_args())
+
+    print("--> Linux Package Collector started..")
+    print('-> Command line arguments:')
+    print('- Linux Distribution: ', cmdArgs['distro'])
+    print("- API's base URL: ", cmdArgs['base_URL'])
+    print('- Number of maximum packages to be processed concurrently: ', cmdArgs['max_concurrency'])
+    print("-" * 35)
+
+    parse_packages_info(cmdArgs['distro'], cmdArgs['base_URL'], cmdArgs['max_concurrency'])
+    print("--> Linux Package Collector finished..")
