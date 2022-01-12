@@ -5,5 +5,14 @@ from django.contrib import admin
 from .models import Package, PackageVersion
 
 # Register your models here.
-admin.site.register(Package)
+
+class PackageModelAdmin(admin.ModelAdmin):
+    list_filter = [
+        "distro"
+    ]
+    search_fields = (
+        "name",
+    )
+
+admin.site.register(Package, PackageModelAdmin)
 admin.site.register(PackageVersion)
