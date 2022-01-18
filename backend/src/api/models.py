@@ -16,6 +16,7 @@ class Package(models.Model):
     maintainer = models.CharField(max_length=100, blank=True, default='')
     description = models.CharField(max_length=200, blank=True, default='')
     homepage = models.URLField(blank=True, default='')
+    repo_URL = models.URLField(blank=True, default='')
 
     def __str__(self):
         return f"{self.name} ({self.distro})"
@@ -25,14 +26,14 @@ class Package(models.Model):
 
 
 class PackageVersion(models.Model):
-    VERSION_ARCHs = Choices("amd64", "i386", "amd64 i386")
-
     package = models.ForeignKey(Package, related_name="versions", on_delete=models.CASCADE)
     version = models.CharField(max_length=50)
-    architecture = models.CharField(max_length=20, choices=VERSION_ARCHs)
+    architecture = models.CharField(max_length=20)
     swhid = models.CharField(max_length=100, blank=True, default='')
     swhid_exists = models.BooleanField(blank=True, null=True)
-    size = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0.0000001)]) # in MBs
+    size = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0.00095)]) # in kBs
+    binary_URL = models.URLField(blank=True, default='')
+
     rating = models.PositiveSmallIntegerField(blank=True, null=True, validators=[
         MinValueValidator(1),
         MaxValueValidator(5)
