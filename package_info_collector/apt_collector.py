@@ -8,6 +8,12 @@ import requests
 import random
 import time
 import argparse
+from os import getenv
+
+
+github_API_headers = {
+    'Authorization': f"token {getenv('GITHUB-TOKEN')}"
+}
 
 
 info_to_parse = {
@@ -96,7 +102,7 @@ def extract_package_license_from_github_repo(pkg_repo_id):
     attempting to extract license from the package's github repo through its API
     '''    
     try:
-        response = requests.get(f'https://api.github.com/repos/{pkg_repo_id}')
+        response = requests.get(f'https://api.github.com/repos/{pkg_repo_id}', headers=github_API_headers)
         if response.status_code != 200:
             return None
 
