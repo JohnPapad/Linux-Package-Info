@@ -177,7 +177,7 @@ def extract_package_version_info(package_name, package_version, distro_archives_
 
     try:
         binary_URL = info_output[1].rstrip('\n').split("Filename: ")[1] # Filename: <archive_path>
-        binary_URL = distro_archives_URL + binary_URL
+        binary_URL = f'{distro_archives_URL}/{binary_URL}'
     except:
         binary_URL= None
 
@@ -202,7 +202,7 @@ def extract_package_info(package_name, package_versions, distro_archives_URL):
             package_versions[cur_version]["size"] = float(info_value.replace(",", "."))
         elif info_key == "Filename":
             assert cur_version in package_versions, f"ERROR in package ({package_name}), version ({cur_version}) binary URL extraction: unknown version (should have been previously found)"
-            binary_URL = distro_archives_URL + info_value
+            binary_URL = f'{distro_archives_URL}/{info_value}'
             package_versions[cur_version]["binary_URL"] = binary_URL
         elif info_key not in info_to_parse or info_to_parse[info_key] in info:
             continue
@@ -400,13 +400,17 @@ $ python3 apt_collector.py -d Ubuntu:20.04 -u http://localhost:8000/api/v1 -a ht
 
     cmdArgs = vars(cmdParser.parse_args())
 
+    info_output = (os.popen(f'lsb_release -r')).readline()
+    distro_release = info_output.rstrip("\n").split("Release:")[1].lstrip("\t")
+    distro = f"{cmdArgs['distro']}:{distro_release}"
+
     print("--> Linux Package Collector started..")
     print('-> Command line arguments:')
-    print('- Linux Distribution:', cmdArgs['distro'])
+    print('- Linux Distribution:', distro)
     print("- Backend's API base URL:", cmdArgs['base_URL'])
     print("- Linux distribution's archives base URL:", cmdArgs['distro_archives_URL'])
     print('- Number of maximum packages to be processed concurrently:', cmdArgs['max_concurrency'])
     print("-" * 35)
 
-    parse_packages_info(cmdArgs['distro'], cmdArgs['base_URL'], cmdArgs['max_concurrency'], cmdArgs['distro_archives_URL'])
+    parse_packages_info(distro, cmdArgs['base_URL'], cmdArgs['max_concurrency'], cmdArgs['distro_archives_URL'])
     print("--> Linux Package Collector finished..")
