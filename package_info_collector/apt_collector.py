@@ -18,13 +18,13 @@ github_API_headers = {
 
 info_to_parse = {
     "Section": "section",
-    # "Installed-Size": "size",
-    # "Filename": "binary_URL"
     "Homepage": "homepage",
     "Description": "description",
     "Description-en": "description",
     "Maintainer": "maintainer",
     "Original-Maintainer": "orig_maintainer",
+    # "Installed-Size": "size",
+    # "Filename": "binary_URL"
 }
 
 
@@ -108,7 +108,7 @@ def extract_package_license_from_github_repo(pkg_repo_id):
 
         license_info = response.json().get("license")
         if not license_info:
-            pkg_license = "No license. All rights reserved"
+            pkg_license = "No license"
         else:
             pkg_license = license_info.get("name")
 
@@ -135,7 +135,7 @@ def extract_package_license_from_salsa_repo(pkg_repo_id):
 
         license_info = response.json().get("license")
         if not license_info:
-            pkg_license = "No license. All rights reserved"
+            pkg_license = "No license"
         else:
             pkg_license = license_info.get("name")
 
@@ -223,8 +223,9 @@ def extract_package_info(package_name, package_versions, distro_archives_URL):
 
     if "maintainer" in info and "orig_maintainer" in info:
         # keep only the original maintainer field
-        info["maintainer"] = info["orig_maintainer"]
-        del info["orig_maintainer"]
+        info["maintainer"] = info.pop("orig_maintainer")
+    elif "orig_maintainer" in info:
+        info["maintainer"] = info.pop("orig_maintainer")
 
     pkg_homepage = info.get("homepage")
     # pkg_binary_URL = info.get("binary_URL")
