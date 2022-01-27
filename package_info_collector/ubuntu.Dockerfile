@@ -1,11 +1,11 @@
 # Copyright 2021 Ioannis Papadopoulos
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 RUN sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
 RUN apt update
-RUN apt install python3-pip -y
+RUN apt install python3-pip -y && apt install lsb-release -y
 
 WORKDIR /collector
 COPY requirements.txt /collector

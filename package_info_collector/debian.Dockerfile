@@ -1,13 +1,13 @@
 # Copyright 2021 Ioannis Papadopoulos
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-FROM debian:10
+FROM debian:latest
 
 RUN sed -i 's/^deb.*/&\n@&/' /etc/apt/sources.list
 RUN sed -i 's/@deb/deb-src/g' /etc/apt/sources.list
 
 RUN apt-get update
-RUN apt-get install -y python3-pip
+RUN apt-get install -y python3-pip && apt-get install lsb-release -y
 
 WORKDIR /collector
 COPY requirements.txt /collector
