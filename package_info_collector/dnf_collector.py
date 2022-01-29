@@ -23,25 +23,30 @@ info_to_parse = {
 }
 
 
-def parse_packages_info(distro, base_URL, max_concurrency, distro_archives_URL, distro_repos_URL):
+def group_packages():
     packages_output = (os.popen('dnf list all')).readlines()
-   
-    ray_ids = []
-    # ray.init()
-    pkg_counter = 0
-    start_time = time.time()
-    for i, line in enumerate(packages_output):
-        line = line.rstrip("\n")
-        # print(line)
+    packages = {}
+    for line in packages_output:
         try:
             pkg_name, _ = line.split(" ")[0].split(".")
-            # if pkg_arch == "x86_64":
-            #     pkg_arch = "amd64"
-            # elif pkg_arch == "i686":
-            #     pkg_arch = "i386"
         except:
             continue
 
+        if pkg_name not in packages:
+            packages[pkg_name] = None
+
+    print("-> Number of packages found:", len(packages))
+    return packages
+
+
+def parse_packages_info(distro, base_URL, max_concurrency, distro_archives_URL, distro_repos_URL):
+    packages = group_packages()
+
+    ray_ids = []
+    ray.init()
+    pkg_counter = 0
+    start_time = time.time()
+    for pkg_name in packages:
         if len(ray_ids) > max_concurrency:
             num_ready = pkg_counter-max_concurrency
             ray.wait(ray_ids, num_returns=num_ready)
@@ -49,8 +54,6 @@ def parse_packages_info(distro, base_URL, max_concurrency, distro_archives_URL, 
         ray_id = parallel_processing.remote(distro, base_URL, pkg_name, distro_archives_URL, distro_repos_URL, pkg_counter)
         ray_ids.append(ray_id)
         pkg_counter += 1
-        if pkg_counter == 20:
-            break
 
     unfinished = ray_ids
     while unfinished:
@@ -131,18 +134,13 @@ def extract_package_version_info(pkg_name_version_release):
             continue
 
         if info_key == "Architecture":
-            if info_value == "x86_64":
-                info_value = "amd64"
-            elif info_value == "i686":
-                info_value = "i386"
-
             cur_version_arch = info_value
             if version_arch is None:
                 version_arch = info_value
             else:
                 version_arch += " " + info_value
         elif info_key == "Size":
-            if version_size is None or cur_version_arch == "amd64":
+            if version_size is None or cur_version_arch == "x86_64":
                 version_size = convert_size_to_kBs(info_value)
 
     return version_arch, version_size
@@ -236,18 +234,13 @@ def extract_package_info(package_name, distro_archives_URL, distro_repos_URL):
                     "version": cur_version_release
                 }
         elif info_key == "Architecture":
-            if info_value == "x86_64":
-                info_value = "amd64"
-            elif info_value == "i686":
-                info_value = "i386"
-
             cur_arch = info_value
             if "architecture" not in versions_info[cur_version_release]:
                 versions_info[cur_version_release]["architecture"] = info_value
             elif info_value not in versions_info[cur_version_release]["architecture"]:
                 versions_info[cur_version_release]["architecture"] += " " + info_value
         elif info_key == "Size":
-            if "size" not in versions_info[cur_version_release] or cur_arch == "amd64":
+            if "size" not in versions_info[cur_version_release] or cur_arch == "x86_64":
                 size = convert_size_to_kBs(info_value)
                 if size is not None:
                     versions_info[cur_version_release]["size"] = size
@@ -412,16 +405,20 @@ $ python3 apt_collector.py -d Ubuntu:20.04 -u http://localhost:8000/api/v1 -a ht
 
     cmdArgs = vars(cmdParser.parse_args())
 
+    info_output = (os.popen(f'lsb_release -r')).readline()
+    distro_release = info_output.rstrip("\n").split("Release:")[1].lstrip("\t")
+    distro = f"{cmdArgs['distro']}:{distro_release}"
+
     print("--> Linux Package Collector started..")
     print('-> Command line arguments:')
-    print('- Linux Distribution:', cmdArgs['distro'])
+    print('- Linux Distribution:', distro)
     print("- Backend's API base URL:", cmdArgs['base_URL'])
     print("- Linux distribution's archives base URL:", cmdArgs['distro_archives_URL'])
     print("- Linux distribution's repositories base URL:", cmdArgs['distro_repos_URL'])
     print('- Number of maximum packages to be processed concurrently:', cmdArgs['max_concurrency'])
     print("-" * 35)
 
-    parse_packages_info(cmdArgs['distro'], cmdArgs['base_URL'], cmdArgs['max_concurrency'], cmdArgs['distro_archives_URL'], cmdArgs['distro_repos_URL'])
+    parse_packages_info(distro, cmdArgs['base_URL'], cmdArgs['max_concurrency'], cmdArgs['distro_archives_URL'], cmdArgs['distro_repos_URL'])
     print("--> Linux Package Collector finished..")
     # info_output = (os.popen(f'dnf info cracklib')).readlines()
     # print(info_output)
