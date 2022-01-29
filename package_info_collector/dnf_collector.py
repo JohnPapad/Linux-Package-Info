@@ -22,6 +22,15 @@ info_to_parse = {
     # "Source": "binary_URL",
 }
 
+centOS_repos = {
+    "appstream": "AppStream",
+    "baseos": "BaseOS",
+    "ha": "HighAvailability",
+    "powertools": "PowerTools",
+    "plus": "centosplus",
+    "extras": "extras"
+}
+
 
 def group_packages():
     packages_output = (os.popen('dnf list all')).readlines()
@@ -122,9 +131,10 @@ def extract_package_repo_id(pkg_repo_URL, base_URL):
 
 
 def extract_package_version_info(pkg_name_version_release):
-    info_output = (os.popen(f'dnf info {pkg_name_version_release} | grep -wE "^Size|^Architecture"')).readlines()
+    info_output = (os.popen(f'dnf info {pkg_name_version_release} | grep -wE "^Size|^Architecture|^Repository|^From repo"')).readlines()
     version_arch = None
     version_size = None
+    version_repo = None
     cur_version_arch = None
     for info_line in info_output:
         try:
@@ -142,8 +152,11 @@ def extract_package_version_info(pkg_name_version_release):
         elif info_key == "Size":
             if version_size is None or cur_version_arch == "x86_64":
                 version_size = convert_size_to_kBs(info_value)
+        elif info_key == "Repository" or info_key == "From repo":
+            if info_value in centOS_repos:
+                version_repo = info_value
 
-    return version_arch, version_size
+    return version_arch, version_size, version_repo
 
 
 def extract_package_version_names(package_name):
@@ -200,14 +213,15 @@ def extract_package_info_from_distro_repo(distro_repos_URL, package_name):
         return None, None
 
 
-def extract_package_info(package_name, distro_archives_URL, distro_repos_URL):
+def extract_package_info(package_name, distro, distro_archives_URL, distro_repos_URL):
     info = {}
     versions_info = {}
-    info_output = (os.popen(f'dnf info {package_name} | grep -wE "^Size|^Summary|^License|^Version|^Release|^Source|^URL|^Architecture"')).readlines() #--showduplicates
+    info_output = (os.popen(f'dnf info {package_name} | grep -wE "^Size|^Summary|^License|^Version|^Release|^Source|^URL|^Architecture|^Repository|^From repo"')).readlines() #--showduplicates
     cur_version = None
     cur_release = None
     cur_arch = None
     cur_version_release = None
+    cur_version_source = None
     for info_line in info_output:
         # print(info_line)
         try:
@@ -245,8 +259,14 @@ def extract_package_info(package_name, distro_archives_URL, distro_repos_URL):
                 if size is not None:
                     versions_info[cur_version_release]["size"] = size
         elif info_key == "Source":
-            binary_URL = f'{distro_archives_URL}/{package_name}/{cur_version}/{cur_release}/src/{info_value}'
-            versions_info[cur_version_release]["binary_URL"] = binary_URL
+            cur_version_source = info_value
+            if distro.startswith("Fedora"):
+                binary_URL = f'{distro_archives_URL}/{package_name}/{cur_version}/{cur_release}/src/{cur_version_source}'
+                versions_info[cur_version_release]["binary_URL"] = binary_URL
+        elif info_key == "Repository" or info_key == "From repo":
+            if info_value in centOS_repos and distro.startswith("CentOS"):
+                binary_URL = f'{distro_archives_URL}/{centOS_repos[info_value]}/Source/SPackages/{cur_version_source}'
+                versions_info[cur_version_release]["binary_URL"] = binary_URL
         elif info_key not in info_to_parse or info_to_parse[info_key] in info:
             continue
         else:
@@ -254,18 +274,29 @@ def extract_package_info(package_name, distro_archives_URL, distro_repos_URL):
 
     # return
     # print("/" * 35)
-    repo_URL, maintainer = extract_package_info_from_distro_repo(distro_repos_URL, package_name)
-    if repo_URL and maintainer:
-        info["repo_URL"] = repo_URL
-        info["maintainer"] = maintainer
-    else:
-        pkg_homepage = info.get("homepage", "")
-        if pkg_homepage.startswith("https://github.com/"): #fallback to github repo (if existant)
+    pkg_homepage = info.get("homepage", "")
+    if distro.startswith("Fedora"):
+        repo_URL, maintainer = extract_package_info_from_distro_repo(distro_repos_URL, package_name)
+        if repo_URL and maintainer:
+            info["repo_URL"] = repo_URL
+            info["maintainer"] = maintainer
+        elif pkg_homepage.startswith("https://github.com/"): #fallback to github repo (if existant)
             info["repo_URL"] = pkg_homepage
             pkg_repo_id = extract_package_repo_id(pkg_homepage, "https://github.com/")
             maintainer = extract_package_info_from_github_repo(pkg_repo_id)
             if maintainer:
                 info["maintainer"] = maintainer
+
+    elif distro.startswith("CentOS"):
+        if pkg_homepage.startswith("https://github.com/"):
+            info["repo_URL"] = pkg_homepage
+            pkg_repo_id = extract_package_repo_id(pkg_homepage, "https://github.com/")
+            maintainer = extract_package_info_from_github_repo(pkg_repo_id)
+            if maintainer:
+                info["maintainer"] = maintainer
+        else:
+            repo_URL = f'{distro_repos_URL}/{package_name}'
+            info["repo_URL"] = repo_URL
 
     return info, versions_info
 
@@ -345,7 +376,7 @@ def parallel_processing(distro, base_URL, package_name, distro_archives_URL, dis
     pkg_existing_info = fetch_package_info(distro, base_URL, package_name)
 
     if pkg_existing_info is None: # package not included
-        package_info, package_versions = extract_package_info(package_name, distro_archives_URL, distro_repos_URL)
+        package_info, package_versions = extract_package_info(package_name, distro, distro_archives_URL, distro_repos_URL)
         # print("--->", package_name)
         # print(package_info, "\n")
         # print(package_versions, "\n", "-" *30)
@@ -371,8 +402,12 @@ def parallel_processing(distro, base_URL, package_name, distro_archives_URL, dis
                 continue
 
             # new version
-            pkg_version_binary_URL = f'{distro_archives_URL}/{package_name}/{pkg_version_info["name"]}/{pkg_version_info["release"]}/src/{pkg_version_info["full_name"]}.src.rpm'
-            pkg_version_arch, pkg_version_size = extract_package_version_info(pkg_version_info["full_name"])
+            pkg_version_arch, pkg_version_size, pkg_version_repo = extract_package_version_info(pkg_version_info["full_name"])
+            if distro.startswith("Fedora"):
+                pkg_version_binary_URL = f'{distro_archives_URL}/{package_name}/{pkg_version_info["name"]}/{pkg_version_info["release"]}/src/{pkg_version_info["full_name"]}.src.rpm'
+            elif distro.startswith("CentOS"):
+                pkg_version_binary_URL = f'{distro_archives_URL}/{centOS_repos[pkg_version_repo]}/Source/SPackages/{pkg_version_info["full_name"]}.src.rpm'
+
             pkg_versions_to_add.append({
                 "version": pkg_version,
                 "architecture": pkg_version_arch,
