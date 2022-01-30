@@ -6,15 +6,14 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from model_utils import Choices
 
 
-class Package(models.Model):
-    # DISTROS = Choices('Ubuntu', 'Debian', 'Fedora')
-    
+class Package(models.Model):    
     name = models.CharField(max_length=50)
     distro = models.CharField(max_length=50)
+    type = models.CharField(max_length=20, default='')
     section = models.CharField(max_length=50, blank=True, default='')
-    license = models.CharField(max_length=50, blank=True, default='')
-    maintainer = models.CharField(max_length=100, blank=True, default='')
-    description = models.CharField(max_length=200, blank=True, default='')
+    license = models.CharField(max_length=200, blank=True, default='')
+    maintainer = models.CharField(max_length=200, blank=True, default='')
+    description = models.CharField(max_length=300, blank=True, default='')
     homepage = models.URLField(blank=True, default='')
     repo_URL = models.URLField(blank=True, default='')
 
@@ -27,8 +26,8 @@ class Package(models.Model):
 
 class PackageVersion(models.Model):
     package = models.ForeignKey(Package, related_name="versions", on_delete=models.CASCADE)
-    version = models.CharField(max_length=50)
-    architecture = models.CharField(max_length=20)
+    version = models.CharField(max_length=100)
+    architecture = models.CharField(max_length=50)
     swhid = models.CharField(max_length=100, blank=True, default='')
     swhid_exists = models.BooleanField(blank=True, null=True)
     size = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0.00095)]) # in kBs
