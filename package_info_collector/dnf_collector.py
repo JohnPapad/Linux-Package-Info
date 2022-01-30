@@ -216,6 +216,22 @@ def extract_package_info_from_distro_repo(distro_repos_URL, package_name):
         return None, None
 
 
+def extract_package_info_from_distro_repo2(distro_repos_URL, package_name):
+    if package_name is None:
+        return None
+
+    try:
+        response = requests.get(f'{distro_repos_URL}/{package_name}')
+        if response.status_code != 200:
+            print("-> distro repo failure response: ", response.json())
+            return None
+
+        maintainer = response.json()['user'].get("fullname")
+        return maintainer
+    except:
+        return None
+
+
 def extract_base_package_name(package_name):
     base_pkg_name = package_name.split("-")
     if len(base_pkg_name) == 1:
@@ -243,7 +259,8 @@ def extract_package_info(package_name, distro, distro_archives_URL, distro_repos
     cur_release = None
     cur_arch = None
     cur_version_release = None
-    cur_version_source = None
+    cur_source = None
+    pkg_repo = None
     for info_line in info_output:
         # print(info_line)
         try:
@@ -281,14 +298,15 @@ def extract_package_info(package_name, distro, distro_archives_URL, distro_repos
                 if size is not None:
                     versions_info[cur_version_release]["size"] = size
         elif info_key == "Source":
-            cur_version_source = info_value
+            cur_source = info_value
             if distro.startswith("Fedora"):
-                binary_URL = f'{distro_archives_URL}/{package_name}/{cur_version}/{cur_release}/src/{cur_version_source}'
+                binary_URL = f'{distro_archives_URL}/{package_name}/{cur_version}/{cur_release}/src/{cur_source}'
                 versions_info[cur_version_release]["binary_URL"] = binary_URL
+            elif distro.startswith("CentOS"):
+                versions_info[cur_version_release]["binary_URL"] = cur_source
         elif info_key == "Repository" or info_key == "From repo":
             if info_value in centOS_repos and distro.startswith("CentOS"):
-                binary_URL = f'{distro_archives_URL}/{centOS_repos[info_value]}/Source/SPackages/{cur_version_source}'
-                versions_info[cur_version_release]["binary_URL"] = binary_URL
+                pkg_repo = info_value
         elif info_key not in info_to_parse or info_to_parse[info_key] in info:
             continue
         else:
@@ -323,15 +341,30 @@ def extract_package_info(package_name, distro, distro_archives_URL, distro_repos
         return info, versions_info
 
     if distro.startswith("CentOS"):
+        if pkg_repo is not None:
+            binary_base_URL = f'{distro_archives_URL}/{centOS_repos[pkg_repo]}/Source/SPackages/'
+            for vers_key, vers_info in versions_info.items():
+                versions_info[vers_key]["binary_URL"] = binary_base_URL + vers_info["binary_URL"]
+
         if pkg_homepage.startswith("https://github.com/"):
             info["repo_URL"] = pkg_homepage
             pkg_repo_id = extract_package_repo_id(pkg_homepage, "https://github.com/")
             maintainer = extract_package_info_from_github_repo(pkg_repo_id)
             if maintainer:
                 info["maintainer"] = maintainer
-        else:
-            repo_URL = f'{distro_repos_URL}/{package_name}'
-            info["repo_URL"] = repo_URL
+                return info, versions_info
+
+        maintainer = extract_package_info_from_distro_repo2(distro_repos_URL, package_name)
+        if maintainer:
+            info["repo_URL"] = distro_repos_URL.replace("/api/0/", "/") + "/" + package_name
+            info["maintainer"] = maintainer
+            return info, versions_info
+
+        pkg_base_name = extract_base_package_name(package_name)
+        maintainer = extract_package_info_from_distro_repo2(distro_repos_URL, pkg_base_name)
+        if maintainer:
+            info["repo_URL"] = distro_repos_URL.replace("/api/0/", "/") + "/" + pkg_base_name
+            info["maintainer"] = maintainer
 
     return info, versions_info
 
