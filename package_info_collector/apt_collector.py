@@ -33,14 +33,11 @@ def group_package_versions():
     packages_versions = {}
     for line in packages_output:
         line = line.rstrip("\n")
-        # print(line)
         if line == '' or line == "Listing...":
             continue
 
         pkg_name, splitted_line = line.split("/")
         pkg_version, pkg_arch = extract_package_version(splitted_line)
-
-        # print(pkg_name, pkg_version, pkg_arch)
 
         if pkg_name not in packages_versions:
             packages_versions[pkg_name] = {
@@ -56,9 +53,6 @@ def group_package_versions():
             else: # one of the two archs already exists
                 packages_versions[pkg_name][pkg_version]["architecture"] += " " + pkg_arch
 
-        # print("-"*35)
-
-    # print(packages_versions)
     print("-> Number of packages found:", len(packages_versions))
     return packages_versions
 
@@ -93,6 +87,8 @@ def extract_package_version(string):
     splitted_package_version = string.split(" ")
     package_version = splitted_package_version[1]
     package_arch = splitted_package_version[2]
+    if package_arch == "amd64":
+        package_arch = "x86_64"
 
     return package_version, package_arch
 
@@ -189,27 +185,29 @@ def extract_package_info(package_name, package_versions, distro_archives_URL):
     info_output = (os.popen(f'apt-cache show {package_name} | grep -wE "^Installed-Size|^Filename|^Description|^Version|^Maintainer|^Original-Maintainer|^Section|^Homepage"')).readlines()
     cur_version = None
     for info_line in info_output:
-        # print(info_line)
-        splitted_info = info_line.rstrip('\n').split(": ")
-        if len(splitted_info) != 2:
+        try:
+            info_key, info_value = info_line.rstrip('\n').split(": ")
+        except:
             continue
 
-        info_key, info_value = splitted_info
         if info_key == "Version":
             cur_version = info_value
         elif info_key == "Installed-Size":
-            assert cur_version in package_versions, f"ERROR in package ({package_name}), version ({cur_version}) size extraction: unknown version (should have been previously found)"
             package_versions[cur_version]["size"] = float(info_value.replace(",", "."))
         elif info_key == "Filename":
-            assert cur_version in package_versions, f"ERROR in package ({package_name}), version ({cur_version}) binary URL extraction: unknown version (should have been previously found)"
             binary_URL = f'{distro_archives_URL}/{info_value}'
             package_versions[cur_version]["binary_URL"] = binary_URL
         elif info_key not in info_to_parse or info_to_parse[info_key] in info:
             continue
+        elif info_key == "Section":
+            try:
+                section = info_value.split("/")[-1]
+            except:
+                section = info_value
+            info[info_to_parse["Section"]] = section
         else:
             info[info_to_parse[info_key]] = info_value
 
-    # print("/" * 35)
     try:
         info_output = (os.popen(f'apt-cache showsrc {package_name} | grep -wE "^Vcs-Browser"')).readline()
         pkg_repo_URL = info_output.split("Vcs-Browser: ")[1].rstrip("\n")
@@ -218,8 +216,6 @@ def extract_package_info(package_name, package_versions, distro_archives_URL):
 
     if pkg_repo_URL is not None:
         info["repo_URL"] = pkg_repo_URL
-    # print(pkg_repo_URL)
-    # print("/" * 35)
 
     if "maintainer" in info and "orig_maintainer" in info:
         # keep only the original maintainer field
@@ -250,22 +246,6 @@ def extract_package_info(package_name, package_versions, distro_archives_URL):
         pkg_repo_id = extract_package_repo_id(pkg_homepage, "https://github.com/")
         pkg_license = extract_package_license_from_github_repo(pkg_repo_id)
 
-    # elif pkg_binary_URL:
-    #     pkg_dsc_file_URL = remove_substrings(pkg_binary_URL, ["_amd64", "_i386", "_all"])
-    #     pkg_dsc_file_URL = pkg_dsc_file_URL[:-3] + "dsc"
-    #     pkg_repo_URL = extract_package_repo_URL_from_dsc_file(pkg_dsc_file_URL)
-
-    #     if pkg_repo_URL:
-    #         info["repo_URL"] = pkg_repo_URL
-
-    #         if pkg_repo_URL.startswith("https://github.com/"):
-    #             pkg_repo_id = extract_package_repo_id(pkg_repo_URL, "https://github.com/")
-    #             pkg_license = extract_package_license_from_github_repo(pkg_repo_id)
-    #         elif pkg_repo_URL.startswith("https://salsa.debian.org/"):
-    #             pkg_repo_id = extract_package_repo_id(pkg_repo_URL, "https://salsa.debian.org/")
-    #             pkg_license = extract_package_license_from_salsa_repo(pkg_repo_id)
-
-    # print(pkg_license)
     if pkg_license is not None:
         info["license"] = pkg_license
 
@@ -296,9 +276,7 @@ def fetch_package_info(distro, base_URL, package_name):
 
         # successfully retrieved package info
         res_data = response.json() # expecting a list with 1 item max
-        assert len(res_data) < 2, f'ERROR in fetching package info: duplicate packages "{package_name}" were found'
-        if len(res_data) == 1:
-            return res_data[0]
+        return res_data[0]
     except:
         pass
 
@@ -326,23 +304,20 @@ def add_new_package(distro, base_URL, package_name, package_info, pkg_versions_t
     package_info["versions"] = pkg_versions_to_add
     package_info["distro"] = distro
     package_info["name"] = package_name
-
-    # print("package_info: ", package_info)
+    package_info["type"] = "deb"
 
     try:
         res = requests.post(f'{base_URL}/packages/', json=package_info)
         if res.status_code == 201:
             return True
-        # print("status: ", res.status_code, res.json())
     except:
         pass
 
     return False
-    
+
 
 @ray.remote
 def parallel_processing(distro, base_URL, package_name, package_versions, distro_archives_URL, i):
-    # print(f"-> Now processing package: '{package_name}' - #{i}")
     report_msg = f"-> Package #{i} - {package_name}: "
     pkg_existing_info = fetch_package_info(distro, base_URL, package_name)
 
