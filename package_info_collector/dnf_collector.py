@@ -200,6 +200,9 @@ def convert_size_to_kBs(size):
 
 
 def extract_package_info_from_distro_repo(distro_repos_URL, package_name):
+    if package_name is None:
+        return None, None
+
     try:
         response = requests.get(f'{distro_repos_URL}/{package_name}')
         if response.status_code != 200:
@@ -211,6 +214,25 @@ def extract_package_info_from_distro_repo(distro_repos_URL, package_name):
         return repo_URL, maintainer
     except:
         return None, None
+
+
+def extract_base_package_name(package_name):
+    base_pkg_name = package_name.split("-")
+    if len(base_pkg_name) == 1:
+        return None
+
+    if len(base_pkg_name) == 2:
+        return base_pkg_name[0]
+
+    return "-".join(base_pkg_name[:-1]) # wipe out the last token
+
+
+def fix_package_versions_binary_URLs(package_base_name, package_name, versions_info):
+    if package_base_name is None:
+        return
+
+    for key, info in versions_info.items():
+        versions_info[key]["binary_URL"] = info["binary_URL"].replace(package_name, package_base_name)
 
 
 def extract_package_info(package_name, distro, distro_archives_URL, distro_repos_URL):
@@ -280,14 +302,27 @@ def extract_package_info(package_name, distro, distro_archives_URL, distro_repos
         if repo_URL and maintainer:
             info["repo_URL"] = repo_URL
             info["maintainer"] = maintainer
-        elif pkg_homepage.startswith("https://github.com/"): #fallback to github repo (if existant)
+            return info, versions_info
+
+        pkg_base_name = extract_base_package_name(package_name)
+        repo_URL, maintainer = extract_package_info_from_distro_repo(distro_repos_URL, pkg_base_name)
+        if repo_URL and maintainer:
+            info["repo_URL"] = repo_URL
+            info["maintainer"] = maintainer
+            fix_package_versions_binary_URLs(pkg_base_name, package_name, versions_info)
+            return info, versions_info
+
+        if pkg_homepage.startswith("https://github.com/"): #fallback to github repo (if existant)
             info["repo_URL"] = pkg_homepage
+            fix_package_versions_binary_URLs(pkg_base_name, package_name, versions_info)
             pkg_repo_id = extract_package_repo_id(pkg_homepage, "https://github.com/")
             maintainer = extract_package_info_from_github_repo(pkg_repo_id)
             if maintainer:
                 info["maintainer"] = maintainer
 
-    elif distro.startswith("CentOS"):
+        return info, versions_info
+
+    if distro.startswith("CentOS"):
         if pkg_homepage.startswith("https://github.com/"):
             info["repo_URL"] = pkg_homepage
             pkg_repo_id = extract_package_repo_id(pkg_homepage, "https://github.com/")
@@ -325,9 +360,7 @@ def fetch_package_info(distro, base_URL, package_name):
 
         # successfully retrieved package info
         res_data = response.json() # expecting a list with 1 item max
-        assert len(res_data) < 2, f'ERROR in fetching package info: duplicate packages "{package_name}" were found'
-        if len(res_data) == 1:
-            return res_data[0]
+        return res_data[0]
     except:
         pass
 
@@ -355,6 +388,7 @@ def add_new_package(distro, base_URL, package_name, package_info, pkg_versions_t
     package_info["versions"] = pkg_versions_to_add
     package_info["distro"] = distro
     package_info["name"] = package_name
+    package_info["type"] = "rpm"
 
     # print("package_info: ", package_info)
 
