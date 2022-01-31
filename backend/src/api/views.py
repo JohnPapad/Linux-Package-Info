@@ -7,15 +7,18 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import action
 from rest_framework.exceptions import ParseError
+from django_filters.rest_framework import DjangoFilterBackend
 from . import models
 
 
-# mixins.UpdateModelMixin
-class PackageViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+class PackageViewSet(viewsets.ModelViewSet):
     queryset = models.Package.objects.all()
     serializer_class = PackageSerializer
     permission_classes = [AllowAny]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
         
+    filterset_fields = ['name', 'distro', 'type', 'section', 'versions__architecture']
+    search_fields = ['name', 'description']
 
     @action(detail=True, methods=['post'], serializer_class=PackageVersionSerializer)
     def versions(self, request, pk=None):
