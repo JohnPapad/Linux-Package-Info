@@ -29,5 +29,6 @@ package_router.register(r'packages', views.PackageViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/v1/users/', include('users.urls', namespace='users')),
     re_path(r'^api/v1/', include(package_router.urls))
 ]
