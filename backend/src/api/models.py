@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
-from model_utils import Choices
 
 
 class Package(models.Model):    
@@ -33,13 +33,21 @@ class PackageVersion(models.Model):
     size = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0.00095)]) # in kBs
     binary_URL = models.URLField(blank=True, default='')
 
-    rating = models.PositiveSmallIntegerField(blank=True, null=True, validators=[
-        MinValueValidator(1),
-        MaxValueValidator(5)
-    ])
+    @property
+    def rating(self):
+        return self.ratings.all().aggregate(models.Avg('rate'))['rate__avg']
 
     def __str__(self):
         return f"{self.version}-{self.architecture}-{self.package}"
 
     class Meta:
         unique_together = [['package', 'version']]
+
+
+class Rating(models.Model):
+    rate = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    pkg_version = models.ForeignKey(PackageVersion, related_name="ratings", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = [['pkg_version', 'user']]
