@@ -1,7 +1,7 @@
 # Copyright 2021 Ioannis Papadopoulos
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-from .serializers import PackageVersionSerializer, PackageSerializer
+from .serializers import PackageVersionSerializer, PackageSerializer, RatingSerializer
 from rest_framework import viewsets, mixins, filters, status
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
@@ -40,4 +40,10 @@ class PackageViewSet(viewsets.ModelViewSet):
 class PackageVersionViewSet(viewsets.ModelViewSet):
     queryset = models.PackageVersion.objects.all()
     serializer_class = PackageVersionSerializer
+    permission_classes = [AllowAny]
+
+
+class RatingViewSet(viewsets.ModelViewSet):
+    queryset = models.Rating.objects.all()
+    serializer_class = RatingSerializer
     permission_classes = [AllowAny]
