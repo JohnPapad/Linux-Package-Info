@@ -2,10 +2,18 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 from rest_framework import serializers
-from .models import Package, PackageVersion
+from .models import Package, PackageVersion, Rating
+
+
+class RatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields = "__all__"
 
 
 class PackageVersionSerializer(serializers.ModelSerializer):
+    # ratings = RatingSerializer(many=True) # read_only=True
+    rating = serializers.FloatField(read_only=True) # serializers.ReadOnlyField()
     class Meta:
         model = PackageVersion
         fields = "__all__"
