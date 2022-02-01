@@ -23,6 +23,7 @@ from api import views
 
 
 package_router = SimpleRouter()
+package_router.register(r'packages/versions/ratings', views.RatingViewSet)
 package_router.register(r'packages/versions', views.PackageVersionViewSet)
 package_router.register(r'packages', views.PackageViewSet)
 
