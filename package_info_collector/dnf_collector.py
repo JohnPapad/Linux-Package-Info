@@ -405,7 +405,7 @@ def add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, package_
         return False
 
     try:
-        res = requests.post(f'{base_URL}/packages/{package_id}/versions/', json=pkg_versions_to_add)
+        res = JWTAuth_obj.session.post(f'{base_URL}/packages/{package_id}/versions/', json=pkg_versions_to_add)
         if res.status_code == 201:
             return True
     except:
@@ -426,7 +426,7 @@ def add_new_package(distro, base_URL, package_name, package_info, pkg_versions_t
     # print("package_info: ", package_info)
 
     try:
-        res = requests.post(f'{base_URL}/packages/', json=package_info)
+        res = JWTAuth_obj.session.post(f'{base_URL}/packages/', json=package_info)
         if res.status_code == 201:
             return True
         print("status: ", res.status_code, res.json())
@@ -489,7 +489,67 @@ def parallel_processing(distro, base_URL, package_name, distro_archives_URL, dis
             report_msg += "no new version was added "
 
     return report_msg
-    
+
+
+class JWTAuth:
+
+    def __init__(self, user, password, base_URL):
+        self.base_URL = base_URL
+        self.user, self.password = user, password
+
+        self._session = requests.Session()  # Session for tokens
+        self.authenticate()
+
+        self.session = requests.Session()  # Authenticated session
+        self.session.auth = self.auth
+        self.session.hooks['response'].append(self.reauth)
+
+    def auth(self, req):
+        """Just set the authentication token, on every request."""
+        req.headers['Authorization'] = f'Bearer {self.access}'
+        return req
+
+    def reauth(self, res, *args, **kwargs):
+        """Hook to re-authenticate whenever authentication expires."""
+        if res.status_code == 403: #access forbiden
+            if res.request.headers.get('REATTEMPT'):
+                res.raise_for_status()
+            self.refresh_auth()
+            req = res.request
+            req.headers['REATTEMPT'] = 1
+            req = self.session.auth(req)
+            res = self.session.send(req)
+            return res
+
+    def refresh_auth(self):
+        """Use the refresh token to get a new access token."""
+        payload = {
+            "refresh": self.refresh
+        }
+        res = self._session.post(f'{self.base_URL}/users/login/token/refresh/', data=payload)
+        if res.status_code == 200:
+            self.refresh, self.access = res.json()['refresh'], res.json()['access']
+        else:
+            # Token expired -> re-authenticate
+            self.authenticate()
+
+    def authenticate(self):
+        payload = {
+            "username": self.user,
+            "password": self.password
+        }
+        res = self._session.post(f'{self.base_URL}/users/login/', data=payload)
+        res.raise_for_status()
+        data = res.json()
+        self.refresh, self.access = data['refresh'], data['access']
+
+    def rm_token(self):
+        payload = {
+            "refresh_token": self.refresh
+        }
+        res = self._session.post(f'{self.base_URL}/users/logout/', data=payload)
+        res.raise_for_status()
+
 
 if __name__ == "__main__":
     cmdParser = argparse.ArgumentParser(
@@ -522,9 +582,10 @@ you should have also set the environment variables: GITHUB-TOKEN and USERNAME, P
     print('- Number of maximum packages to be processed concurrently:', cmdArgs['max_concurrency'])
     print("-" * 35)
 
+    JWTAuth_obj = JWTAuth(getenv('USERNAME'), getenv('PASSWORD'), cmdArgs['base_URL'])
     parse_packages_info(distro, cmdArgs['base_URL'], cmdArgs['max_concurrency'], cmdArgs['distro_archives_URL'], cmdArgs['distro_repos_URL'])
     print("--> Linux Package Collector finished..")
-    # info_output = (os.popen(f'dnf info cracklib')).readlines()
+    JWTAuth_obj.rm_token()
     # print(info_output)
     # print("\n" * 4)
     # info_output = (os.popen(f'dnf info firefox')).readlines()
