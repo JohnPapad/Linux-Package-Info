@@ -2,6 +2,7 @@ Django==3.2.5
 django-cors-headers==3.7.0     
 djangorestframework==3.12.2
 djangorestframework-simplejwt==5.0.0
+drf-access-policy==1.1.0
 markdown
 django-filter
 django-model-utils
