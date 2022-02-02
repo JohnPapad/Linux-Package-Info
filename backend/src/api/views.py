@@ -8,13 +8,35 @@ from rest_framework.permissions import AllowAny
 from rest_framework.decorators import action
 from rest_framework.exceptions import ParseError
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_access_policy import AccessPolicy
 from . import models
+
+
+class PackageAccessPolicy(AccessPolicy):
+    statements = [
+        {
+            "action": ["list", "retrieve"],
+            "principal": ["*"],
+            "effect": "allow"
+        },
+        {
+            "action": ["create", "versions"],
+            "principal": ["group:API_PRIV"],
+            "effect": "allow"
+        },
+        {
+            "action": ["*"],
+            "principal": ["admin", "staff"],
+            "effect": "allow"
+        }
+    ]
 
 
 class PackageViewSet(viewsets.ModelViewSet):
     queryset = models.Package.objects.all()
     serializer_class = PackageSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [PackageAccessPolicy]
+
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
         
     filterset_fields = ['name', 'distro', 'type', 'section', 'versions__architecture']
@@ -40,10 +62,34 @@ class PackageViewSet(viewsets.ModelViewSet):
 class PackageVersionViewSet(viewsets.ModelViewSet):
     queryset = models.PackageVersion.objects.all()
     serializer_class = PackageVersionSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [PackageAccessPolicy]
+
+
+class RatingAccessPolicy(AccessPolicy):
+    statements = [
+        {
+            "action": ["list", "retrieve"],
+            "principal": ["*"],
+            "effect": "allow"
+        },
+        {
+            "action": ["create"],
+            "principal": ["group:API_PRIV", "authenticated"],
+            "effect": "allow",
+            "condition": ["is_request_from_own_user"]
+        },
+        {
+            "action": ["*"],
+            "principal": ["admin", "staff"],
+            "effect": "allow"
+        }
+    ]
+
+    def is_request_from_own_user(self, request, view, action) -> bool:
+        return request.user.id == request.data.get("user")
 
 
 class RatingViewSet(viewsets.ModelViewSet):
     queryset = models.Rating.objects.all()
     serializer_class = RatingSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [RatingAccessPolicy]
