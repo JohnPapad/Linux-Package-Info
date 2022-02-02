@@ -425,9 +425,11 @@ if __name__ == "__main__":
         allow_abbrev=False, 
         formatter_class=argparse.RawDescriptionHelpFormatter,
         description="A script that parses useful info about all software packages (along with all their corresponding available versions) of a Linux distribution, that uses the 'apt' package manager, and sends them to a backend through an API in order to be saved in a database",
-        epilog='''for example in order to parse info about the Ubuntu:20.04 packages (given the fact that the backend runs on the same machine):
-$ python3 apt_collector.py -d Ubuntu:20.04 -u http://localhost:8000/api/v1 -a http://archive.ubuntu.com/ubuntu/'''
-    )
+        epilog='''for example in order to parse info about the Ubuntu packages (given the fact that the backend runs on the same machine):
+$ python3 apt_collector.py -d Ubuntu -u http://localhost:8000/api/v1 -a http://archive.ubuntu.com/ubuntu
+you should have also set the environment variables: GITHUB-TOKEN and USERNAME, PASSWORD (credentials to access the backend API)
+'''
+)
     cmdParser.add_argument('--max-concurrency', '-c', type=int, dest='max_concurrency', metavar='<int>', help='[default: 50] Number of maximum packages that will be processed concurrently', default=50)
     cmdParser.add_argument('--distro', '-d', type=str, dest='distro', metavar='<str>', help='The linux distribution name', required=True)
     cmdParser.add_argument('--API-URL', '-u', type=str, dest='base_URL', metavar='<url>', help="Backend's API base URL", required=True)
