@@ -547,8 +547,7 @@ class JWTAuth:
         payload = {
             "refresh_token": self.refresh
         }
-        res = self._session.post(f'{self.base_URL}/users/logout/', data=payload)
-        res.raise_for_status()
+        self._session.post(f'{self.base_URL}/users/logout/', data=payload)
 
 
 if __name__ == "__main__":
