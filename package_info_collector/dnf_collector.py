@@ -345,6 +345,9 @@ def extract_package_info(package_name, distro, distro_archives_URL, distro_repos
             binary_base_URL = f'{distro_archives_URL}/{centOS_repos[pkg_repo]}/Source/SPackages/'
             for vers_key, vers_info in versions_info.items():
                 versions_info[vers_key]["binary_URL"] = binary_base_URL + vers_info["binary_URL"]
+        else:
+            for vers_key, vers_info in versions_info.items():
+                versions_info[vers_key].pop("binary_URL", None)
 
         if pkg_homepage.startswith("https://github.com/"):
             info["repo_URL"] = pkg_homepage
