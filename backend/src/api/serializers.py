@@ -3,6 +3,7 @@
 
 from rest_framework import serializers
 from .models import Package, PackageVersion, Rating
+from model_utils import Choices
 
 
 class RatingSerializer(serializers.ModelSerializer):
@@ -60,3 +61,15 @@ class PackageSerializer(serializers.ModelSerializer):
             PackageVersion.objects.create(package=pkg, **version)
 
         return pkg
+
+
+class CreateDockerfileSerializer(serializers.Serializer):
+    distro_name = serializers.ChoiceField(required=True, choices=Choices("Ubuntu", "Debian", "Kali", "Fedora", "CentOS"))
+    distro_type = serializers.ChoiceField(required=True, choices=Choices("deb", "rpm"))
+    distro_version = serializers.CharField(required=True)
+    packages = serializers.ListField(required=True,
+        child = serializers.DictField(required=True)
+    )
+
+    class Meta:
+        fields = "__all__"
