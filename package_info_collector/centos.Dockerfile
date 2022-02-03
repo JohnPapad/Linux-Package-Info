@@ -1,10 +1,12 @@
 # Copyright 2021 Ioannis Papadopoulos
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-FROM centos
+FROM centos:centos8.4.2105
 
-RUN dnf install -y python3-pip
-RUN dnf install -y redhat-lsb-core
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-* && \
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-Linux-*
+
+RUN dnf install -y python3-pip && dnf install -y redhat-lsb-core
 
 RUN dnf install -y yum-utils 
 RUN yum-config-manager --enable powertools
