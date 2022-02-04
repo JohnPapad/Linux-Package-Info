@@ -50,7 +50,7 @@ def group_package_versions():
                 packages_versions[pkg_name][pkg_version] = {
                     "architecture": pkg_arch
                 }
-            else: # one of the two archs already exists
+            else:
                 packages_versions[pkg_name][pkg_version]["architecture"] += " " + pkg_arch
 
     print("-> Number of packages found:", len(packages_versions))
@@ -193,7 +193,10 @@ def extract_package_info(package_name, package_versions, distro_archives_URL):
         if info_key == "Version":
             cur_version = info_value
         elif info_key == "Installed-Size":
-            package_versions[cur_version]["size"] = float(info_value.replace(",", "."))
+            try:
+                package_versions[cur_version]["size"] = float(info_value.replace(",", "."))
+            except:
+                pass
         elif info_key == "Filename":
             binary_URL = f'{distro_archives_URL}/{info_value}'
             package_versions[cur_version]["binary_URL"] = binary_URL
