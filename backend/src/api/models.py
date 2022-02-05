@@ -7,11 +7,11 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Package(models.Model):    
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     distro = models.CharField(max_length=50)
     type = models.CharField(max_length=20, default='')
     section = models.CharField(max_length=50, blank=True, default='')
-    license = models.CharField(max_length=200, blank=True, default='')
+    license = models.CharField(max_length=300, blank=True, default='')
     maintainer = models.CharField(max_length=200, blank=True, default='')
     description = models.CharField(max_length=300, blank=True, default='')
     homepage = models.URLField(blank=True, default='')
