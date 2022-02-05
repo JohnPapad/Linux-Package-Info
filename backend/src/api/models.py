@@ -22,6 +22,7 @@ class Package(models.Model):
 
     class Meta:
         unique_together = [['name', 'distro']]
+        ordering = ['name', 'distro']
 
 
 class PackageVersion(models.Model):
@@ -42,6 +43,7 @@ class PackageVersion(models.Model):
 
     class Meta:
         unique_together = [['package', 'version']]
+        ordering = ['-version']
 
 
 class Rating(models.Model):
