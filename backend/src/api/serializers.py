@@ -26,23 +26,7 @@ class PackageVersionSerializer(serializers.ModelSerializer):
 
 class PackageSerializer(serializers.ModelSerializer):
     versions = PackageVersionSerializer(many=True)
-
-    rating = serializers.SerializerMethodField()
-    def get_rating(self, package):
-        sum_rating = 0
-        num_of_ratings = 0
-        pkg_versions = package.versions.all()
-        for version in pkg_versions:
-            version_ratings = version.ratings.all()
-            for rating in version_ratings:
-                sum_rating += rating.rate
-
-            num_of_ratings += version_ratings.count()
-
-        if num_of_ratings == 0:
-            return None
-            
-        return sum_rating / num_of_ratings
+    rating = serializers.FloatField(read_only=True) # serializers.ReadOnlyField()
 
     def validate_versions(self, versions):
         if len(versions) == 0:
