@@ -22,7 +22,7 @@ class PackagesList extends Component {
 
     state = {
         data: dpkgSampleData,
-        visibleColumns: ['distro', 'version', 'swhid']
+        visibleColumns: ['type', 'category', 'rating', 'license', 'maintainer', 'website', 'repo', 'description']
     };
 
     selectedPackages = [];
@@ -113,7 +113,7 @@ class PackagesList extends Component {
     showAllColumnsHandler = () => {
         this.setState(
             produce(draft=>{
-                draft.visibleColumns = ['distro', 'version', 'swhid'];
+                draft.visibleColumns = ['type', 'category', 'rating', 'license', 'maintainer', 'website', 'repo', 'description'];
             })
         );
     }
@@ -125,31 +125,95 @@ class PackagesList extends Component {
         const visibleColumns = new Set(this.state.visibleColumns);
         const columns = [
             {
+                name: "Package",
+                selector: "name",
+                sortable: true,
+                grow: 1.5
+            },
+            {
                 name: 'Distribution',
                 selector: 'distro',
                 sortable: true,
-                omit: !visibleColumns.has('distro')
+                reorder:true,
+                grow: 1
             },
         
             {
-                name: "Package",
-                selector: "package",
+                name: "Type",
+                selector: "type",
                 sortable: true,
+                reorder:true,
+                omit: !visibleColumns.has('type'),
+                grow: 0.1
             },
-        
             {
-                name: "Version",
-                selector: "version",
+                name: "Category",
+                selector: "section",
                 sortable: true,
-                omit: !visibleColumns.has('version')
+                reorder:true,
+                omit: !visibleColumns.has('category'),
+                grow: 0.5
+            },
+            {
+                name: "Rating",
+                selector: "rating",
+                sortable: true,
+                reorder:true,
+                // center: true,
+                omit: !visibleColumns.has('rating'),
+                grow: 0.1,
+                cell: row=>row.rating ? row.rating.toFixed(1) : "-"
+            },
+
+            {
+                name: "License",
+                selector: "license",
+                reorder:true,
+                omit: !visibleColumns.has('license'),
+                grow: 2,
+                wrap: true
+            },
+
+            {
+                name: "Maintainer",
+                selector: "maintainer",
+                reorder:true,
+                omit: !visibleColumns.has('maintainer'),
+                grow: 2,
+                cell: row=>{
+                    if (validUrl.isUri(row.maintainer)) {
+                        return <a target="_blank" rel="noreferrer" href={row.maintainer}>{row.maintainer.replace("https://", "")}</a>
+                    }
+                    return row.maintainer;
+                }
+            },
+
+            {
+                name: "Website",
+                selector: "homepage",
+                reorder:true,
+                omit: !visibleColumns.has('website'),
+                grow: 1.5,
+                format: row => <a target="_blank" rel="noreferrer" href={row.homepage}>{row.homepage.replace("https://", "").replace("http://", "")}</a>
             },
         
             {
-                name: "SoftWare Heritage ID",
-                selector: "swhid",
-                omit: !visibleColumns.has('swhid'),
-                cell: row => <a href={baseSWHul + row.swhid}>{row.swhid}</a>
-            }
+                name: "Code Repository",
+                selector: "repo_URL",
+                reorder:true,
+                omit: !visibleColumns.has('repo'),
+                grow: 1.5,
+                format: row => <a target="_blank" rel="noreferrer" href={row.repo_URL}>{row.repo_URL.replace("https://", "")}</a>
+            },
+
+            {
+                name: "Description",
+                selector: "description",
+                reorder:true,
+                omit: !visibleColumns.has('description'),
+                wrap: true,
+                grow: 3
+            },
         
         ];
 
