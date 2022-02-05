@@ -273,12 +273,14 @@ def fetch_package_info(distro, base_URL, package_name):
     }
 
     try:
-        response = requests.get(f'{base_URL}/packages/', params=URL_params)
-        if response.status_code != 200:
+        res = requests.get(f'{base_URL}/packages/', params=URL_params)
+        if res.status_code != 200:
+            print(f"-> Fetching info of package '{package_name}' failed with response status code: {res.status_code}, response:\n{res.json()}")
+            print("-" * 30)
             return None
 
         # successfully retrieved package info
-        res_data = response.json() # expecting a list with 1 item max
+        res_data = res.json()['results'] # expecting a list with 1 item max
         return res_data[0]
     except:
         pass
@@ -286,7 +288,7 @@ def fetch_package_info(distro, base_URL, package_name):
     return None
 
 
-def add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, package_id):
+def add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, package_id, package_name):
     if len(pkg_versions_to_add) == 0:
         return False
 
@@ -294,6 +296,9 @@ def add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, package_
         res = JWTAuth_obj.session.post(f'{base_URL}/packages/{package_id}/versions/', json=pkg_versions_to_add)
         if res.status_code == 201:
             return True
+
+        print(f"-> Adding new versions to existing package '{package_name}' failed with response status code: {res.status_code}, response:\n{res.json()}")
+        print("-" * 30)
     except:
         pass
 
@@ -313,6 +318,9 @@ def add_new_package(distro, base_URL, package_name, package_info, pkg_versions_t
         res = JWTAuth_obj.session.post(f'{base_URL}/packages/', json=package_info)
         if res.status_code == 201:
             return True
+
+        print(f"-> Adding new package '{package_name}' failed with response status code: {res.status_code}, response:\n{res.json()}")
+        print("-" * 30)
     except:
         pass
 
@@ -354,7 +362,7 @@ def parallel_processing(distro, base_URL, package_name, package_versions, distro
                 "binary_URL": pkg_version_binary_URL
             })
 
-        new_versions_flag = add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, pkg_existing_info["id"]) # add only the possible new versions
+        new_versions_flag = add_new_versions_to_existing_package(base_URL, pkg_versions_to_add, pkg_existing_info["id"], package_name) # add only the possible new versions
         if new_versions_flag:
             report_msg += "successfully added new versions "
         else:
