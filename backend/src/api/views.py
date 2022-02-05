@@ -38,7 +38,7 @@ class PackageViewSet(viewsets.ModelViewSet):
     serializer_class = PackageSerializer
     permission_classes = [PackageAccessPolicy]
 
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['name', 'description']
     # filterset_fields = ['name', 'distro', 'type', 'section', 'versions__architecture']
     filterset_fields = {
@@ -47,9 +47,9 @@ class PackageViewSet(viewsets.ModelViewSet):
         'type': ['exact', 'in'],
         'section': ['exact', 'in'],
         'versions__architecture': ['exact', 'icontains'],
-        # 'versions__rating': ['gte', 'lte']
+        # 'rating': ['gte', 'lte'],
     }
-        
+    ordering_fields = ['avg_rating', 'name', 'distro', 'type', 'section']
 
     @action(detail=True, methods=['post'], serializer_class=PackageVersionSerializer)
     def versions(self, request, pk=None):
