@@ -17,6 +17,10 @@ class Package(models.Model):
     homepage = models.URLField(blank=True, default='')
     repo_URL = models.URLField(blank=True, default='')
 
+    @property
+    def rating(self):
+        return self.avg_rating
+
     def __str__(self):
         return f"{self.name} ({self.distro})"
 
