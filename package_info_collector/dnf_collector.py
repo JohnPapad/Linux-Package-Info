@@ -206,7 +206,7 @@ def extract_package_info_from_distro_repo(distro_repos_URL, package_name):
     try:
         response = requests.get(f'{distro_repos_URL}/{package_name}')
         if response.status_code != 200:
-            print("response: ", response.json())
+            # print("-> distro repo failure response: ", response.json())
             return None, None
 
         repo_URL = response.json().get("full_url")
@@ -223,7 +223,7 @@ def extract_package_info_from_distro_repo2(distro_repos_URL, package_name):
     try:
         response = requests.get(f'{distro_repos_URL}/{package_name}')
         if response.status_code != 200:
-            print("-> distro repo failure response: ", response.json())
+            # print("-> distro repo failure response: ", response.json())
             return None
 
         maintainer = response.json()['user'].get("fullname")
@@ -475,8 +475,10 @@ def parallel_processing(distro, base_URL, package_name, distro_archives_URL, dis
             pkg_version_arch, pkg_version_size, pkg_version_repo = extract_package_version_info(pkg_version_info["full_name"])
             if distro.startswith("Fedora"):
                 pkg_version_binary_URL = f'{distro_archives_URL}/{package_name}/{pkg_version_info["name"]}/{pkg_version_info["release"]}/src/{pkg_version_info["full_name"]}.src.rpm'
-            elif distro.startswith("CentOS"):
+            elif distro.startswith("CentOS") and pkg_version_repo:
                 pkg_version_binary_URL = f'{distro_archives_URL}/{centOS_repos[pkg_version_repo]}/Source/SPackages/{pkg_version_info["full_name"]}.src.rpm'
+            else:
+                pkg_version_binary_URL = ''
 
             pkg_versions_to_add.append({
                 "version": pkg_version,
