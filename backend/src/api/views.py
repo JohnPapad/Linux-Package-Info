@@ -9,6 +9,7 @@ from rest_framework.exceptions import ParseError
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_access_policy import AccessPolicy
 from .dockerfile_renderer import DockerfileRenderer
+from django.db.models import Avg
 from . import models
 
 
@@ -33,7 +34,7 @@ class PackageAccessPolicy(AccessPolicy):
 
 
 class PackageViewSet(viewsets.ModelViewSet):
-    queryset = models.Package.objects.all()
+    queryset = models.Package.objects.all().annotate(avg_rating=Avg('versions__ratings__rate'))
     serializer_class = PackageSerializer
     permission_classes = [PackageAccessPolicy]
 
@@ -60,7 +61,6 @@ class PackageViewSet(viewsets.ModelViewSet):
             serializer.is_valid(raise_exception=True)
 
         pkg = self.get_object()
-
         for req_data_pkg_ver in request.data:
             models.PackageVersion.objects.create(package=pkg, **req_data_pkg_ver)
 
