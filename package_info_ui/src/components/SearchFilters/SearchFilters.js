@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Form, 
     InputGroup,
     InputGroupAddon,
-    InputGroupButtonDropdown,
+    // InputGroupButtonDropdown,
     Input,
     Button,
     ButtonGroup,
@@ -10,7 +10,7 @@ import { Form,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
 import produce from 'immer';
-import styles from './SearchForm.module.scss';
+import styles from './SearchFilters.module.scss';
 import { createQueryParams } from '../../utilities/URIutil';
 import { withRouter } from 'react-router';
 
@@ -84,12 +84,13 @@ class SearchForm extends Component {
             <form onSubmit={e=>this.submitFormHandler(e)}>
                 <InputGroup>
                     <Input
+                        bsSize="sm"
                         placeholder="Example: grep"
                         value={this.state.searchText}
                         onChange={e => this.inputChangedHandler(e.target.value)}
                     />
 
-                    <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
+                    {/* <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
             
                     <ButtonGroup>
                         <Button onClick={this.submitFormHandler}>Search</Button>
@@ -100,7 +101,7 @@ class SearchForm extends Component {
                         {dropdownItems}
                     </DropdownMenu>
 
-                    </InputGroupButtonDropdown>
+                    </InputGroupButtonDropdown> */}
                 </InputGroup>
             </form>
         );

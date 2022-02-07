@@ -3,7 +3,7 @@ import DataTable from 'react-data-table-component';
 import { withRouter } from 'react-router-dom';
 import produce from 'immer';
 import { isEqual } from 'lodash';
-import SearchForm from '../SearchForm/SearchForm';
+import SearchForm from '../SearchFilters/SearchFilters';
 import { Row, Col, Button, Spinner } from 'reactstrap';
 import ExportOptions from '../ExportOptions/ExportOptions';
 import { downloadCSV } from '../../utilities/CSVutil';
