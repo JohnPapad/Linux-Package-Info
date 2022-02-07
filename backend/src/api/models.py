@@ -14,8 +14,8 @@ class Package(models.Model):
     license = models.CharField(max_length=300, blank=True, default='')
     maintainer = models.CharField(max_length=200, blank=True, default='')
     description = models.CharField(max_length=300, blank=True, default='')
-    homepage = models.URLField(blank=True, default='')
-    repo_URL = models.URLField(blank=True, default='')
+    homepage = models.URLField(max_length=500, blank=True, default='')
+    repo_URL = models.URLField(max_length=500, blank=True, default='')
 
     @property
     def rating(self):
@@ -36,7 +36,7 @@ class PackageVersion(models.Model):
     swhid = models.CharField(max_length=100, blank=True, default='')
     swhid_exists = models.BooleanField(blank=True, null=True)
     size = models.FloatField(blank=True, null=True, validators=[MinValueValidator(0.00095)]) # in kBs
-    binary_URL = models.URLField(blank=True, default='')
+    binary_URL = models.URLField(max_length=500, blank=True, default='')
 
     @property
     def rating(self):
