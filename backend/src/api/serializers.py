@@ -14,7 +14,13 @@ class RatingSerializer(serializers.ModelSerializer):
 
 class PackageVersionSerializer(serializers.ModelSerializer):
     # ratings = RatingSerializer(many=True) # read_only=True
-    rating = serializers.FloatField(read_only=True) # serializers.ReadOnlyField()
+    rating = serializers.SerializerMethodField()
+    def get_rating(self, obj):
+        if obj.rating is None:
+            return 0
+
+        return obj.rating
+
     class Meta:
         model = PackageVersion
         fields = "__all__"
@@ -26,7 +32,12 @@ class PackageVersionSerializer(serializers.ModelSerializer):
 
 class PackageSerializer(serializers.ModelSerializer):
     versions = PackageVersionSerializer(many=True)
-    rating = serializers.FloatField(read_only=True) # serializers.ReadOnlyField()
+    rating = serializers.SerializerMethodField()
+    def get_rating(self, obj):
+        if obj.rating is None:
+            return 0
+
+        return obj.rating
 
     def validate_versions(self, versions):
         if len(versions) == 0:
