@@ -19,7 +19,10 @@ class Package(models.Model):
 
     @property
     def rating(self):
-        return self.avg_rating
+        if hasattr(self, 'avg_rating'):
+            return self.avg_rating
+
+        return 0
 
     def __str__(self):
         return f"{self.name} ({self.distro})"
