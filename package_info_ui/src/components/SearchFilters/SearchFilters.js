@@ -9,7 +9,7 @@ import { Form,
     Button,
     ButtonGroup,
     DropdownItem, 
-    Row, Col} from 'reactstrap';
+    Row, Col, ModalFooter} from 'reactstrap';
 import produce from 'immer';
 import styles from './SearchFilters.module.scss';
 import { createQueryParams } from '../../utilities/URIutil';
@@ -17,6 +17,7 @@ import { withRouter } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faSlidersH, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import Select from 'react-select';
+import queryString from 'query-string';
 
 
 const addToOptions = (options, dropdownOptions) => {
@@ -148,28 +149,50 @@ class SearchFilters extends Component {
         );
     }
 
-    submitFormHandler = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        const queryParams = {
-            package: this.state.searchText,
-            distro: this.state.selectedDropdownItem
-        };
-        this.props.history.push("/?" + createQueryParams(queryParams));
+    submitFormHandler = (event, selectedFilters) => {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        if (selectedFilters) {
+            selectedFilters['search'] = this.state.searchText;
+            const URLqueryParams = queryString.stringify(selectedFilters, {arrayFormat: 'comma'})
+            console.log("URLqueryParams: ", URLqueryParams)
+            alert(URLqueryParams)
+            return
+        }
+        
+        // only text search
+        if (this.state.searchText) {
+            const URLqueryParams = queryString.stringify({'search': this.state.searchText})
+            console.log("URLqueryParams: ", URLqueryParams)
+            alert(URLqueryParams)
+            return
+        }
+
+        // no text search - just fetch all ordered by the highest rating in descending order
+        const URLqueryParams = queryString.stringify({'ordering': "-avg_rating"});
+        console.log("URLqueryParams: ", URLqueryParams)
+        alert(URLqueryParams)
+        return
+    }
+
+    getSelectedOptionsSet = (filterKey) => {
+        const selectedOptionsSet = new Set();
+        for (const opt of this.state[filterKey]) {
+            selectedOptionsSet.add(opt.value);
+        }
+        return selectedOptionsSet;
     }
 
     render () {
-        console.log("search filters state: ", this.state)
-        const selectedDistrosSet = new Set();
-        for (const distro of this.state.selectedDistros) {
-            selectedDistrosSet.add(distro.value)
-        }
+        console.log("search filters state: ", this.state);
+
+        const selectedDistrosSet = this.getSelectedOptionsSet("selectedDistros");
         console.log("selectedDistrosSet", selectedDistrosSet)
 
-        const selectedTypesSet = new Set();
-        for (const type of this.state.selectedTypes) {
-            selectedTypesSet.add(type.value)
-        }
+        const selectedTypesSet = this.getSelectedOptionsSet("selectedTypes");
         console.log("selectedTypesSet", selectedTypesSet)
 
         let distrosDropdownOptions = [];
@@ -199,17 +222,17 @@ class SearchFilters extends Component {
                         />
 
                         <ButtonGroup>
-                            <Button className="fw-bold" onClick={this.submitFormHandler}>
+                            <Button size="sm" className="fw-bold px-3" onClick={this.submitFormHandler}>
                                 Search
                             </Button>
-                            <Button className='border-start' onClick={this.toggleFiltersModal}>
+                            <Button size="sm" className='border-start' onClick={this.toggleFiltersModal}>
                                 <FontAwesomeIcon icon={faSlidersH} className="mx-1 text-light"/>
                             </Button>
                         </ButtonGroup>
                     </InputGroup>
                 </form>
 
-                <Modal size="lg" centered isOpen={this.state.filtersModalOpen} toggle={this.toggleFiltersModal}>
+                <Modal size="lg" isOpen={this.state.filtersModalOpen} toggle={this.toggleFiltersModal} className='pt-5'>
                     <ModalHeader toggle={this.toggleFiltersModal}>
                         Search Filters
                     </ModalHeader>
@@ -250,7 +273,7 @@ class SearchFilters extends Component {
                                 />
                             </Col>
                         </Row>
-                        <Row className='py-3'>
+                        <Row className='pt-3'>
                             <Col>
                                 <Label className={"fw-bold small"}>
                                     Architecture
@@ -278,6 +301,20 @@ class SearchFilters extends Component {
                             </Col>
                         </Row>
                     </ModalBody>
+                    <ModalFooter>
+                        <Button className="fw-bold" 
+                            onClick={()=>this.submitFormHandler(null,
+                                {
+                                    "distro__in": [...selectedDistrosSet],
+                                    "type__in": [...selectedTypesSet],
+                                    "versions__architecture__icontains": [...this.getSelectedOptionsSet("selectedArchs")],
+                                    "section__in": [...this.getSelectedOptionsSet("selectedCategories")]
+                                }
+                            )}
+                        >
+                            Search
+                        </Button>
+                    </ModalFooter>
                 </Modal>
             </>
         );
