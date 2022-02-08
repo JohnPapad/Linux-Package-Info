@@ -42,6 +42,8 @@ class PackagesList extends Component {
         visibleColumns: ['type', 'category', 'rating', 'license', 'maintainer', 'website', 'repo', 'description']
     };
 
+    skipPackagePageChange = false;
+
     selectedPackages = [];
 
     exportHandler = (type) => {
@@ -89,6 +91,10 @@ class PackagesList extends Component {
     }
 
     handlePackagePageChange = (page) => {
+        if (this.skipPackagePageChange) {
+            this.skipPackagePageChange = false;
+            return;
+        }
         const URLqueryParams = {
             ...this.state.URLqueryParams,
             page
@@ -96,8 +102,29 @@ class PackagesList extends Component {
         this.fetchPackages(URLqueryParams, true);
     }
 
-    handleSort = async (column, sortDirection) => {
+    handleSort = (column, sortDirection) => {
         console.log("handle sort: ", column.id, sortDirection)
+
+        let sortingField = column.id;
+        if (sortDirection === "desc") {
+            sortingField = `-${sortingField}`;
+        }
+
+        let orderingFields = [sortingField, 'name', 'distro']
+        if (column.id === 'name') {
+            orderingFields = [sortingField, 'distro']
+        }
+        else if (column.id === 'distro') {
+            orderingFields = [sortingField, 'name']
+        }
+
+        const URLqueryParams = {
+            ...this.state.URLqueryParams,
+            'page': 1,
+            'ordering': orderingFields
+        };
+        this.skipPackagePageChange = true;
+        this.fetchPackages(URLqueryParams);
     }
 
     render() {
@@ -160,7 +187,7 @@ class PackagesList extends Component {
                 // grow: 0.5
             },
             {
-                id: 'rating',
+                id: 'avg_rating',
                 name: "Rating",
                 selector: row => row['rating'],
                 sortable: true,
