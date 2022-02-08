@@ -18,6 +18,18 @@ import VersionsList from "./VersionsLIst/VersionsList";
 import { packagesDataTableStyles } from './ContentTableStyles';
 
 
+const noDataComponent = (
+    <div className="py-3 text-center">
+        <p className="mb-0">
+            No package found...
+        </p>
+        <p className="mb-0">
+            Please try again with different search criteria
+        </p>
+    </div>
+);
+
+
 class PackagesList extends Component {
 
     state = {
@@ -260,6 +272,7 @@ class PackagesList extends Component {
                 fixedHeader
                 highlightOnHover
                 responsive
+                noDataComponent={noDataComponent}
                 progressPending={this.state.tableIsLoading}
                 // progressComponent={(
                 //     <div  style={{height: "15vh", fontSize: "150%"}}>
