@@ -245,6 +245,7 @@ class SearchFilters extends Component {
                                     Type
                                 </Label>
                                 <Select
+                                    defaultValue={this.state.selectedTypes}
                                     isSearchable
                                     isMulti
                                     options={[
@@ -266,6 +267,7 @@ class SearchFilters extends Component {
                                     Distribution
                                 </Label>
                                 <Select 
+                                    defaultValue={this.state.selectedDistros}
                                     isSearchable
                                     isMulti
                                     options={distrosDropdownOptions} 
@@ -279,7 +281,8 @@ class SearchFilters extends Component {
                                 <Label className={"fw-bold small"}>
                                     Architecture
                                 </Label>
-                                <Select 
+                                <Select
+                                    defaultValue={this.state.selectedArchs}
                                     isSearchable
                                     isMulti
                                     options={archsDropdownOptions}
@@ -292,6 +295,7 @@ class SearchFilters extends Component {
                                     Category
                                 </Label>
                                 <Select
+                                    defaultValue={this.state.selectedCategories}
                                     isSearchable
                                     isMulti
                                     isDisabled={selectedDistrosSet.has("Fedora:34") || selectedDistrosSet.has("CentOS:8.4.2105")}
