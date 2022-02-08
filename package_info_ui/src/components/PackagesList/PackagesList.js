@@ -34,6 +34,7 @@ class PackagesList extends Component {
 
     state = {
         data: [],
+        tableResetDefaultPage: true,
         tableIsLoading: true,
         dataTotalCount: 0,
         expandedRowIds: {},
@@ -92,7 +93,7 @@ class PackagesList extends Component {
             ...this.state.URLqueryParams,
             page
         };
-        this.fetchPackages(URLqueryParams);
+        this.fetchPackages(URLqueryParams, true);
     }
 
     handleSort = async (column, sortDirection) => {
@@ -288,6 +289,7 @@ class PackagesList extends Component {
                 paginationServer
 			    paginationTotalRows={this.state.dataTotalCount}
                 paginationPerPage={10}
+                paginationResetDefaultPage={this.state.tableResetDefaultPage}
                 paginationComponentOptions={{
                     noRowsPerPage: true
                 }}
@@ -307,7 +309,7 @@ class PackagesList extends Component {
         );
     }
 
-    fetchPackages = async (URLqueryParams) => {
+    fetchPackages = async (URLqueryParams, shouldNotResetTableDefaultPage) => {
         const URLqueryString = queryString.stringify(URLqueryParams, {arrayFormat: 'comma'});
         console.log("URLqueryString: ", URLqueryString)
 
@@ -319,6 +321,9 @@ class PackagesList extends Component {
                 draft.data = response.results;
                 draft.dataTotalCount = response.count;
                 draft.URLqueryParams = URLqueryParams;
+                if (!shouldNotResetTableDefaultPage) {
+                    draft.tableResetDefaultPage = !draft.tableResetDefaultPage;
+                }
             })
         );
     }
@@ -333,7 +338,6 @@ class PackagesList extends Component {
 
     componentDidUpdate () {
         console.log("Package list did update");
-        // this.filterPackages();
     }
 
 }
