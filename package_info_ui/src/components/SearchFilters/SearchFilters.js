@@ -155,27 +155,28 @@ class SearchFilters extends Component {
             event.stopPropagation();
         }
 
+        let URLqueryParams = {};
         if (selectedFilters) {
-            selectedFilters['search'] = this.state.searchText;
-            const URLqueryParams = queryString.stringify(selectedFilters, {arrayFormat: 'comma'})
-            console.log("URLqueryParams: ", URLqueryParams)
-            alert(URLqueryParams)
-            return
+            URLqueryParams = {
+                ...selectedFilters,
+                'search': this.state.searchText
+            };
+            this.toggleFiltersModal();
         }
-        
-        // only text search
-        if (this.state.searchText) {
-            const URLqueryParams = queryString.stringify({'search': this.state.searchText})
-            console.log("URLqueryParams: ", URLqueryParams)
-            alert(URLqueryParams)
-            return
+        else if (this.state.searchText) {
+            // only text search
+            URLqueryParams = {
+                'search': this.state.searchText
+            };
+        }
+        else {
+            // no text search - just fetch all ordered by the highest rating in descending order
+            URLqueryParams = {
+                'ordering': "-avg_rating"
+            };
         }
 
-        // no text search - just fetch all ordered by the highest rating in descending order
-        const URLqueryParams = queryString.stringify({'ordering': "-avg_rating"});
-        console.log("URLqueryParams: ", URLqueryParams)
-        alert(URLqueryParams)
-        return
+        this.props.fetchPackages(URLqueryParams);
     }
 
     getSelectedOptionsSet = (filterKey) => {
