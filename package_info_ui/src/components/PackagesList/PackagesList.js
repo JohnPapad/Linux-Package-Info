@@ -88,7 +88,11 @@ class PackagesList extends Component {
     }
 
     handlePackagePageChange = (page) => {
-        alert(page)
+        const URLqueryParams = {
+            ...this.state.URLqueryParams,
+            page
+        };
+        this.fetchPackages(URLqueryParams);
     }
 
     handleSort = async (column, sortDirection) => {
