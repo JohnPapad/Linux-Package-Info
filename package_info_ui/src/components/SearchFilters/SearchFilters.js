@@ -122,7 +122,7 @@ class SearchFilters extends Component {
         selectedDistros: [],
         selectedCategories: [],
         selectedTypes: [],
-        selectedArchs: []
+        selectedArch: null
     };
 
     toggleFiltersModal = () => {
@@ -284,12 +284,11 @@ class SearchFilters extends Component {
                                     Architecture
                                 </Label>
                                 <Select
-                                    defaultValue={this.state.selectedArchs}
+                                    defaultValue={this.state.selectedArch}
                                     isSearchable
-                                    isMulti
                                     options={archsDropdownOptions}
-                                    onChange={selectedOptions => this.onSelectChange(selectedOptions, "selectedArchs")} 
-                                    placeholder="Select one or more"
+                                    onChange={selectedOptions => this.onSelectChange(selectedOptions, "selectedArch")} 
+                                    placeholder="Select one"
                                 />
                             </Col>
                             <Col>
@@ -314,7 +313,7 @@ class SearchFilters extends Component {
                                 {
                                     "distro__in": [...selectedDistrosSet],
                                     "type__in": [...selectedTypesSet],
-                                    "versions__architecture__icontains": [...this.getSelectedOptionsSet("selectedArchs")],
+                                    "versions__architecture__icontains": this.state["selectedArch"].value,
                                     "section__in": [...this.getSelectedOptionsSet("selectedCategories")]
                                 }
                             )}
