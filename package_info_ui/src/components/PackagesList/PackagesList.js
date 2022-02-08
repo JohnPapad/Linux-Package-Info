@@ -99,7 +99,9 @@ class PackagesList extends Component {
                 style: {
                     fontWeight: "500", 
                     fontSize: "110%",
-                    color: "#6c757d"
+                    color: "#6c757d",
+                    paddingTop: "2px",
+                    paddingBottom: "4px"
                 },
             },
             {
@@ -108,7 +110,7 @@ class PackagesList extends Component {
                 selector: row => row['distro'],
                 sortable: true,
                 reorder:true,
-                // grow: 1,
+                grow: 1.2,
                 // center: true,
                 style: {
                     fontWeight: "500"
@@ -146,7 +148,7 @@ class PackagesList extends Component {
                 selector: row => row['rating'],
                 sortable: true,
                 reorder:true,
-                // center: true,
+                center: true,
                 width: "95px",
                 omit: !visibleColumns.has('rating'),
                 cell: row=>row.rating ? row.rating.toFixed(1) : "-"
@@ -168,7 +170,7 @@ class PackagesList extends Component {
                 selector: row => row['maintainer'],
                 reorder:true,
                 omit: !visibleColumns.has('maintainer'),
-                grow: 2,
+                grow: 2.5,
                 cell: row=>{
                     if (validUrl.isUri(row.maintainer)) {
                         return <a target="_blank" rel="noreferrer" href={row.maintainer}>{removeHttp(row.maintainer)}</a>;
