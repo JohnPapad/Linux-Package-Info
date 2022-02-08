@@ -111,7 +111,7 @@ class VersionsList extends Component {
                 <DataTable
                     customStyles={versionsDataTableStyles}
                     theme="light"
-                    data={[...this.state.data]}
+                    data={this.state.data}
                     columns={columns}
                     // defaultSortField="distro"
                     dense
@@ -134,9 +134,7 @@ class VersionsList extends Component {
 
     componentDidUpdate () {
         console.log("Package versions list did update");
-        this.filterPackages();
     }
-
 
 }
 
