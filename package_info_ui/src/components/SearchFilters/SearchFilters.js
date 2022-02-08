@@ -159,20 +159,22 @@ class SearchFilters extends Component {
         if (selectedFilters) {
             URLqueryParams = {
                 ...selectedFilters,
-                'search': this.state.searchText
+                'search': this.state.searchText,
+                'ordering': ['name', 'distro']
             };
             this.toggleFiltersModal();
         }
         else if (this.state.searchText) {
             // only text search
             URLqueryParams = {
-                'search': this.state.searchText
+                'search': this.state.searchText,
+                'ordering': ['name', 'distro']
             };
         }
         else {
             // no text search - just fetch all ordered by the highest rating in descending order
             URLqueryParams = {
-                'ordering': "-avg_rating"
+                'ordering': ['-avg_rating', 'name', 'distro']
             };
         }
 
