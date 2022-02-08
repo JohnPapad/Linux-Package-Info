@@ -68,8 +68,7 @@ def parse_packages_info(distro, base_URL, max_concurrency, distro_archives_URL, 
     while unfinished:
         # Returns the first ObjectRef that is ready.
         finished, unfinished = ray.wait(unfinished, num_returns=1)
-        msg = ray.get(finished)
-        print(msg)
+        ray.get(finished)
 
     end_time = time.time() 
     print('-> Elapsed time: ', end_time - start_time)
@@ -500,7 +499,7 @@ def parallel_processing(distro, base_URL, package_name, distro_archives_URL, dis
         else:
             report_msg += "no new version was added "
 
-    return report_msg
+    print(report_msg)
 
 
 class JWTAuth:
