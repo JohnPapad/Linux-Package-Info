@@ -322,7 +322,7 @@ class PackagesList extends Component {
     componentDidMount () {
         console.log("Package list did mount");
         const URLqueryParams = {
-            'ordering': "-avg_rating"
+            'ordering': ['-avg_rating', 'name', 'distro']
         };
         this.fetchPackages(URLqueryParams);
     }
