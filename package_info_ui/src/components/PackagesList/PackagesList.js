@@ -29,6 +29,13 @@ const noDataComponent = (
     </div>
 );
 
+const progressComponent = (
+    <div className="my-4">
+        <Spinner color="secondary" style={{ width: "4rem", height: "4rem" }}/>
+        {/* <p className="text-center mt-2 fst-italic">Loading...</p> */}
+    </div>
+);
+
 
 class PackagesList extends Component {
 
@@ -306,12 +313,7 @@ class PackagesList extends Component {
                 responsive
                 noDataComponent={noDataComponent}
                 progressPending={this.state.tableIsLoading}
-                // progressComponent={(
-                //     <div  style={{height: "15vh", fontSize: "150%"}}>
-
-                //         <Spinner color="secondary" style={{width: "10%"}}/>
-                //     </div>
-                // )}
+                progressComponent={progressComponent}
                 pagination
                 paginationServer
 			    paginationTotalRows={this.state.dataTotalCount}
