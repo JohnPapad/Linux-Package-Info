@@ -8,8 +8,8 @@ import { Row, Col, Button, Spinner } from 'reactstrap';
 import ExportOptions from '../ExportOptions/ExportOptions';
 import { downloadCSV } from '../../utilities/CSVutil';
 import { downloadJSON } from '../../utilities/JSONutil';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { API } from '../../services/API';
 import queryString from 'query-string';
 import validUrl from 'valid-url';
@@ -25,6 +25,7 @@ class PackagesList extends Component {
         tableIsLoading: true,
         dataTotalCount: 0,
         expandedRowIds: {},
+        URLqueryParams: {},
         visibleColumns: ['type', 'category', 'rating', 'license', 'maintainer', 'website', 'repo', 'description']
     };
 
@@ -221,7 +222,7 @@ class PackagesList extends Component {
             <>
             <Row className="mb-3 justify-content-between">
                 <Col md="3" className="py-2">
-                    <SearchForm/>
+                    <SearchForm fetchPackages={this.fetchPackages}/>
                 </Col>
                 <Col xs="auto" className="py-2 align-items-center d-flex">
                     <span className="fw-bold me-2">
@@ -251,7 +252,7 @@ class PackagesList extends Component {
             <DataTable
                 customStyles={packagesDataTableStyles}
                 conditionalRowStyles={expandedRowStyles}
-                data={[...this.state.data]}
+                data={this.state.data}
                 columns={columns}
                 // defaultSortField="distro"
                 fixedHeader
@@ -287,44 +288,33 @@ class PackagesList extends Component {
         );
     }
 
-    fetchPackages = async (query) => {
-        const response = await API.getPackages(query);
+    fetchPackages = async (URLqueryParams) => {
+        const URLqueryString = queryString.stringify(URLqueryParams, {arrayFormat: 'comma'});
+        console.log("URLqueryString: ", URLqueryString)
+
+        const response = await API.getPackages(URLqueryString);
         console.log(response);
         this.setState(
             produce(draft=>{
                 draft.tableIsLoading=false;
                 draft.data = response.results;
                 draft.dataTotalCount = response.count;
+                draft.URLqueryParams = URLqueryParams;
             })
         );
     }
 
     componentDidMount () {
         console.log("Package list did mount");
-        const query = queryString.stringify({
-            ordering: "-avg_rating"
-        });
-        console.log("query", query)
-        // this.filterPackages();
-        this.fetchPackages(query);
-
+        const URLqueryParams = {
+            'ordering': "-avg_rating"
+        };
+        this.fetchPackages(URLqueryParams);
     }
 
     componentDidUpdate () {
         console.log("Package list did update");
         // this.filterPackages();
-    }
-
-    shouldComponentUpdate (nextProps, nextState) {
-        if (!isEqual(nextState.visibleColumns, this.state.visibleColumns)) {
-            return true;
-        }
-        console.log("Package list should update");
-        if (nextProps.location.search !== this.props.location.search){
-            return true;
-        }
-
-        return !isEqual(this.state.data, nextState.data);
     }
 
 }
