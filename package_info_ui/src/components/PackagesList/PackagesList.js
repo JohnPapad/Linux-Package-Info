@@ -55,24 +55,98 @@ class PackagesList extends Component {
         dataTotalCount: 0,
         expandedRowIds: {},
         URLqueryParams: {},
+        selectedPackageVersions: {},
         visibleColumns: ['type', 'category', 'rating', 'license', 'maintainer', 'website', 'repo', 'description']
     };
 
     skipPackagePageChange = false;
+    skipRowsChangedTriggering = true;
 
-    selectedPackages = [];
+    selectedPackages = {};
 
     exportHandler = (type) => {
         if (type === "CSV") {
-            downloadCSV(this.selectedPackages);
+            downloadCSV(this.collectSelectedPackages());
         }
         else if (type === "JSON") {
-            downloadJSON(this.selectedPackages);
+            downloadJSON(this.collectSelectedPackages());
         }
     }
 
+    collectSelectedPackages = (includeSelectedVersion) => {
+        const collectedPackages = [];
+        for (const packageId in this.selectedPackages) {
+            let packageInfo = this.selectedPackages[packageId];
+            if (includeSelectedVersion && (packageId in this.state.selectedPackageVersions)) {
+                const selectedVersion = this.state.selectedPackageVersions[packageId];
+                packageInfo["selectedVersion"] = selectedVersion;
+            }
+
+            collectedPackages.push(packageInfo);
+        }
+
+        return collectedPackages;
+    }
+
     selectedRowsChangedHandler = state => {
-        this.selectedPackages = state.selectedRows;
+        if (this.skipRowsChangedTriggering) {
+            this.skipRowsChangedTriggering = false;
+            return;
+        }
+
+        console.log("selected rows", state)
+
+        let curSelectedPackages = {};
+        for (const selectedPackage of state.selectedRows) {
+            curSelectedPackages[selectedPackage.id] = selectedPackage;
+        }
+
+        const selectedPackagesCount = Object.keys(this.selectedPackages).length;
+        if (state.selectedCount < selectedPackagesCount) { // currently selected packages are less than previously
+            // a package was deselected - need to find which one
+            let deselectedPackageId = null;
+            for (const packageId in this.selectedPackages) { // comparing the previously and currently selected packages
+                if (packageId in curSelectedPackages) continue;
+                deselectedPackageId = packageId;
+                break;
+            }
+
+            this.selectedPackages = curSelectedPackages;
+
+            this.setState(
+                produce(draft=>{
+                    delete draft.selectedPackageVersions[deselectedPackageId];
+                })
+            );
+        }
+        else {
+            this.selectedPackages = curSelectedPackages;
+        }
+    }
+
+    packageVersionSelectedHandler = (packageInfo, version) => {
+
+        if (version) {
+            this.selectedPackages[packageInfo.id] = packageInfo;
+        }
+        // else if (packageInfo.id in this.selectedPackages) {
+        //     delete this.selectedPackages[packageInfo.id];
+        // }
+
+        this.setState(
+            produce(draft=>{
+                if (version) {
+                    draft.selectedPackageVersions[packageInfo.id] = version;
+                }
+                else if (packageInfo.id in draft.selectedPackageVersions) {
+                    delete draft.selectedPackageVersions[packageInfo.id];
+                }
+            })
+        );
+    }
+
+    getSelectedPackageVersions = (packageId) => {
+        return this.state.selectedPackageVersions[packageId];
     }
 
     omitColumnHandler = (colName) => {
@@ -145,7 +219,7 @@ class PackagesList extends Component {
 
     render() {
 
-        console.log("packages rendered")
+        console.log("-> Packages rendered")
 
         const visibleColumns = new Set(this.state.visibleColumns);
         const columns = [
@@ -370,6 +444,7 @@ class PackagesList extends Component {
                 draft.data = response.results;
                 draft.dataTotalCount = response.count;
                 draft.URLqueryParams = URLqueryParams;
+                draft.selectedPackageVersions = {};
                 if (!shouldNotResetTableDefaultPage) {
                     draft.tableResetDefaultPage = !draft.tableResetDefaultPage;
                 }
@@ -378,7 +453,7 @@ class PackagesList extends Component {
     }
 
     componentDidMount () {
-        console.log("Package list did mount");
+        console.log("-> Package list did mount");
         const URLqueryParams = {
             'ordering': ['-avg_rating', 'name', 'distro']
         };
@@ -386,7 +461,12 @@ class PackagesList extends Component {
     }
 
     componentDidUpdate () {
-        console.log("Package list did update");
+        console.log("-> Package list did update");
+    }
+
+    componentWillUpdate () {
+        console.log("-> Package list will update");
+        this.skipRowsChangedTriggering = true;
     }
 
 }
