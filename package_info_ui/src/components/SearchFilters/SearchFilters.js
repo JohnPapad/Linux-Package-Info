@@ -190,13 +190,8 @@ class SearchFilters extends Component {
     }
 
     render () {
-        console.log("search filters state: ", this.state);
-
         const selectedDistrosSet = this.getSelectedOptionsSet("selectedDistros");
-        console.log("selectedDistrosSet", selectedDistrosSet)
-
         const selectedTypesSet = this.getSelectedOptionsSet("selectedTypes");
-        console.log("selectedTypesSet", selectedTypesSet)
 
         let distrosDropdownOptions = [];
         if (selectedTypesSet.size === 0){
@@ -286,6 +281,7 @@ class SearchFilters extends Component {
                                 <Select
                                     defaultValue={this.state.selectedArch}
                                     isSearchable
+                                    isClearable
                                     options={archsDropdownOptions}
                                     onChange={selectedOptions => this.onSelectChange(selectedOptions, "selectedArch")} 
                                     placeholder="Select one"
@@ -313,7 +309,7 @@ class SearchFilters extends Component {
                                 {
                                     "distro__in": [...selectedDistrosSet],
                                     "type__in": [...selectedTypesSet],
-                                    "versions__architecture__icontains": this.state["selectedArch"].value,
+                                    "versions__architecture__icontains": this.state["selectedArch"] ? this.state["selectedArch"].value : "",
                                     "section__in": [...this.getSelectedOptionsSet("selectedCategories")]
                                 }
                             )}
