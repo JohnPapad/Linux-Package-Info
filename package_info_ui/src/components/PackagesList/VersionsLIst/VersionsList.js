@@ -1,4 +1,4 @@
-import { Component } from "react"
+import { Component } from "react";
 import DataTable from 'react-data-table-component';
 import { withRouter } from 'react-router-dom';
 import produce from 'immer';
@@ -13,9 +13,7 @@ import { versionsDataTableStyles } from '../ContentTableStyles';
 
 class VersionsList extends Component {
 
-    state = {
-        data: this.props.versions
-    };
+    skipRowsChangedTriggering = true;
 
     rateHandler = async (rate, packageVersionId) => {
         alert(rate);
@@ -33,12 +31,30 @@ class VersionsList extends Component {
 
     }
 
+    selectedRowsChangedHandler = state => {
+        if (this.skipRowsChangedTriggering) {
+            this.skipRowsChangedTriggering = false;
+            return;
+        }
+        console.log("selected versions: ", state, "selectedVersion: ", this.props.selectedVersion)
+        if (state.selectedCount === 0) {
+            this.props.packageVersionSelectedHandler(this.props.packageInfo);
+        }
+        else {
+            const currSelectedVersion = state.selectedRows[0].version;
+            this.props.packageVersionSelectedHandler(this.props.packageInfo, currSelectedVersion);
+        }
+    }
+
+    versionIsSelected = row => {
+        return row.version === this.props.selectedVersion;
+    }
+
     render() {
         const isAuth = true;
         const hasVoted = false;
-        console.log("versions state: ", this.state)
 
-        console.log("versions rendered")
+        console.log(`--> Versions [${this.props.packageInfo.name}] rendered`)
         const columns = [
             {
                 name: "Version",
@@ -100,7 +116,6 @@ class VersionsList extends Component {
                 selector: row => row['binary_URL'],
                 reorder:true,
                 grow: 3,
-                // omit: row => { return row.binary_URL == null;},
                 format: row => <a target="_blank" rel="noreferrer" href={row.binary_URL}>{removeHttp(row.binary_URL)}</a>
             }
         
@@ -111,16 +126,15 @@ class VersionsList extends Component {
                 <DataTable
                     customStyles={versionsDataTableStyles}
                     theme="light"
-                    data={this.state.data}
+                    data={this.props.packageInfo.versions}
                     columns={columns}
-                    // defaultSortField="distro"
                     dense
                     highlightOnHover
                     responsive
                     selectableRows
                     selectableRowsSingle
                     selectableRowsNoSelectAll
-                    selectableRowsHighlight
+                    selectableRowSelected={this.versionIsSelected}
                     onSelectedRowsChange={this.selectedRowsChangedHandler}
                 />
             </div>
@@ -129,13 +143,16 @@ class VersionsList extends Component {
     }
 
     componentDidMount () {
-        console.log("Package versions list did mount");
+        console.log(`--> Versions [${this.props.packageInfo.name}] did mount`);
     }
 
     componentDidUpdate () {
-        console.log("Package versions list did update");
+        console.log(`--> Versions [${this.props.packageInfo.name}]  did update`);
     }
 
+    shouldComponentUpdate (nextProps, nextState) {
+        return nextProps.selectedVersion != this.props.selectedVersion;
+    }
 }
 
 export default withRouter(VersionsList);
