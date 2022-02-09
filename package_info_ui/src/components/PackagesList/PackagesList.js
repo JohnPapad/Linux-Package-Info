@@ -37,6 +37,15 @@ const progressComponent = (
 );
 
 
+const expandableComponent = (packageInfo, selectedVersion, packageVersionSelectedHandler) => (
+    <VersionsList 
+        packageInfo={packageInfo}
+        selectedVersion={selectedVersion}
+        packageVersionSelectedHandler={packageVersionSelectedHandler}
+    />
+);
+
+
 class PackagesList extends Component {
 
     state = {
@@ -307,13 +316,15 @@ class PackagesList extends Component {
                 conditionalRowStyles={expandedRowStyles}
                 data={this.state.data}
                 columns={columns}
-                // defaultSortField="distro"
+                
                 fixedHeader
                 highlightOnHover
                 responsive
+                
                 noDataComponent={noDataComponent}
                 progressPending={this.state.tableIsLoading}
                 progressComponent={progressComponent}
+                
                 pagination
                 paginationServer
 			    paginationTotalRows={this.state.dataTotalCount}
@@ -322,16 +333,22 @@ class PackagesList extends Component {
                 paginationComponentOptions={{
                     noRowsPerPage: true
                 }}
+                paginationServerOptions={{
+                    persistSelectedOnPageChange: true
+                }}
                 onChangePage={this.handlePackagePageChange}
+                
                 expandableRows
                 expandOnRowClicked
-                expandableRowsComponent={({data})=><VersionsList versions={data.versions}/>} 
+                expandableRowsComponent={({data})=>expandableComponent(data, this.getSelectedPackageVersions(data.id), this.packageVersionSelectedHandler)}
+                onRowExpandToggled={this.onRowExpandToggled}
+                
                 selectableRows
                 selectableRowsHighlight
+                onSelectedRowsChange={this.selectedRowsChangedHandler}
+                
                 sortServer
 			    onSort={this.handleSort}
-                onSelectedRowsChange={this.selectedRowsChangedHandler}
-                onRowExpandToggled={this.onRowExpandToggled}
                 contextActions={<ExportOptions exportHandler={this.exportHandler}/>}
             />
             </>
