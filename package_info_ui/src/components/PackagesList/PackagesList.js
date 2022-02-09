@@ -316,8 +316,10 @@ class PackagesList extends Component {
                 conditionalRowStyles={expandedRowStyles}
                 data={this.state.data}
                 columns={columns}
+                title={<span/>}
                 
                 fixedHeader
+                persistTableHead
                 highlightOnHover
                 responsive
                 
@@ -346,6 +348,7 @@ class PackagesList extends Component {
                 selectableRows
                 selectableRowsHighlight
                 onSelectedRowsChange={this.selectedRowsChangedHandler}
+                selectableRowSelected={row=>row.id in this.selectedPackages}
                 
                 sortServer
 			    onSort={this.handleSort}
