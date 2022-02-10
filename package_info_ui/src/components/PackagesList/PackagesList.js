@@ -11,7 +11,7 @@ import { API } from '../../services/API';
 import queryString from 'query-string';
 import validUrl from 'valid-url';
 import { removeHttp, mapDistroToBootstrapColor } from "../../utilities/utilities";
-import VersionsList from "./VersionsLIst/VersionsList";
+import Versions from "./Versions/Versions";
 import { packagesDataTableStyles } from './ContentTableStyles';
 import DataTableContextComponent from "../DataTableContextComponent/DataTableContextComponent";
 
@@ -36,7 +36,7 @@ const progressComponent = (
 
 
 const expandableComponent = (packageInfo, selectedVersion, packageVersionSelectedHandler) => (
-    <VersionsList 
+    <Versions 
         packageInfo={packageInfo}
         selectedVersion={selectedVersion}
         packageVersionSelectedHandler={packageVersionSelectedHandler}

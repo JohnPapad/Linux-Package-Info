@@ -11,7 +11,7 @@ import pretty from 'prettysize';
 import { versionsDataTableStyles } from '../ContentTableStyles';
 
 
-class VersionsList extends Component {
+class Versions extends Component {
 
     skipRowsChangedTriggering = true;
 
@@ -155,4 +155,4 @@ class VersionsList extends Component {
     }
 }
 
-export default withRouter(VersionsList);
+export default withRouter(Versions);
