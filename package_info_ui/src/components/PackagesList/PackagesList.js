@@ -48,6 +48,7 @@ class PackagesList extends Component {
 
     state = {
         data: [],
+        toggleClearSelectedRows: false,
         tableResetDefaultPage: true,
         tableIsLoading: true,
         dataTotalCount: 0,
@@ -75,6 +76,35 @@ class PackagesList extends Component {
         }
 
         return collectedPackages;
+    }
+
+    deselectedAllHandler = () => {
+        this.selectedPackages = {};
+        this.setState(
+            produce(draft=>{
+                draft.selectedPackageVersions = {};
+                draft.toggleClearSelectedRows = !draft.toggleClearSelectedRows;
+            })
+        );
+    }
+
+    deselectedOneHandler = (packageId) => {
+        if (packageId in this.selectedPackages) {
+            delete this.selectedPackages[packageId];
+            this.setState(
+                produce(draft=>{
+                    draft.toggleClearSelectedRows = !draft.toggleClearSelectedRows;
+                })
+            );
+        }
+
+        if (packageId in this.state.selectedPackageVersions) {
+            this.setState(
+                produce(draft=>{
+                    delete draft.selectedPackageVersions[packageId];
+                })
+            );
+        }
     }
 
     selectedRowsChangedHandler = state => {
@@ -412,6 +442,7 @@ class PackagesList extends Component {
                 selectableRowsHighlight
                 onSelectedRowsChange={this.selectedRowsChangedHandler}
                 selectableRowSelected={row=>row.id in this.selectedPackages}
+                clearSelectedRows={this.state.toggleClearSelectedRows}
                 
                 sortServer
 			    onSort={this.handleSort}
