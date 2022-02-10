@@ -49,6 +49,7 @@ class PackagesList extends Component {
     state = {
         data: [],
         toggleClearSelectedRows: false,
+        toggleRerender: false,
         tableResetDefaultPage: true,
         tableIsLoading: true,
         dataTotalCount: 0,
@@ -149,6 +150,11 @@ class PackagesList extends Component {
         }
         else {
             this.selectedPackages = curSelectedPackages;
+            this.setState(
+                produce(draft=>{
+                    draft.toggleRerender = !draft.toggleRerender;
+                })
+            );
         }
     }
 
