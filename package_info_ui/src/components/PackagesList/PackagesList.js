@@ -419,6 +419,13 @@ class PackagesList extends Component {
                     </Button>
                 </Col>
             </Row>
+
+            <DataTableContextComponent
+                selectedPackagesInfo={this.collectSelectedPackages(true)}
+                deselectedOneHandler={this.deselectedOneHandler}
+                deselectedAllHandler={this.deselectedAllHandler}
+            />
+
             <DataTable
                 customStyles={packagesDataTableStyles}
                 conditionalRowStyles={expandedRowStyles}
