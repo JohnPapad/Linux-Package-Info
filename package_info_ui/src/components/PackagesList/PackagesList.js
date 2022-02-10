@@ -64,18 +64,27 @@ class PackagesList extends Component {
     selectedPackages = {};
 
     collectSelectedPackages = (includeSelectedVersion) => {
-        const collectedPackages = [];
+        let onlyOneDistro = true;
+        let prvDistro = null;
+        const selectedPackages = [];
         for (const packageId in this.selectedPackages) {
-            let packageInfo = this.selectedPackages[packageId];
+            let packageInfo = {...this.selectedPackages[packageId]};
             if (includeSelectedVersion && (packageId in this.state.selectedPackageVersions)) {
                 const selectedVersion = this.state.selectedPackageVersions[packageId];
                 packageInfo["selectedVersion"] = selectedVersion;
             }
 
-            collectedPackages.push(packageInfo);
+            if (!prvDistro) {
+                prvDistro = packageInfo.distro;
+            }
+            else if (onlyOneDistro && (prvDistro !== packageInfo.distro)) {
+                onlyOneDistro = false;
+            }
+
+            selectedPackages.push(packageInfo);
         }
 
-        return collectedPackages;
+        return {selectedPackages, onlyOneDistro};
     }
 
     deselectedAllHandler = () => {
