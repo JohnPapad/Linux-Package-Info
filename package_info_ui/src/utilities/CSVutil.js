@@ -16,7 +16,19 @@ export const convertArrayOfObjectsToCSV = (array) => {
         keys.forEach(key => {
             if (ctr > 0) result += columnDelimiter;
 
-            result += item[key];
+            if (key === "versions") {
+                item[key].forEach((elem, index) => {
+                    if (index < item[key].length - 1) {
+                        result += elem.version + " | ";
+                    }
+                    else {
+                        result += elem.version;
+                    }
+                });
+            }
+            else {
+                result += item[key];
+            }
 
             ctr++;
         });
