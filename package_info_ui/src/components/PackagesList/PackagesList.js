@@ -5,9 +5,6 @@ import produce from 'immer';
 import { isEqual } from 'lodash';
 import SearchForm from '../SearchFilters/SearchFilters';
 import { Row, Col, Button, Spinner } from 'reactstrap';
-import ExportOptions from '../ExportOptions/ExportOptions';
-import { downloadCSV } from '../../utilities/CSVutil';
-import { downloadJSON } from '../../utilities/JSONutil';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { API } from '../../services/API';
@@ -16,6 +13,7 @@ import validUrl from 'valid-url';
 import { removeHttp, mapDistroToBootstrapColor } from "../../utilities/utilities";
 import VersionsList from "./VersionsLIst/VersionsList";
 import { packagesDataTableStyles } from './ContentTableStyles';
+import DataTableContextComponent from "../DataTableContextComponent/DataTableContextComponent";
 
 
 const noDataComponent = (
@@ -63,15 +61,6 @@ class PackagesList extends Component {
     skipRowsChangedTriggering = true;
 
     selectedPackages = {};
-
-    exportHandler = (type) => {
-        if (type === "CSV") {
-            downloadCSV(this.collectSelectedPackages());
-        }
-        else if (type === "JSON") {
-            downloadJSON(this.collectSelectedPackages());
-        }
-    }
 
     collectSelectedPackages = (includeSelectedVersion) => {
         const collectedPackages = [];
