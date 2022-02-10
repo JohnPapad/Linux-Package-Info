@@ -23,12 +23,14 @@ export const versionsDataTableStyles = {
 export const packagesDataTableStyles = {
     table: {
 		style: {
-            border: `1px solid ${dividerColor}`,
+            borderLeft: `1px solid ${dividerColor}`,
+            borderRight: `1px solid ${dividerColor}`,
 		},
 	},
     headRow: {
         style: {
-            fontSize: "120%"
+            fontSize: "120%",
+            borderTop: `1px solid ${dividerColor}`,
         },
     },
     expanderRow: {
