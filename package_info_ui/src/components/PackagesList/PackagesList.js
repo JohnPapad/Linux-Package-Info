@@ -278,7 +278,7 @@ class PackagesList extends Component {
                 selector: row => row['distro'],
                 sortable: true,
                 reorder:true,
-                grow: 1.2,
+                grow: 1.5,
                 // center: true,
                 style: {
                     fontWeight: "500"
@@ -297,7 +297,7 @@ class PackagesList extends Component {
                 sortable: true,
                 reorder:true,
                 // center: true,
-                width: "80px",
+                width: "85px",
                 omit: !visibleColumns.has('type'),
             },
             {
@@ -390,7 +390,7 @@ class PackagesList extends Component {
 
         return (
             <>
-            <Row className="mb-3 justify-content-between">
+            <Row className="mb-4 justify-content-between">
                 <Col md="3" className="py-2">
                     <SearchForm fetchPackages={this.fetchPackages}/>
                 </Col>
@@ -431,7 +431,6 @@ class PackagesList extends Component {
                 conditionalRowStyles={expandedRowStyles}
                 data={this.state.data}
                 columns={columns}
-                title={<span/>}
                 
                 fixedHeader
                 persistTableHead
@@ -459,7 +458,7 @@ class PackagesList extends Component {
                 expandOnRowClicked
                 expandableRowsComponent={({data})=>expandableComponent(data, this.getSelectedPackageVersions(data.id), this.packageVersionSelectedHandler)}
                 onRowExpandToggled={this.onRowExpandToggled}
-                
+    
                 selectableRows
                 selectableRowsHighlight
                 onSelectedRowsChange={this.selectedRowsChangedHandler}
@@ -468,7 +467,6 @@ class PackagesList extends Component {
                 
                 sortServer
 			    onSort={this.handleSort}
-                contextActions={<ExportOptions exportHandler={this.exportHandler}/>}
             />
             </>
         );
