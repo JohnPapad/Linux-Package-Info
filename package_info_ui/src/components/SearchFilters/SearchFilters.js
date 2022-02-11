@@ -232,6 +232,8 @@ class SearchFilters extends Component {
                 </form>
 
                 <Modal size="lg" isOpen={this.state.filtersModalOpen} toggle={this.toggleFiltersModal} className='pt-5'>
+                    <div style={{backgroundColor: '#f8f9fa'}} className='rounded'>
+
                     <ModalHeader toggle={this.toggleFiltersModal}>
                         Search Filters
                     </ModalHeader>
@@ -318,6 +320,8 @@ class SearchFilters extends Component {
                             Search
                         </Button>
                     </ModalFooter>
+
+                    </div>
                 </Modal>
             </>
         );
