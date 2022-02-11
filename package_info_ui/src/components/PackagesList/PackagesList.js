@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import produce from 'immer';
 import { isEqual } from 'lodash';
 import SearchForm from '../SearchFilters/SearchFilters';
-import { Row, Col, Button, Spinner } from 'reactstrap';
+import { Container, Row, Col, Button, Spinner } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { API } from '../../services/API';
@@ -389,7 +389,12 @@ class PackagesList extends Component {
         ];
 
         return (
-            <>
+        <Container fluid className="mt-2">
+            <header className='my-4 pb-2 text-center border-bottom'>
+                <h3>
+                    Useful info about Linux distributions packages
+                </h3>
+            </header>
             <Row className="mb-4 justify-content-between">
                 <Col md="3" className="py-2">
                     <SearchForm fetchPackages={this.fetchPackages}/>
@@ -468,7 +473,7 @@ class PackagesList extends Component {
                 sortServer
 			    onSort={this.handleSort}
             />
-            </>
+        </Container>
         );
     }
 
