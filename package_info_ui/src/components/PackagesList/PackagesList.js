@@ -284,7 +284,7 @@ class PackagesList extends Component {
                     fontWeight: "500"
                 },
                 cell: row=>(
-                    <div className={`my-auto p-1 border rounded border-${mapDistroToBootstrapColor(row.distro)} text-${mapDistroToBootstrapColor(row.distro)}`}>
+                    <div className={`my-auto p-1 border border-2 rounded border-${mapDistroToBootstrapColor(row.distro)} text-${mapDistroToBootstrapColor(row.distro)}`}>
                         {row.distro}
                     </div>
                 )
@@ -406,10 +406,8 @@ class PackagesList extends Component {
                     {
                         this.state.visibleColumns.map(col=>(
                             <span key={col} className="mx-2">
-                                <Button color="dark" outline disabled size="sm">
-                                    <span className="fw-bold">
-                                        {col}
-                                    </span>
+                                <Button color="dark" outline disabled size="sm" className="border-2 fw-bold">
+                                    {col}
                                 </Button>
                                 <FontAwesomeIcon role="button" onClick={()=>this.omitColumnHandler(col)} icon={faTimesCircle} className="mx-2 text-secondary small"/>
                                 <span className="py-2" style={{borderLeft: "1px solid grey"}}/>
