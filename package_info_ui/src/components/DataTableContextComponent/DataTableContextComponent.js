@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Row, Col, Container, Button, UncontrolledCollapse, List } from "reactstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileExport, faTrashAlt, faFileCsv, faFileCode, faFileDownload, faSortDown, faExclamationTriangle, faMinusSquare, faEraser } from '@fortawesome/free-solid-svg-icons';
+import { faFileExport, faTrashAlt, faFileCsv, faFileCode, faFileDownload, faSortDown, faExclamationTriangle, faMinusSquare, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { downloadCSV } from '../../utilities/CSVutil';
 import { downloadJSON } from '../../utilities/JSONutil';
 import { API } from "../../services/API";
@@ -84,8 +84,8 @@ const DataTableContextComponent = (props) => {
                             <FontAwesomeIcon icon={faTrashAlt} className="ms-2"/>
                         </Button>
                         <Button size="sm" onClick={createDockerfile} color="secondary" className='fw-bold mx-4'>
-                            Export to Dockerfile
-                            <FontAwesomeIcon icon={faFileDownload} className="ms-2"/>
+                            Create Dockerfile
+                            <FontAwesomeIcon icon={faFileLines} className="ms-2"/>
                         </Button>
                         <Button size="sm" onClick={()=>downloadCSV(selectedPackages)} color="primary" className='fw-bold'>
                             Export to CSV
