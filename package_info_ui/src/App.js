@@ -6,6 +6,7 @@ import './App.scss';
 import PackagesList from './components/PackagesList/PackagesList';
 import { Container, Row, Col } from 'reactstrap';
 import { Route, Redirect, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 
 
 class App extends Component {
@@ -13,16 +14,18 @@ class App extends Component {
    
     render() {
         return (
+            <>
+                <Navbar/>
+                <main className='pt-5'>
+                    <Switch>
+                        <Route path="/" exact>
+                            <PackagesList/>
+                        </Route>
 
-            <Switch>
-                <Route path="/" exact>
-                    <Container fluid className="mt-5">
-                        <PackagesList/>
-                    </Container>
-                </Route>
-
-                <Redirect to="/" />
-            </Switch>
+                        <Redirect to="/" />
+                    </Switch>
+                </main>
+            </>
         );
     }
     
