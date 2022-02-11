@@ -15,7 +15,7 @@ import styles from './SearchFilters.module.scss';
 import { createQueryParams } from '../../utilities/URIutil';
 import { withRouter } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter, faSlidersH, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faFilter, faMagnifyingGlass, faSlidersH, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import Select from 'react-select';
 import queryString from 'query-string';
 
@@ -220,7 +220,8 @@ class SearchFilters extends Component {
                         />
 
                         <ButtonGroup>
-                            <Button size="sm" className="fw-bold px-3" onClick={this.submitFormHandler}>
+                            <Button size="sm" className="fw-bold px-2" onClick={this.submitFormHandler}>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} className="me-2 text-light"/>
                                 Search
                             </Button>
                             <Button size="sm" className='border-start' onClick={this.toggleFiltersModal}>
