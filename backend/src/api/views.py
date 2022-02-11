@@ -66,7 +66,7 @@ class PackageViewSet(viewsets.ModelViewSet):
 
         return Response({'status': 'versions set'}, status=status.HTTP_201_CREATED)
 
-    @action(detail=False, methods=['get'], serializer_class=CreateDockerfileSerializer, renderer_classes=[DockerfileRenderer])
+    @action(detail=False, methods=['post'], serializer_class=CreateDockerfileSerializer, renderer_classes=[DockerfileRenderer])
     def dockerfile(self, request, pk=None):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
