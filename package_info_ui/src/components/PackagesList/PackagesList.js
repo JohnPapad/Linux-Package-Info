@@ -473,6 +473,12 @@ class PackagesList extends Component {
     }
 
     fetchPackages = async (URLqueryParams, shouldNotResetTableDefaultPage) => {
+        this.setState(
+            produce(draft=>{
+                draft.tableIsLoading = true;
+            })
+        );
+
         const URLqueryString = queryString.stringify(URLqueryParams, {arrayFormat: 'comma'});
         console.log("URLqueryString: ", URLqueryString)
 
@@ -480,7 +486,7 @@ class PackagesList extends Component {
         console.log(response);
         this.setState(
             produce(draft=>{
-                draft.tableIsLoading=false;
+                draft.tableIsLoading = false;
                 draft.data = response.results;
                 draft.dataTotalCount = response.count;
                 draft.URLqueryParams = URLqueryParams;
