@@ -1,13 +1,15 @@
 import { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText, Button } from 'reactstrap';
-import { NavLink as RouterNavLink, withRouter }  from 'react-router-dom';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, ModalHeader, Modal, Button, ModalBody } from 'reactstrap';
+import { withRouter }  from 'react-router-dom';
 import produce  from 'immer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faUserEdit, faArrowRightToBracket, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 import Auth from '../Auth/Auth';
+import { API } from '../../services/API';
+import axiosInstance from '../../services/axiosConfig';
 
 
- class NavigatonBar extends Component {
+ class NavigationBar extends Component {
 
     state = {
         navbarIsOpen: false,
@@ -30,6 +32,20 @@ import Auth from '../Auth/Auth';
                 draft.authModalType = type;
             })
         );
+    }
+
+    logOutHandler = async () => {
+        const payload = {
+            "refresh_token": localStorage.getItem('refresh_token')
+        };
+        const response = await API.logOut(payload);
+        console.log(response)
+
+        localStorage.removeItem('access_token');
+		localStorage.removeItem('refresh_token');
+		axiosInstance.defaults.headers['Authorization'] = null;
+
+        this.props.history.push("/");
     }
 
     render () {
@@ -58,7 +74,7 @@ import Auth from '../Auth/Auth';
                                     </Button>
                             </>
                             :
-                                <Button size="sm" color='info' className='fw-bold pe-1 ms-2'>
+                                <Button size="sm" color='info' className='fw-bold pe-1 ms-2' onClick={()=>this.logOutHandler()}>
                                     <span className='border-end pe-1 border-dark'>Log out</span>
                                     <FontAwesomeIcon icon={faSignOutAlt} className="ms-1 small"/>
                                 </Button>
@@ -76,4 +92,4 @@ import Auth from '../Auth/Auth';
 
 }
 
-export default NavigatonBar;
+export default withRouter(NavigationBar);
