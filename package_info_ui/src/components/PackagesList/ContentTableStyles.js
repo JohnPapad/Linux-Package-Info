@@ -25,6 +25,7 @@ export const packagesDataTableStyles = {
 		style: {
             borderLeft: `1px solid ${dividerColor}`,
             borderRight: `1px solid ${dividerColor}`,
+            borderBottom: `1px solid ${dividerColor}`,
 		},
 	},
     headRow: {
