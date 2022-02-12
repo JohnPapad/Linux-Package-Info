@@ -6,6 +6,8 @@ export const versionsDataTableStyles = {
     table: {
 		style: {
             borderBottom: `1px solid ${dividerColor}`,
+            // borderLeft: `1px solid ${dividerColor}`,
+            // borderRight: `1px solid ${dividerColor}`,
 		},
 	},
     headCells: {
@@ -42,7 +44,8 @@ export const packagesDataTableStyles = {
     expanderButton: {
 		style: {
 			'&:focus': {
-                backgroundColor: "#f8f9fa",
+				// outline: 'none',
+				backgroundColor: "#f8f9fa",
 			},
 		}
     }

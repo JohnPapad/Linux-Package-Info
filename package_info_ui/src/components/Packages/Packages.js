@@ -123,8 +123,6 @@ class PackagesList extends Component {
             return;
         }
 
-        console.log("selected rows", state)
-
         let curSelectedPackages = {};
         for (const selectedPackage of state.selectedRows) {
             curSelectedPackages[selectedPackage.id] = selectedPackage;
@@ -184,7 +182,6 @@ class PackagesList extends Component {
     }
 
     omitColumnHandler = (colName) => {
-        console.log("col name: ", colName)
         this.setState(
             produce(draft=>{
                 draft.visibleColumns = draft.visibleColumns.filter(val=> val !== colName);
@@ -201,7 +198,6 @@ class PackagesList extends Component {
     }
 
     onRowExpandToggled = (expanded, row) => {
-        console.log("expanded", expanded, "row", row)
         this.setState(
             produce(draft=>{
                 if (expanded) {
@@ -227,8 +223,6 @@ class PackagesList extends Component {
     }
 
     handleSort = (column, sortDirection) => {
-        console.log("handle sort: ", column.id, sortDirection)
-
         let sortingField = column.id;
         if (sortDirection === "desc") {
             sortingField = `-${sortingField}`;
@@ -247,6 +241,7 @@ class PackagesList extends Component {
             'page': 1,
             'ordering': orderingFields
         };
+  
         this.skipPackagePageChange = true;
         this.fetchPackages(URLqueryParams);
     }
@@ -485,10 +480,8 @@ class PackagesList extends Component {
         }
 
         const URLqueryString = queryString.stringify(URLqueryParams, {arrayFormat: 'comma'});
-        console.log("URLqueryString: ", URLqueryString)
 
         const response = await API.getPackages(URLqueryString);
-        console.log(response);
         if (!response) return;
         this.setState(
             produce(draft=>{

@@ -3,7 +3,7 @@
 
 import { Component } from 'react';
 import './App.scss';
-import PackagesList from './components/PackagesList/PackagesList';
+import PackagesList from './components/Packages/Packages';
 import { Container, Row, Col } from 'reactstrap';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
