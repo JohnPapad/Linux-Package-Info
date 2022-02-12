@@ -6,3 +6,4 @@ drf-access-policy==1.1.0
 markdown
 django-filter
 django-model-utils
+drf-yasg
