@@ -74,7 +74,7 @@ import axiosInstance from '../../services/axiosConfig';
                                     </Button>
                             </>
                             :
-                                <Button size="sm" color='info' className='fw-bold pe-1 ms-2' onClick={()=>this.logOutHandler()}>
+                                <Button size="sm" color='dark' className='fw-bold pe-1 ms-2' onClick={()=>this.logOutHandler()}>
                                     <span className='border-end pe-1 border-dark'>Log out</span>
                                     <FontAwesomeIcon icon={faSignOutAlt} className="ms-1 small"/>
                                 </Button>
