@@ -87,7 +87,7 @@ class RatingAccessPolicy(AccessPolicy):
             "effect": "allow"
         },
         {
-            "action": ["create"],
+            "action": ["create", "update"],
             "principal": ["group:API_PRIV", "authenticated"],
             "effect": "allow",
             "condition": ["is_request_from_own_user"]
