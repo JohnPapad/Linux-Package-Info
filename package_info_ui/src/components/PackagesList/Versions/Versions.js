@@ -9,26 +9,44 @@ import { API } from '../../../services/API';
 import { removeHttp } from '../../../utilities/utilities';
 import pretty from 'prettysize';
 import { versionsDataTableStyles } from '../ContentTableStyles';
+import jwt_decode from "jwt-decode";
 
 
 class Versions extends Component {
 
+    state = {
+        versions: this.props.packageInfo.versions
+    };
+
     skipRowsChangedTriggering = true;
 
-    rateHandler = async (rate, packageVersionId) => {
-        alert(rate);
+    rateHandler = async (rate, versionIndexStr, packageVersionId, userId, userRating) => {
         const payload = {
             rate: Number(rate),
             pkg_version: packageVersionId,
-            user: 2
+            user: userId
         };
 
-        console.log("rate version payload: ", payload)
-        const responseStatus = await API.ratePackageVersion(payload);
-        if (responseStatus === 201) {
-
+        let response = null;
+        if (userRating) {
+            // change existing rating
+            response = await API.changePackageVersionRating(payload, userRating.rating_id);
+        }
+        else {
+            // new rating
+            response = await API.ratePackageVersion(payload);
         }
 
+        if (!response) return;
+        const versionIndex = Number(versionIndexStr);
+        this.setState(
+            produce(draft=>{
+                draft.versions[versionIndex]["user_rating"] = {
+                    "rate": response.data.rate,
+                    "rating_id": response.data.id
+                };
+            })
+        );
     }
 
     selectedRowsChangedHandler = state => {
@@ -51,8 +69,11 @@ class Versions extends Component {
     }
 
     render() {
-        const isAuth = true;
-        const hasVoted = false;
+        let userId = null;
+        try {
+            userId = jwt_decode(localStorage.getItem("access_token"))['user_id'];
+        }
+        catch {}
 
         console.log(`--> Versions [${this.props.packageInfo.name}] rendered`)
         const columns = [
@@ -80,7 +101,7 @@ class Versions extends Component {
                 format: row=>pretty(row.size)
             },
             {
-                name: "Rating",
+                name: "Average Rating",
                 selector: row => row['rating'],
                 sortable: true,
                 reorder:true,
@@ -89,25 +110,28 @@ class Versions extends Component {
                 cell: row=>row.rating ? row.rating.toFixed(1) : "-"
             },
             {
-                name: "Rate",
+                name: "Personal Rating",
                 reorder:true,
-                omit: !isAuth,
+                omit: !userId,
                 grow: 0.5,
                 center: true,
-                cell: row=>(
+                cell: (row, index) =>(
                     <Input
                         type="select"
                         bsSize="sm"
                         className="my-1 mx-4"
-                        value={2}
-                        disabled={hasVoted}
-                        onChange={e=>this.rateHandler(e.target.value, row.id)}
+                        value={row.user_rating ? row.user_rating.rate : 0}
+                        onChange={e=>this.rateHandler(e.target.value, index, row.id, userId, row.user_rating)}
                     >
                         <option value={5}>5</option>
                         <option value={4}>4</option>
                         <option value={3}>3</option>
                         <option value={2}>2</option>
                         <option value={1}>1</option>
+                        {
+                            !row.user_rating &&
+                            <option value={0}>-</option>
+                        }
                     </Input>
                 )
             },
@@ -126,7 +150,7 @@ class Versions extends Component {
                 <DataTable
                     customStyles={versionsDataTableStyles}
                     theme="light"
-                    data={this.props.packageInfo.versions}
+                    data={this.state.versions}
                     columns={columns}
                     dense
                     highlightOnHover
@@ -146,12 +170,16 @@ class Versions extends Component {
         console.log(`--> Versions [${this.props.packageInfo.name}] did mount`);
     }
 
+    componentWillUpdate () {
+        this.skipRowsChangedTriggering = true;
+    }
+
     componentDidUpdate () {
         console.log(`--> Versions [${this.props.packageInfo.name}]  did update`);
     }
 
     shouldComponentUpdate (nextProps, nextState) {
-        return nextProps.selectedVersion != this.props.selectedVersion;
+        return !isEqual(this.state.versions, nextState.versions);
     }
 }
 
