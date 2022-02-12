@@ -7,11 +7,10 @@ import { downloadJSON } from '../../utilities/JSONutil';
 import { API } from "../../services/API";
 
 
-const DataTableContextComponent = (props) => {
+const DataTableContext = (props) => {
     const { selectedPackages } = props.selectedPackagesInfo;
     const selectedPackagesOnlyOneDistro = props.selectedPackagesInfo.onlyOneDistro;
-    console.log("selectedPackagessss", selectedPackages)
-    console.log("selectedPackagesOnlyOneDistro", selectedPackagesOnlyOneDistro)
+ 
     if (selectedPackages.length === 0) return null;
 
     const createDockerfile = async () => {
@@ -32,15 +31,11 @@ const DataTableContextComponent = (props) => {
             packages
         };
 
-        console.log("dockerfile payload: ", payload)
-        // return;
         const createdDockerfile = await API.getPackagesDockerfile(payload);
-        console.log("dockerfile", createdDockerfile)
 
         const blob = new Blob([createdDockerfile], { type: 'text/plain' });
         const link = document.createElement('a');
         const filename = `${selectedPackages[0].distro}.Dockerfile`;
-        console.log("filename", filename)
 
         link.setAttribute('href', window.URL.createObjectURL(blob));
         link.setAttribute('download', filename);
@@ -109,4 +104,4 @@ const DataTableContextComponent = (props) => {
     );
 }
 
-export default DataTableContextComponent;
+export default DataTableContext;

@@ -13,7 +13,7 @@ import validUrl from 'valid-url';
 import { removeHttp, mapDistroToBootstrapColor } from "../../utilities/utilities";
 import Versions from "./Versions/Versions";
 import { packagesDataTableStyles } from './ContentTableStyles';
-import DataTableContextComponent from "../DataTableContextComponent/DataTableContextComponent";
+import DataTableContextComponent from "../DataTableContext/DataTableContext";
 
 
 const noDataComponent = (
