@@ -14,6 +14,17 @@ class RatingSerializer(serializers.ModelSerializer):
 
 class PackageVersionSerializer(serializers.ModelSerializer):
     # ratings = RatingSerializer(many=True) # read_only=True
+
+    user_rating = serializers.SerializerMethodField()
+    def get_user_rating(self, obj):
+        request = self.context.get('request')
+        for rating_info in obj.ratings.all():
+            if rating_info.user.id == request.user.id:
+                return {
+                    "rating_id": rating_info.id,
+                    "rate": rating_info.rate
+                }
+
     rating = serializers.SerializerMethodField()
     def get_rating(self, obj):
         if obj.rating is None:
