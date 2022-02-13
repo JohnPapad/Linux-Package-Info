@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, InputGroup, Input, Label, Button, FormGroup, Alert } from "reactstrap";
+import { Form, Input, Label, Button, FormGroup, Alert } from "reactstrap";
 import produce from 'immer';
 import { API } from "../../services/API";
 import { withRouter } from "react-router-dom";
@@ -75,7 +75,7 @@ class Auth extends Component {
         if (this.state.type === "signup") {
             payload["email"] = this.state.formElems.email;
             const response = await API.signUp(payload);
-            if (response.status == 400) {
+            if (response.status === 400) {
                 //bad request
                 this.badRequestHandler(response.data);
             }
@@ -98,7 +98,7 @@ class Auth extends Component {
         }
         else {
             const response = await API.logIn(payload);
-            if (response.status == 400) {
+            if (response.status === 400) {
                 //bad request
                 this.badRequestHandler(response.data);
             }

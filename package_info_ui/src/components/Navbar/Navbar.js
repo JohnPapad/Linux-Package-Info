@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, ModalHeader, Modal, Button, ModalBody } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, Modal, Button } from 'reactstrap';
 import { withRouter }  from 'react-router-dom';
 import produce  from 'immer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -38,9 +38,7 @@ import axiosInstance from '../../services/axiosConfig';
         const payload = {
             "refresh_token": localStorage.getItem('refresh_token')
         };
-        const response = await API.logOut(payload);
-        console.log(response)
-
+        await API.logOut(payload);
         localStorage.removeItem('access_token');
 		localStorage.removeItem('refresh_token');
 		axiosInstance.defaults.headers['Authorization'] = null;
@@ -59,7 +57,7 @@ import axiosInstance from '../../services/axiosConfig';
                 </NavbarBrand>
                 <NavbarToggler onClick={this.toggleNavbar}/>
                 <Collapse isOpen={this.state.navbarIsOpen} navbar className='mb-1'>
-                    <Nav className="mr-auto" navbar className="ms-auto">
+                    <Nav navbar className="ms-auto">
                         {
                             !isLoggedIn ?
                                 <>

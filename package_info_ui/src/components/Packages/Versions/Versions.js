@@ -3,8 +3,7 @@ import DataTable from 'react-data-table-component';
 import { withRouter } from 'react-router-dom';
 import produce from 'immer';
 import { isEqual } from 'lodash';
-import { Row, Col, Input } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Input } from 'reactstrap';
 import { API } from '../../../services/API';
 import { removeHttp } from '../../../utilities/utilities';
 import pretty from 'prettysize';
@@ -54,7 +53,7 @@ class Versions extends Component {
             this.skipRowsChangedTriggering = false;
             return;
         }
-        console.log("selected versions: ", state, "selectedVersion: ", this.props.selectedVersion)
+
         if (state.selectedCount === 0) {
             this.props.packageVersionSelectedHandler(this.props.packageInfo);
         }
@@ -74,8 +73,6 @@ class Versions extends Component {
             userId = jwt_decode(localStorage.getItem("access_token"))['user_id'];
         }
         catch {}
-
-        console.log(`--> Versions [${this.props.packageInfo.name}] rendered`)
         const columns = [
             {
                 name: "Version",
@@ -166,16 +163,8 @@ class Versions extends Component {
         );
     }
 
-    componentDidMount () {
-        console.log(`--> Versions [${this.props.packageInfo.name}] did mount`);
-    }
-
     componentWillUpdate () {
         this.skipRowsChangedTriggering = true;
-    }
-
-    componentDidUpdate () {
-        console.log(`--> Versions [${this.props.packageInfo.name}]  did update`);
     }
 
     shouldComponentUpdate (nextProps, nextState) {

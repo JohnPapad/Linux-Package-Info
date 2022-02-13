@@ -1,23 +1,20 @@
 import { Component } from 'react';
-import { Form, 
-    Label,
+import { Label,
     InputGroup,
     Input,
     Modal,
     ModalHeader,
     ModalBody,
     Button,
-    ButtonGroup,
-    DropdownItem, 
-    Row, Col, ModalFooter} from 'reactstrap';
+    ButtonGroup, 
+    Row, 
+    Col, 
+    ModalFooter } from 'reactstrap';
 import produce from 'immer';
-import styles from './SearchFilters.module.scss';
-import { createQueryParams } from '../../utilities/URIutil';
 import { withRouter } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter, faMagnifyingGlass, faSlidersH, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faSlidersH } from '@fortawesome/free-solid-svg-icons';
 import Select from 'react-select';
-import queryString from 'query-string';
 
 
 const addToOptions = (options, dropdownOptions) => {

@@ -2,7 +2,6 @@ import { Component } from "react"
 import DataTable from 'react-data-table-component';
 import { withRouter } from 'react-router-dom';
 import produce from 'immer';
-import { isEqual } from 'lodash';
 import SearchForm from '../SearchFilters/SearchFilters';
 import { Container, Row, Col, Button, Spinner } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -247,9 +246,6 @@ class PackagesList extends Component {
     }
 
     render() {
-
-        console.log("-> Packages rendered")
-
         const visibleColumns = new Set(this.state.visibleColumns);
         const columns = [
             {
@@ -498,19 +494,13 @@ class PackagesList extends Component {
     }
 
     componentDidMount () {
-        console.log("-> Package list did mount");
         const URLqueryParams = {
             'ordering': ['-avg_rating', 'name', 'distro']
         };
         this.fetchPackages(URLqueryParams);
     }
 
-    componentDidUpdate () {
-        console.log("-> Package list did update");
-    }
-
     componentWillUpdate () {
-        console.log("-> Package list will update");
         this.skipRowsChangedTriggering = true;
     }
 

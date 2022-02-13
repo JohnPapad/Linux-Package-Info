@@ -1,7 +1,6 @@
-import { Component } from "react";
 import { Row, Col, Container, Button, UncontrolledCollapse, List } from "reactstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileExport, faTrashAlt, faFileCsv, faFileCode, faFileDownload, faSortDown, faExclamationTriangle, faMinusSquare, faFileLines } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faFileCsv, faFileCode, faSortDown, faExclamationTriangle, faMinusSquare, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { downloadCSV } from '../../utilities/CSVutil';
 import { downloadJSON } from '../../utilities/JSONutil';
 import { API } from "../../services/API";

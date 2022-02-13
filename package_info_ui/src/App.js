@@ -2,9 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import { Component } from 'react';
-import './App.scss';
 import PackagesList from './components/Packages/Packages';
-import { Container, Row, Col } from 'reactstrap';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 
