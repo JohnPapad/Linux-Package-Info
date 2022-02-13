@@ -1,3 +1,6 @@
+# Copyright 2021 Ioannis Papadopoulos
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 version: '3.7'
 
 services:
@@ -17,12 +20,20 @@ services:
         tty: true
         environment:
             - SECRET_KEY=${SECRET_KEY}
-        # depends_on: 
-        #     - db
-        #     - redis
-        # links:
-        #     - db
         command: >
             sh -c "python3 manage.py makemigrations
             && python3 manage.py migrate
             && python3 manage.py runserver 0.0.0.0:8000"
+
+    collector:
+        build:
+            context: ./package_info_collector
+            dockerfile: collector.Dockerfile
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        depends_on:
+            - backend
+        privileged: true
+        stdin_open: true
+        tty: true
+        network_mode: host
