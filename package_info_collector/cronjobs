@@ -1,0 +1,2 @@
+0 0 1 * * /bin/sh /collector/run_all_collector_scripts.sh > /proc/1/fd/1 2> /proc/1/fd/2
+# the script will be executing at 00:00 on the 1st of every month
