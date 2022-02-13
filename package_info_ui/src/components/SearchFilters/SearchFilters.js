@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Label,
+    FormGroup,
     InputGroup,
     Input,
     Modal,
@@ -119,7 +120,8 @@ class SearchFilters extends Component {
         selectedDistros: [],
         selectedCategories: [],
         selectedTypes: [],
-        selectedArch: null
+        selectedArch: null,
+        checkBox: false
     };
 
     toggleFiltersModal = () => {
@@ -146,27 +148,47 @@ class SearchFilters extends Component {
         );
     }
 
+    checkBoxClickedHandler = () => {
+        this.setState(
+            produce(draft => {
+                draft.checkBox = !draft.checkBox;
+            })
+        );
+    }
+
     submitFormHandler = (event, selectedFilters) => {
         if (event) {
             event.preventDefault();
             event.stopPropagation();
         }
 
+        let pkgNameFilter = null;
+        if (this.state.searchText) {
+            if (this.state.checkBox) {
+                pkgNameFilter = "name"; // exact match
+            }
+            else {
+                pkgNameFilter = "search"; 
+            }
+        }
+            
         let URLqueryParams = {};
         if (selectedFilters) {
             URLqueryParams = {
                 ...selectedFilters,
-                'search': this.state.searchText,
                 'ordering': ['name', 'distro']
             };
+            if (pkgNameFilter) {
+                URLqueryParams[pkgNameFilter] = this.state.searchText;
+            }
             this.toggleFiltersModal();
         }
         else if (this.state.searchText) {
             // only text search
             URLqueryParams = {
-                'search': this.state.searchText,
                 'ordering': ['name', 'distro']
             };
+            URLqueryParams[pkgNameFilter] = this.state.searchText;
         }
         else {
             // no text search - just fetch all ordered by the highest rating in descending order
@@ -302,6 +324,17 @@ class SearchFilters extends Component {
                                 />
                             </Col>
                         </Row>
+
+                        <FormGroup
+                            check
+                            inline
+                            className='mt-4'
+                        >
+                            <Input type="checkbox" checked={this.state.checkBox} onClick={this.checkBoxClickedHandler}/>
+                            <Label check>
+                                Show only exact search matches
+                            </Label>
+                        </FormGroup>
                     </ModalBody>
                     <ModalFooter>
                         <Button className="fw-bold" 
