@@ -29,7 +29,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="PKGman API",
         default_version='v1',
-        description="Useful info about Linux distributions packages",
+        description="Useful info for Linux distributions packages",
         contact=openapi.Contact(email="itp20126@hua.gr"),
         license=openapi.License(name="Copyright 2021 - Ioannis Papadopoulos - AGPL-3.0-or-later"),
     ),
