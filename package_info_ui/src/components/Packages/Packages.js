@@ -383,7 +383,7 @@ class PackagesList extends Component {
         <Container fluid className="mt-2">
             <header className='my-4 pb-2 text-center border-bottom'>
                 <h3>
-                    Useful info about Linux distributions packages
+                    Useful info for Linux distributions packages
                 </h3>
             </header>
             <Row className="mb-4 justify-content-between">
