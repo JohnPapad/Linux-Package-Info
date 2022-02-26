@@ -25,6 +25,18 @@ services:
             && python3 manage.py migrate
             && python3 manage.py runserver 0.0.0.0:8000"
 
+    frontend:
+        image: halverneus/static-file-server
+        volumes:
+            - ./package_info_ui/build/:/web
+        restart: always
+        ports: 
+            - "3000:8080"
+        environment:
+            - CORS=true
+        depends_on:
+            - backend
+
     collector:
         build:
             context: ./package_info_collector
