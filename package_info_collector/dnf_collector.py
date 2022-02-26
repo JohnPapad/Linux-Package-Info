@@ -261,20 +261,11 @@ def extract_package_info(package_name, distro, distro_archives_URL, distro_repos
     cur_source = None
     pkg_repo = None
     for info_line in info_output:
-        # print(info_line)
         try:
             info_key, info_value = info_line.rstrip('\n').split(": ")
             info_key = info_key.rstrip(" ")
         except:
             continue
-
-        
-        # if info_key == "Version":
-        #     print("-" * 30)
-        #     print(package_name)
-        #     cur_version = info_value
-        # print(info_key, info_value)
-        # continue
 
         if info_key == "Version":
             cur_version = info_value
@@ -311,8 +302,6 @@ def extract_package_info(package_name, distro, distro_archives_URL, distro_repos
         else:
             info[info_to_parse[info_key]] = info_value
 
-    # return
-    # print("/" * 35)
     pkg_homepage = info.get("homepage", "")
     if distro.startswith("Fedora"):
         repo_URL, maintainer = extract_package_info_from_distro_repo(distro_repos_URL, package_name)
@@ -430,8 +419,6 @@ def add_new_package(distro, base_URL, package_name, package_info, pkg_versions_t
     package_info["name"] = package_name
     package_info["type"] = "rpm"
 
-    # print("package_info: ", package_info)
-
     try:
         res = JWTAuth_obj.session.post(f'{base_URL}/packages/', json=package_info)
         if res.status_code == 201:
@@ -447,16 +434,11 @@ def add_new_package(distro, base_URL, package_name, package_info, pkg_versions_t
 
 @ray.remote
 def parallel_processing(distro, base_URL, package_name, distro_archives_URL, distro_repos_URL, i):
-    # print(f"-> Now processing package: '{package_name}' - #{i}")
     report_msg = f"-> Package #{i} - {package_name}: "
     pkg_existing_info = fetch_package_info(distro, base_URL, package_name)
 
     if pkg_existing_info is None: # package not included
         package_info, package_versions = extract_package_info(package_name, distro, distro_archives_URL, distro_repos_URL)
-        # print("--->", package_name)
-        # print(package_info, "\n")
-        # print(package_versions, "\n", "-" *30)
-        # return
         pkg_versions_to_add = []
         for pkg_version_info in package_versions.values():
             pkg_versions_to_add.append({
@@ -596,25 +578,3 @@ you should have also set the environment variables: GITHUB-TOKEN and USERNAME, P
     parse_packages_info(distro, cmdArgs['base_URL'], cmdArgs['max_concurrency'], cmdArgs['distro_archives_URL'], cmdArgs['distro_repos_URL'])
     print("--> Linux Package Collector finished..")
     JWTAuth_obj.rm_token()
-    # print(info_output)
-    # print("\n" * 4)
-    # info_output = (os.popen(f'dnf info firefox')).readlines()
-    # print(info_output)
-
-    # info_output = (os.popen(f'dnf info cracklib | grep -wE "^Source"')).readlines()
-
-
-    # for info in info_output:
-    #     print(info)
-    # s, b = extract_package_version_info("accountsservice", "0.6.55-0ubuntu12~20.04.5", cmdArgs['distro_archives_URL'])
-    # print(s, b)
-    # s, b = extract_package_version_info("accountsservice", "0.6.55-0ubuntu12~20.04.5", cmdArgs['distro_archives_URL'])
-    # print(s, b)
-    # data = load_package_licenses_file("pkgs_licenses.json")
-    # print(data)
-    # license, repo = extract_package_license_from_salsa("http://archive.ubuntu.com/ubuntu/pool/universe/r/redis/redis_5.0.7-2_all.deb")
-    # print("license:", license)
-    # print("repo:", repo)
-    # lc = extract_package_license_from_github_repo("https://github.com/andymccurdy/redis-py")
-    # print(lc)
-
