@@ -1,7 +1,9 @@
-# Linux Packages Info Collection
+# PKGman
+## Linux Packages Info Collection & Presentation
 
-The purpose of the particular thesis is the development of a software web application
-(“PKGman”) that periodically collects a number of useful attributes about popular Linux
+### Abstract:
+
+“PKGman” is a web application that periodically collects a number of useful attributes about popular Linux
 distributions’ software packages (e.g. name, available versions, size), stores them in a database
 and also provides a website with search filters for their presentation.
 The whole project consists of 3 distinguished parts: the mechanism (python scripts within Docker
@@ -18,9 +20,42 @@ The project currently supports Ubuntu 20.04, Debian 11, Kali 2021.4, Fedora 34 a
 8.4.2105, but it can easily be extended to include even more distributions that utilize the apt or
 dnf/yum package manager. The whole application is containerized and thus easily deployable via
 a Docker-Compose file.
+  
+
+![PKGman arch - tech stack](./PKGman_arch.png)
+
+### Supported Linux Distributions:
+
+- Ubuntu 20.04
+- Debian 11
+- Kali 2021.4
+- Fedora 34
+- CentOS 8.4.2105
+
+
+### The collected package attributes are the following:
+- name
+- Linux distribution
+- type [deb, rpm]
+- category
+- license
+- maintainer
+- description
+- homepage website URL
+- code repository URL
+
+
+### For every package version the following attributes are also collected:
+- name
+- architecture
+- size
+- binary file URL
+
+> <ins>Note:</ins> each package can have multiple versions
 
 
 ### How to run:
+
 ```
 $ docker-compose up --build
 ```
